@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 16, 2022 at 02:19 PM
+-- Generation Time: Nov 21, 2022 at 03:00 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.24
 
@@ -145,7 +145,7 @@ INSERT INTO `grades` (`GRADE_ID`, `IDNO`, `SUBJ_ID`, `INST_ID`, `SYID`, `FIRST`,
 (49, 1900679, 482, 0, 13, '0', '0', 0, 0, '0', 'NONE', '00:00:00', '', 'NONE', ''),
 (50, 1900742, 482, 0, 15, '0', '0', 0, 0, '0', 'NONE', '00:00:00', '', 'NONE', ''),
 (51, 1900742, 483, 8, 19, '1.75', '1.00', 0, 0, '1.00', 'NONE', '00:00:00', '', 'Passed', ''),
-(52, 1900742, 484, 0, 19, '0', '0', 0, 0, '0', 'NONE', '00:00:00', '', 'NONE', ''),
+(52, 1900742, 484, 8, 19, '2.50', '2.50', 0, 0, '2.50', 'NONE', '00:00:00', '', 'Passed', ''),
 (53, 1900742, 485, 0, 19, '0', '0', 0, 0, '0', 'NONE', '00:00:00', '', 'NONE', ''),
 (54, 1900742, 486, 0, 19, '0', '0', 0, 0, '0', 'NONE', '00:00:00', '', 'NONE', ''),
 (55, 1900742, 487, 0, 19, '0', '0', 0, 0, '0', 'NONE', '00:00:00', '', 'NONE', ''),
@@ -179,7 +179,29 @@ INSERT INTO `grades` (`GRADE_ID`, `IDNO`, `SUBJ_ID`, `INST_ID`, `SYID`, `FIRST`,
 (83, 1900742, 515, 0, 31, '0', '0', 0, 0, '0', 'NONE', '00:00:00', '', 'NONE', ''),
 (84, 1900742, 516, 0, 31, '0', '0', 0, 0, '0', 'NONE', '00:00:00', '', 'NONE', ''),
 (85, 1900742, 517, 0, 31, '0', '0', 0, 0, '0', 'NONE', '00:00:00', '', 'NONE', ''),
-(86, 1900742, 518, 0, 31, '0', '0', 0, 0, '0', 'NONE', '00:00:00', '', 'NONE', '');
+(86, 1900742, 518, 0, 31, '0', '0', 0, 0, '0', 'NONE', '00:00:00', '', 'NONE', ''),
+(87, 1900742, 540, 0, 35, '', '', 0, 0, '', 'NONE', '00:00:00', '', 'NONE', ''),
+(88, 1900742, 519, 0, 32, '', '', 0, 0, '', 'NONE', '00:00:00', '', 'NONE', ''),
+(89, 1900742, 520, 0, 32, '', '', 0, 0, '', 'NONE', '00:00:00', '', 'NONE', ''),
+(90, 1900742, 521, 0, 32, '', '', 0, 0, '', 'NONE', '00:00:00', '', 'NONE', ''),
+(91, 1900742, 522, 0, 32, '', '', 0, 0, '', 'NONE', '00:00:00', '', 'NONE', ''),
+(92, 1900742, 523, 0, 32, '', '', 0, 0, '', 'NONE', '00:00:00', '', 'NONE', ''),
+(93, 1900742, 524, 0, 32, '', '', 0, 0, '', 'NONE', '00:00:00', '', 'NONE', ''),
+(94, 1900742, 525, 0, 32, '', '', 0, 0, '', 'NONE', '00:00:00', '', 'NONE', ''),
+(95, 1900742, 526, 0, 32, '', '', 0, 0, '', 'NONE', '00:00:00', '', 'NONE', ''),
+(96, 1900742, 527, 0, 32, '', '', 0, 0, '', 'NONE', '00:00:00', '', 'NONE', ''),
+(97, 1900742, 528, 0, 33, '', '', 0, 0, '', 'NONE', '00:00:00', '', 'NONE', ''),
+(98, 1900742, 529, 0, 33, '', '', 0, 0, '', 'NONE', '00:00:00', '', 'NONE', ''),
+(99, 1900742, 530, 0, 33, '', '', 0, 0, '', 'NONE', '00:00:00', '', 'NONE', ''),
+(100, 1900742, 531, 0, 33, '', '', 0, 0, '', 'NONE', '00:00:00', '', 'NONE', ''),
+(101, 1900742, 532, 0, 33, '', '', 0, 0, '', 'NONE', '00:00:00', '', 'NONE', ''),
+(102, 1900742, 533, 0, 33, '', '', 0, 0, '', 'NONE', '00:00:00', '', 'NONE', ''),
+(103, 1900742, 534, 0, 34, '', '', 0, 0, '', 'NONE', '00:00:00', '', 'NONE', ''),
+(104, 1900742, 535, 0, 34, '', '', 0, 0, '', 'NONE', '00:00:00', '', 'NONE', ''),
+(105, 1900742, 536, 0, 34, '', '', 0, 0, '', 'NONE', '00:00:00', '', 'NONE', ''),
+(106, 1900742, 537, 0, 34, '', '', 0, 0, '', 'NONE', '00:00:00', '', 'NONE', ''),
+(107, 1900742, 538, 0, 34, '', '', 0, 0, '', 'NONE', '00:00:00', '', 'NONE', ''),
+(108, 1900742, 539, 0, 34, '', '', 0, 0, '', 'NONE', '00:00:00', '', 'NONE', '');
 
 -- --------------------------------------------------------
 
@@ -203,7 +225,8 @@ CREATE TABLE `instructor` (
 --
 
 INSERT INTO `instructor` (`INST_ID`, `INST_FULLNAME`, `INST_ADDRESS`, `INST_SEX`, `INST_STATUS`, `SPECIALIZATION`, `INST_EMAIL`, `EMPLOYMENT_STATUS`) VALUES
-(8, 'Sarah', '120P MLQ', 'M', 'Single', 'IT', 'sarahroselimsison@gmail.com', 'Full time');
+(8, 'Sarah', '120P MLQ', 'M', 'Single', 'IT', 'sarahroselimsison@gmail.com', 'Full time'),
+(9, 'Mary Jane Bayod', 'Wawa', 'F', 'Single', 'IT', 'bayodjane@gmail.com', 'Full time');
 
 -- --------------------------------------------------------
 
@@ -261,7 +284,7 @@ CREATE TABLE `room` (
 --
 
 INSERT INTO `room` (`ROOM_ID`, `ROOM_NAME`, `ROOM_DESC`) VALUES
-(5, '401', '4th Floor'),
+(5, 'Robert''); DROP TABLE tblstuden', '4th Floor'),
 (6, '402', '4th Floor'),
 (7, '403', '4th Floor'),
 (8, '404', '4th Floor'),
@@ -443,7 +466,8 @@ CREATE TABLE `tblrequirements` (
 --
 
 INSERT INTO `tblrequirements` (`REQ_ID`, `NSO`, `BAPTISMAL`, `ENTRANCE_TEST_RESULT`, `MARRIAGE_CONTRACT`, `CERTIFICATE_OF_TRANSFER`, `IDNO`) VALUES
-(1, 'No', 'No', 'No', 'No', 'No', 19);
+(1, 'No', 'No', 'No', 'No', 'No', 19),
+(2, 'No', 'No', 'No', 'No', 'No', 12);
 
 -- --------------------------------------------------------
 
@@ -473,7 +497,12 @@ CREATE TABLE `tblstuddetails` (
 INSERT INTO `tblstuddetails` (`DETAIL_ID`, `FATHER`, `FATHER_OCCU`, `MOTHER`, `MOTHER_OCCU`, `BOARDING`, `WITH_FAMILY`, `GUARDIAN`, `GUARDIAN_ADDRESS`, `OTHER_PERSON_SUPPORT`, `ADDRESS`, `IDNO`) VALUES
 (48, 'BENIGNO B. CORTEZ', 'FARMER', 'TERESITA P. CORTEZ', 'HOUSE WIFE', 'Yes', 'No', 'BENIGNO B. CORTEZ', 'TABUGON,kABANKALAN CITY', 'NONE', 'NONE', 20001550),
 (60, 'Abraham I. Sison', 'Retired', 'Rosita Lim', 'House Wife', '', '', 'Abraham I. Sison', '120P MLQ St. New Lower Bicutan, Taguig City', 'Rosita Lim', '120P MLQ St. New Lower Bicutan, Taguig City', 1900742),
-(61, '', '', '', '', '', '', '', '', '', '', 19);
+(61, '', '', '', '', '', '', '', '', '', '', 19),
+(62, '', '', '', '', '', '', 'nkn', 'knkjnk', 'kjnkn', 'knkj', 12),
+(63, '', '', '', '', 'no', 'yes', 'kvbh', 'vhj', 'mbbb', 'jjhbb', 123),
+(64, '', '', '', '', 'no', 'yes', 'kvbh', 'vhj', 'mbbb', 'jjhbb', 123),
+(65, '', '', '', '', 'no', 'yes', 'kkj', 'knk', 'nnkn', 'nknk', 3232),
+(66, '', '', '', '', 'no', 'yes', 'Eric Mendiola', 'Ibayo Tipas, Taguig', 'Christel Mendiola', 'Ibayo Tipas, Taguig', 1900664);
 
 -- --------------------------------------------------------
 
@@ -505,7 +534,8 @@ CREATE TABLE `tblstudent` (
 
 INSERT INTO `tblstudent` (`S_ID`, `IDNO`, `FNAME`, `LNAME`, `MNAME`, `SEX`, `BDAY`, `BPLACE`, `STATUS`, `AGE`, `NATIONALITY`, `RELIGION`, `CONTACT_NO`, `HOME_ADD`, `EMAIL`) VALUES
 (57, '1900742', 'Sarah Rose', 'Sison', 'Lim', 'F', '2001-01-20', 'Manila', 'Single', 21, 'Filipino', 'The Church of Jesus Christ of Latter Day Saints', '09761131191', '120P MLQ St. New Lower Bicutan, Taguig City', 'sarahroselimsison@gmail.com'),
-(58, '1900679', 'Mary Jane', 'Bayod', 'Buhatin', 'F', '0000-00-00', '', 'Single', 21, '', '', '', '', 'bayodmaryjane@gmail.com');
+(58, '1900679', 'Mary Jane', 'Bayod', 'Buhatin', 'F', '0000-00-00', '', 'Single', 21, '', '', '', '', 'bayodmaryjane@gmail.com'),
+(63, '1900664', 'Ma. Antonette', 'Mendiola', 'Esguerra', 'F', '2001-05-20', 'Taguig', 'Single', 21, 'Filipino', 'Chirstian', '09563329334', 'Ibayo Tipas, Taguig', 'tonet@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -528,7 +558,7 @@ CREATE TABLE `useraccounts` (
 INSERT INTO `useraccounts` (`ACCOUNT_ID`, `ACCOUNT_NAME`, `ACCOUNT_USERNAME`, `ACCOUNT_PASSWORD`, `ACCOUNT_TYPE`) VALUES
 (12, 'TCU Admin', 'admin', '8cb2237d0679ca88db6464eac60da96345513964', 'Administrator'),
 (13, 'Sarah', 'sarahroselimsison@gmail.com', '8cb2237d0679ca88db6464eac60da96345513964', 'Teacher'),
-(14, 'hhk', 'hhj', '3da541559918a808c2402bba5012f6c60b27661c', 'Administrator');
+(15, 'Mary Jane Bayod', 'bayodjane@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'Teacher');
 
 --
 -- Indexes for dumped tables
@@ -674,12 +704,12 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT for table `grades`
 --
 ALTER TABLE `grades`
-  MODIFY `GRADE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+  MODIFY `GRADE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 --
 -- AUTO_INCREMENT for table `instructor`
 --
 ALTER TABLE `instructor`
-  MODIFY `INST_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `INST_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `level`
 --
@@ -724,22 +754,22 @@ ALTER TABLE `subject`
 -- AUTO_INCREMENT for table `tblrequirements`
 --
 ALTER TABLE `tblrequirements`
-  MODIFY `REQ_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `REQ_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tblstuddetails`
 --
 ALTER TABLE `tblstuddetails`
-  MODIFY `DETAIL_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `DETAIL_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 --
 -- AUTO_INCREMENT for table `tblstudent`
 --
 ALTER TABLE `tblstudent`
-  MODIFY `S_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `S_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 --
 -- AUTO_INCREMENT for table `useraccounts`
 --
 ALTER TABLE `useraccounts`
-  MODIFY `ACCOUNT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `ACCOUNT_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
