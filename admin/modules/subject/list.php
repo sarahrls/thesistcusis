@@ -39,7 +39,7 @@
 						  		//echo '<td>'. $result->SEMESTER.'</td>';
 						  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500;">'. $result->COURSE_NAME.'</td>';
 						  		//echo '<td>'. $result->COURSE_LEVEL.'</td>';
-                                echo '<td style="font-size:15px; font-family:Poppins; font-weight:500;"><a href="index.php?view=edit&id='.$result->SUBJ_ID.'" style="color:#780000;"> Edit </a></td>';
+                                echo '<td style="font-size:15px; font-family:Poppins; font-weight:500;"><a href="index.php?view=edit&id='.$result->SUBJ_ID.'" style="color:#780000; margin-left:18px;"> Edit </a></td>';
 
 						  		echo '</tr>';
 					  		}

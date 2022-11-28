@@ -12,7 +12,7 @@
 	  ?>
 <div class="panel panel-primary">
 	  <div class="panel-heading">
-	    <h3 class="panel-title">Class </h3>
+	    <h3 class="panel-title" style="margin-top:5px; font-family:Poppins; font-weight:900; ">Class </h3>
 	  </div>
 	  <div class="panel-body">
 	   <div class="row" >
@@ -23,7 +23,7 @@
     			
 				  <tbody>				    
 			     	<tr>
-			     		<td><strong>Subject Code:</strong> <?php echo (isset($cur)) ? $cur->SUBJ_CODE : 'Code' ;?><br/>
+			     		<td style="font-size:16px; font-family:Poppins; font-weight:500; margin-left:10px;"><strong>Subject Code:</strong> <?php echo (isset($cur)) ? $cur->SUBJ_CODE : 'Code' ;?><br/>
 			     		<strong>Description:</strong> <?php echo (isset($cur)) ? $cur->SUBJ_DESCRIPTION  : 'Description' ;?><br/>
 			     	<!--	<td><?php //echo (isset($cur)) ? $cur->SEMESTER : 'Semester' ;?></td>-->
 			     		<strong>Grade level:</strong> <?php echo (isset($cur)) ? $cur->COURSE_NAME : 'Course' ;?><br/>
@@ -44,24 +44,24 @@
 	<?php
 		check_message();
 	?>
-			<h3 align="left">List of Student</h3>
+			<h3 align="left" style="margin-top:5px; font-family:Poppins; font-weight:900; ">List of Student</h3>
 			    <form action="" Method="POST">  					
 				<table id="example" class="table table-striped" cellspacing="0">
 				
 				  <thead>
 				  	<tr id="table" >
 				  		<tr>
-				  			<th>No.</th>
-				  		<th> <input type="checkbox" name="chkall" id="chkall" onclick="return checkall('selector[]');"> ID#.</th>
-				  		<th>Fullname</th>
-				  		<th>Sex</th>
+				  		<th style="font-size:16px; font-family:Poppins; font-weight:900;">No.</th>
+				  		<th style="font-size:16px; font-family:Poppins; font-weight:900;"> <input type="checkbox" name="chkall" id="chkall" onclick="return checkall('selector[]');"> ID#.</th>
+				  		<th style="font-size:16px; font-family:Poppins; font-weight:900;">Fullname</th>
+				  		<th style="font-size:16px; font-family:Poppins; font-weight:900;">Sex</th>
 				  	<!--	<th>Age</th>
 				  		<th>Birth Date</th>
 				  		<th>Status</th>-->
-				  		<th>Midterm</th>
-				  		<th>FInals</th>
-						<th>Average</th>				  		
-				  		<th>Remarks</th>
+				  		<th style="font-size:16px; font-family:Poppins; font-weight:900;">Midterm</th>
+				  		<th style="font-size:16px; font-family:Poppins; font-weight:900;">FInals</th>
+						<th style="font-size:16px; font-family:Poppins; font-weight:900;">Average</th>				  		
+				  		<th style="font-size:16px; font-family:Poppins; font-weight:900;">Remarks</th>
 				  	</tr>	
 				  </thead>
 				  <tbody>
@@ -81,19 +81,19 @@
 					  		$cur = $mydb->loadResultList();
 							foreach ($cur as $student) {
 					  		echo '<tr>';
-					  		echo '<td width="5%" align="center"></td>';
+					  		echo '<td width="5%" align="center" style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;"></td>';
 					  		// echo '<td><input type="checkbox" name="selector[]" id="selector[]" value="'.$student->IDNO. '"/>
 					  		// 		<a href="edit_studentinfo.php?id='.$student->IDNO.'">' . $student->IDNO.'</a></td>';
-					  		echo '<td>' . $student->IDNO.'</td>';
-					  		echo '<td>'. $student->LNAME. ',' .$student->FNAME.' '.$student->MNAME.'</td>';
-					  		echo '<td>'. $student->SEX.'</td>';
+					  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">' . $student->IDNO.'</td>';
+					  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $student->LNAME. ',' .$student->FNAME.' '.$student->MNAME.'</td>';
+					  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $student->SEX.'</td>';
 					  		/*echo '<td>'. $student->AGE.'</td>';
 					  		echo '<td>'. $student->BDAY.'</td>';
 					  		echo '<td>'. $student->STATUS.'</td>';*/
-					  		echo '<td>'.$student->FIRST.'</td>';
-					  		echo '<td>'. $student->SECOND.'</td>';
-					  		echo '<td>'. $student->AVE.'</td>';  
-					  		echo '<td>'. $student->REMARKS.'</td>';  
+					  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'.$student->FIRST.'</td>';
+					  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $student->SECOND.'</td>';
+					  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $student->AVE.'</td>';  
+					  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $student->REMARKS.'</td>';  
 					  		echo '</tr>';
 					  		}
 
@@ -106,7 +106,7 @@
 				 
 				</table>
 				<div class="btn-group">
-				  <a href="index.php" class="btn btn-default">Back</a>
+				  <a href="index.php" class="btn btn-default" style="background-color:#780000; font-family:Poppins; ">Back</a>
 				  <!--  <button type="submit" class="btn btn-default" name="delete"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button> -->
 				</div>
 				</form>

@@ -13,7 +13,7 @@
 				  		<th style="font-size:16px; font-family:Poppins; font-weight:900;">Gender</th>
 				  		<th style="font-size:16px; font-family:Poppins; font-weight:900;">Specialization</th>
 				 		<th style="font-size:16px; font-family:Poppins; font-weight:900;">Email Address</th>
-				 		<th style="font-size:16px; font-family:Poppins; font-weight:900;"></th>
+				 		<th style="font-size:16px; font-family:Poppins; font-weight:900;">Actions</th>
 				  	</tr>	
 				  </thead>
 				  <tbody>

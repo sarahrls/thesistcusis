@@ -3,6 +3,8 @@
     .wells{
         font-size: 20px;
     }
+    
+   
 
 </style>
 
@@ -12,19 +14,19 @@
 
 			    <form action="controller.php?action=delsy&studentId=<?php echo $_GET['studentId']; ?>" Method="POST">  					
 				<table class="table table-hover">
-					<caption><h3 align="left">Student Enrollment Records</h3></caption>
+				<h3 align="left" style="margin-top:5px; font-family:Poppins; font-weight:900; ">Student Enrollment Records</h3>
 				  <thead>
 				  	<tr>
-				  		<th> <input type="checkbox" name="chkall" id="chkall" onclick="return checkall('selector[]');"> Year/Sem</th>
+				  		<th style="font-size:16px; font-family:Poppins; font-weight:900;"> <input type="checkbox" name="chkall" id="chkall" onclick="return checkall('selector[]');" > Year/Sem</th>
 				  	<!--	<th>Semester</th>-->
-				  		<th>School Year</th>
-				  		<th>Status</th>
-				  		<th>Date Enrolled</th>
-				  		<th>Options</th>
+				  		<th style="font-size:16px; font-family:Poppins; font-weight:900;">School Year</th>
+				  		<th style="font-size:16px; font-family:Poppins; font-weight:900;">Status</th>
+				  		<th style="font-size:16px; font-family:Poppins; font-weight:900;">Date Enrolled</th>
+				  		<th style="font-size:16px; font-family:Poppins; font-weight:900;">Options</th>
 				 
 				  	</tr>	
 				  </thead>
-				  <tbody>
+				  <tbody >
 				  	<?php 
 				  		$mydb->setQuery("SELECT  `COURSE_NAME` ,COURSE_DESC,  `SYID` ,  `AY` ,  `SEMESTER` , s.`COURSE_ID` ,  `IDNO` ,  `CATEGORY` ,  `DATE_RESERVED` ,  `DATE_ENROLLED` ,  `STATUS` 
 										FROM  `schoolyr` s,  `course` c
@@ -35,12 +37,12 @@
 				  		echo '<tr>';
 
 				  		echo '<td><input type="checkbox" name="selector[]" id="selector[]" value="'.$schoolyr->SYID. '"/>
-				  				<a href="index.php?view=editenrollment&studentId='.$_GET['studentId'].'&id='.$schoolyr->SYID.'">' . $schoolyr->COURSE_DESC.'</a></td>';
+				  				<a href="index.php?view=editenrollment&studentId='.$_GET['studentId'].'&id='.$schoolyr->SYID.'" style="color:#780000; font-size:15px; font-family:Poppins; font-weight:500;">' . $schoolyr->COURSE_DESC.'</a></td>';
 				  //		echo '<td>'. $schoolyr->SEMESTER.'</td>';
-				  		echo '<td>'. $schoolyr->AY.'</td>';
-				  		echo '<td>'. $schoolyr->STATUS.'</td>';
-				  		echo '<td>'. $schoolyr->DATE_RESERVED.'</td>';
-				  		echo '<td><a href = "index.php?view=subject&studentId='.$schoolyr->IDNO.'&cid='.$schoolyr->COURSE_ID.'&sy='.$schoolyr->SYID.'">Enrolled Subjects</a></td>';
+				  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $schoolyr->AY.'</td>';
+				  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $schoolyr->STATUS.'</td>';
+				  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $schoolyr->DATE_RESERVED.'</td>';
+				  		echo '<td><a href = "index.php?view=subject&studentId='.$schoolyr->IDNO.'&cid='.$schoolyr->COURSE_ID.'&sy='.$schoolyr->SYID.'" style="color:#780000; font-size:15px; font-family:Poppins; font-weight:500;">Enrolled Subjects</a></td>';
                         //echo '<a href = "index.php?view=view&studentId='.$schoolyr->COE.'" ><span class="glyphicon glyphicon-list-alt"> </span> Upload File </a></td>';
 				  		echo '</tr>';
 				  	} 
@@ -51,9 +53,9 @@
 				<?php
 				if($_SESSION['ACCOUNT_TYPE']=='Administrator') {
 		
-			echo   '<div class="btn-group">
-				  <a href="index.php?view=enroll&studentId='. $_GET['studentId'].'" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span> New</a>
-				  <button type="submit" class="btn btn-default" name="delete"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>
+			echo   '<div class="btn-group" >
+				  <a href="index.php?view=enroll&studentId='. $_GET['studentId'].'" class="btn btn-default" style="background-color:#780000; font-family:Poppins;"><span class="glyphicon glyphicon-plus-sign"></span > New</a>
+				  <button type="submit" class="btn btn-default" name="delete" style="background-color:#780000; font-family:Poppins;"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>
 				</div>';
 				
 				 }

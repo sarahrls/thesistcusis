@@ -8,13 +8,13 @@ $object = $singlesubject->single_subject($subjid);
 <form class="form-horizontal well span4" action="controller.php?action=edit&id=<?php echo $subjid;?>" method="POST">
 
 <fieldset>
-	<legend>Edit Subject</legend>
+	<legend style="margin-top:5px; font-family:Poppins; font-weight:900; ">Edit Subject</legend>
 										
 
 		<div class="form-group">
         <div class="col-md-8">
           <label class="col-md-4 control-label" for=
-          "subjcode">Subject Code</label>
+          "subjcode" style="color:#780000; font-family:Poppins; font-size:14px;">Subject Code</label>
 
           <div class="col-md-8">
              <input class="form-control input-sm" id="subjcode" name="subjcode" placeholder=
@@ -26,7 +26,7 @@ $object = $singlesubject->single_subject($subjid);
       <div class="form-group">
         <div class="col-md-8">
           <label class="col-md-4 control-label" for=
-          "subjdesc">Subject Description</label>
+          "subjdesc" style="color:#780000; font-family:Poppins; font-size:14px;">Subject Description</label>
 
           <div class="col-md-8">
              <input class="form-control input-sm" id="subjdesc" name="subjdesc" placeholder=
@@ -38,7 +38,7 @@ $object = $singlesubject->single_subject($subjid);
        <div class="form-group">
         <div class="col-md-8">
           <label class="col-md-4 control-label" for=
-          "unit">No of units</label>
+          "unit" style="color:#780000; font-family:Poppins; font-size:14px;">No of units</label>
 
           <div class="col-md-8">
              <input class="form-control input-sm" id="unit" name="unit" placeholder=
@@ -60,7 +60,7 @@ $object = $singlesubject->single_subject($subjid);
        <div class="form-group">
         <div class="col-md-8">
           <label class="col-md-4 control-label" for=
-          "course">Year level</label>
+          "course" style="color:#780000; font-family:Poppins; font-size:14px;">Year level</label>
 
           <div class="col-md-8">
            <select class="form-control input-sm" name="course" id="course">
@@ -80,7 +80,7 @@ $object = $singlesubject->single_subject($subjid);
        <div class="form-group">
         <div class="col-md-8">
           <label class="col-md-4 control-label" for=
-          "ay">Academic Year</label>
+          "ay" style="color:#780000; font-family:Poppins; font-size:14px;">Academic Year</label>
 
           <div class="col-md-8">
             <select class="form-control input-sm" name="ay" id="ay">
@@ -113,13 +113,13 @@ $object = $singlesubject->single_subject($subjid);
 	<?php
                           if($_SESSION['ACCOUNT_TYPE']=='Administrator'){
             echo '
-	 <div class="form-group">
+	 <div class="form-group" >
         <div class="col-md-8">
           <label class="col-md-4 control-label" for=
           "idno"></label>
 
           <div class="col-md-8">
-            <button class="btn btn-primary" name="savecourse" type="submit" >Save</button>
+            <button class="btn btn-primary" name="savecourse" type="submit" style="background-color:#780000;">Save</button>
           </div>
         </div>
       </div>';

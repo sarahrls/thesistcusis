@@ -52,10 +52,10 @@
 
 
 
-<!-- 	<div class="btn-group">
-	  <a href="index.php?view=add" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span> New</a>
-	  <button type="submit" class="btn btn-default" name="delete"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>
-	</div> -->
+	<div class="btn-group">
+	  <a href="index.php?view=add" class="btn btn-default" style="background-color:#780000; font-family:Poppins; "><span class="glyphicon glyphicon-plus-sign"></span> New</a>
+	  
+	</div> 
 	</form>
 
 

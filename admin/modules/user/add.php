@@ -1,13 +1,13 @@
  <form class="form-horizontal span6" action="controller.php?action=add" method="POST">
 
           <fieldset>
-            <legend>New User Account</legend>
+            <legend style="margin-top:20px; font-family:Poppins; font-weight:900;">New User Account</legend>
                               
                   
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "name">Name:</label>
+                      "name" style="color:#780000; font-family:Poppins; font-size:14px;">Name:</label>
 
                       <div class="col-md-8">
                         <input name="deptid" type="hidden" value="">
@@ -20,7 +20,7 @@
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "username">Username:</label>
+                      "username" style="color:#780000; font-family:Poppins; font-size:14px;">Username:</label>
 
                       <div class="col-md-8">
                         <input name="deptid" type="hidden" value="">
@@ -33,7 +33,7 @@
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "pass">Password:</label>
+                      "pass" style="color:#780000; font-family:Poppins; font-size:14px;">Password:</label>
 
                       <div class="col-md-8">
                         <input name="deptid" type="hidden" value="">
@@ -45,7 +45,7 @@
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "type">Type:</label>
+                      "type" style="color:#780000; font-family:Poppins; font-size:14px;">Type:</label>
 
                       <div class="col-md-8">
                        <select class="form-control input-sm" name="type" id="type">

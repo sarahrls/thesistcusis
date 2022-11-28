@@ -20,7 +20,7 @@
 			 <span style="font-size:18px; font-weight:bold; color:#780000;"> Total of Admin </span>
 		</div>
 		<div>
-			<span class='bx bxs-user' style="color:#780000;"> </span>
+			<span class='bx bxs-user' style="color:#780000; font-size:40px;"> </span>
 		</div>
 		</div>
 		
@@ -45,7 +45,7 @@
 			 <span style="font-size:18px; font-weight:bold; color:#780000;"> Total of Student </span>
 		</div>
 		<div>
-			<span class='bx bx-body' style="color:#780000;"> </span>
+			<span class='bx bx-body' style="color:#780000; font-size:40px;"> </span>
 		</div>
 		</div>
 		<!--
@@ -84,7 +84,7 @@
 			 <span style="font-size:18px; font-weight:bold;color:#780000;"> Total of Department </span>
 		</div>
 		<div>
-			<span class='bx bxs-user' style="color:#780000;"> </span>
+			<span class='bx bxs-user' style="color:#780000; font-size:40px;"> </span>
 		</div>
 		</div>
 		</div>

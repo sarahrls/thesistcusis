@@ -2,13 +2,13 @@
 <form class="form-horizontal well span6" action="controller.php?action=add" method="POST">
 
       <fieldset>
-        <legend>New Grade level</legend>
+        <legend style="margin-top:20px; font-family:Poppins; font-weight:900;">New Grade level</legend>
                           
 
           <div class="form-group">
                 <div class="col-md-8">
                   <label class="col-md-4 control-label" for=
-                  "coursename">Grade level</label>
+                  "coursename" style="color:#780000; font-family:Poppins; font-size:14px;">Grade level</label>
 
                   <div class="col-md-8">
                      <input class="form-control input-sm" id="coursename" name="coursename" placeholder=
@@ -54,7 +54,7 @@
               <div class="form-group">
                 <div class="col-md-8">
                   <label class="col-md-4 control-label" for=
-                  "coursedesc">Description</label>
+                  "coursedesc" style="color:#780000; font-family:Poppins; font-size:14px;">Description</label>
 
                   <div class="col-md-8">
                      <input class="form-control input-sm" id="coursedesc" name="coursedesc" placeholder=
@@ -89,7 +89,7 @@
                   "idno"></label>
 
                   <div class="col-md-8">
-                    <button class="btn btn-default" name="savecourse" type="submit" ><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
+                    <button class="btn btn-default" name="savecourse" type="submit" style="background-color:#780000; font-family:Poppins;"><span class="glyphicon glyphicon-floppy-save" ></span> Save</button>
                   </div>
                 </div>
               </div>

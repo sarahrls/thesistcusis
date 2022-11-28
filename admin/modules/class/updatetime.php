@@ -17,13 +17,13 @@
 		        <form class="form-horizontal well span4" action="controller.php?action=updatetime&classId=<?php echo $_GET['classId'];?>" method="POST">
 
 					<fieldset>
-						<legend>Update</legend>
+						<legend style="margin-top:5px; font-family:Poppins; font-weight:900; ">Update</legend>
 															
 
 							<div class="form-group">
 				            <div class="col-md-8">
 				              <label class="col-md-4 control-label" for=
-				              "subjcode">Subject Code</label>
+				              "subjcode" style="color:#780000; font-family:Poppins; font-size:14px;">Subject Code</label>
 
 				              <div class="col-md-8">
 				                 <input class="form-control input-sm" id="subjcode" name="subjcode" readonly placeholder=
@@ -35,7 +35,7 @@
 				          <div class="form-group">
 				            <div class="col-md-8">
 				              <label class="col-md-4 control-label" for=
-				              "subjdesc">Subject Description</label>
+				              "subjdesc" style="color:#780000; font-family:Poppins; font-size:14px;">Subject Description</label>
 
 				              <div class="col-md-8">
 				                 <input class="form-control input-sm" id="subjdesc" name="subjdesc" readonly placeholder=
@@ -69,7 +69,7 @@
 				           <div class="form-group">
 				            <div class="col-md-8">
 				              <label class="col-md-4 control-label" for=
-				              "course">Year/Sem</label>
+				              "course" style="color:#780000; font-family:Poppins; font-size:14px;">Year/Sem</label>
 
 				              <div class="col-md-8">
 				              <input class="form-control input-sm" id="course_name" name="course_name" readonly placeholder=
@@ -83,7 +83,7 @@
 				           <div class="form-group">
 				            <div class="col-md-8">
 				              <label class="col-md-4 control-label" for=
-				              "ay">Academic Year</label>
+				              "ay" style="color:#780000; font-family:Poppins; font-size:14px;">Academic Year</label>
 
 				              <div class="col-md-8">
 				                <input class="form-control input-sm" id="sy" name="sy" readonly placeholder=
@@ -105,7 +105,7 @@
 							<div class="form-group">
 				            <div class="col-md-8">
 				              <label class="col-md-4 control-label" for=
-				              "ay">Days</label>
+				              "ay" style="color:#780000; font-family:Poppins; font-size:14px;">Days</label>
 
 				              <div class="col-md-8">
 				                <select class="form-control input-sm"   name="day" id="day">
@@ -119,7 +119,7 @@
 				          <div class="form-group">
 				            <div class="col-md-8">
 				              <label class="col-md-4 control-label" for=
-				              "rmname">Room</label>
+				              "rmname" style="color:#780000; font-family:Poppins; font-size:14px;">Room</label>
 
 				              <div class="col-md-8">
 				                <select class="form-control input-sm"   name="rmname" id="rmname">
@@ -140,7 +140,7 @@
 				          <div class="form-group">
 				            <div class="col-md-8">
 				              <label class="col-md-4 control-label" for=
-				              "section">Section</label>
+				              "section" style="color:#780000; font-family:Poppins; font-size:14px;">Section</label>
 
 				              <div class="col-md-8">
 				                <input type="text" name="section" id="section" class="form-control input-sm" Placeholder="Section">
@@ -150,7 +150,7 @@
 				          <div class="form-group">
 				            <div class="col-md-8">
 				              <label class="col-md-4 control-label" for=
-				              "ay">Time</label>
+				              "ay" style="color:#780000; font-family:Poppins; font-size:14px;">Time</label>
 				              <div class="col-md-8">
 				                <select class="form-control input-sm"  name="time" id="time">
 									<option value="7:30-8:30">7:30-8:30</option>
@@ -175,7 +175,7 @@
 				              "idno"></label>
 
 				              <div class="col-md-8">
-				                <button class="btn btn-primary" name="savecourse" type="submit" >Save</button>
+				                <button class="btn btn-primary" name="savecourse" type="submit" style="background-color:#780000; font-family:Poppins; ">Save</button>
 				              </div>
 				            </div>
 				          </div>							

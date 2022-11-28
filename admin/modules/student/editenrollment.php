@@ -24,7 +24,7 @@
 			             <div class="form-group" id="idno">
 				            <div class="col-md-8">
 				              <label class="col-md-6 control-label" for=
-				              "Semester">ID Number: </label>
+				              "Semester" style="color:#780000; font-family:Poppins; font-size:14px;">ID Number: </label>
 				              <div class="col-md-6">
 				                <input class="form-control input-sm" id="idno" name="idno" readonly placeholder=
 									  "ID Number" type="text" value="<?php echo (isset($cur)) ? $cur->IDNO : 'ID' ;?>">
@@ -35,7 +35,7 @@
 				          <div class="form-group" id="idno">
 				            <div class="col-md-8">
 				              <label class="col-md-6 control-label" for=
-				              "Semester">Name: </label>
+				              "Semester" style="color:#780000; font-family:Poppins; font-size:14px;">Name: </label>
 				              <div class="col-md-6">
 				                <input class="form-control input-sm" readonly placeholder=
 									  "ID Number" type="text" value="<?php echo (isset($cur)) ? $cur->LNAME.', '.$cur->FNAME : 'Fullname' ;?>">
@@ -48,7 +48,7 @@
 			              <div class="form-group">
 				            <div class="col-md-8">
 				              <label class="col-md-6 control-label" for=
-				              "Status">Status : </label>
+				              "Status" style="color:#780000; font-family:Poppins; font-size:14px;">Status : </label>
 
 				              <div class="col-md-6">
 				                 <select class="form-control input-sm" name="Status" id="Status">
@@ -61,7 +61,7 @@
 			             <div class="form-group">
 				            <div class="col-md-8">
 				              <label class="col-md-6 control-label" for=
-				              "course">Year and Section :</label>
+				              "course" style="color:#780000; font-family:Poppins; font-size:14px;">Year and Section :</label>
 
 				              <div class="col-md-6">
 				               <select class="form-control input-sm" name="course" id="course">
@@ -86,7 +86,7 @@
 			             <div class="form-group">
 				            <div class="col-md-8">
 				              <label class="col-md-6 control-label" for=
-				              "ay">Academic Year :</label>
+				              "ay" style="color:#780000; font-family:Poppins; font-size:14px;">Academic Year :</label>
 
 				              <div class="col-md-6">
 				                <select class="form-control input-sm" name="ay" id="ay">
@@ -123,9 +123,9 @@
 				                	<?php
 				                	if($_SESSION['ACCOUNT_TYPE']=='Administrator'){
 						echo '
-							         <div class="btn-group"> 
-							          <a href="index.php" name="back" class="btn btn-default"></span>Back</a>
-									    <button type="submit" name="savestep1" class="btn btn-default"><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
+							         <div class="btn-group" style="background-color:#780000; border-radius:5px;"> 
+							          <a href="index.php" name="back" class="btn btn-default" style="background-color:#780000; font-family:Poppins; border-radius:5px;"></span>Back</a>
+									    <button type="submit" name="savestep1" class="btn btn-default" style="background-color:#780000; font-family:Poppins; border-radius:5px;"><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
 									  
 									  
 									  

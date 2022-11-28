@@ -8,11 +8,11 @@
 <form class="form-horizontal well span6" action="controller.php?action=edit&id=<?php echo $courseid;?>" method="POST">
 
 	<fieldset>
-		<legend>Modify Year/Sem </legend>
+		<legend style="margin-top:5px; font-family:Poppins; font-weight:900; ">Modify Year/Sem </legend>
 		<div class="form-group">
             <div class="col-md-8">
               <label class="col-md-4 control-label" for=
-              "coursename">Year/Sem </label>
+              "coursename" style="color:#780000; font-family:Poppins; font-size:14px;">Year/Sem </label>
 
               <div class="col-md-8">
                  <input class="form-control input-sm" id="coursename" name="coursename" placeholder=
@@ -57,7 +57,7 @@
           <div class="form-group">
             <div class="col-md-8">
               <label class="col-md-4 control-label" for=
-              "coursedesc">Description</label>
+              "coursedesc" style="color:#780000; font-family:Poppins; font-size:14px;">Description</label>
 
               <div class="col-md-8">
                  <input class="form-control input-sm" id="coursedesc" name="coursedesc" placeholder=
@@ -95,7 +95,7 @@
               "idno"></label>
 
               <div class="col-md-8">
-                <button class="btn btn-primary" name="savecourse" type="submit" >Save</button>
+                <button class="btn btn-primary" name="savecourse" type="submit" style="background-color:#780000; font-family:Poppins;">Save</button>
               </div>
             </div>
           </div>';

@@ -13,12 +13,12 @@ $object = $room->single_room($rmid);
  <form class="form-horizontal well span6" action="controller.php?action=edit&id=<?php echo $rmid;?>" method="POST">
 
           <fieldset>
-            <legend>Edit Room</legend>
+            <legend style="margin-top:5px; font-family:Poppins; font-weight:900; ">Edit Room</legend>
                               
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "rmname">Room Name</label>
+                      "rmname" style="color:#780000; font-family:Poppins; font-size:14px;">Room Name</label>
 
                       <div class="col-md-8">
                         <input name="roomid" type="hidden" value="<?php echo $object->ROOM_ID;?>">
@@ -31,7 +31,7 @@ $object = $room->single_room($rmid);
              <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "roomdesc">Room Description</label>
+                      "roomdesc" style="color:#780000; font-family:Poppins; font-size:14px;">Room Description</label>
 
                       <div class="col-md-8">
                            <input class="form-control input-sm" id="roomdesc" name="roomdesc" placeholder=
@@ -45,7 +45,7 @@ $object = $room->single_room($rmid);
                       "idno"></label>
 
                       <div class="col-md-8">
-                        <button class="btn btn-primary" name="save" type="submit" >Save</button>
+                        <button class="btn btn-primary" name="save" type="submit" style="background-color:#780000; font-family:Poppins;">Save</button>
                       </div>
                     </div>
                   </div>

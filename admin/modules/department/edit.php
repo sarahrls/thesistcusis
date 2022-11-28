@@ -13,12 +13,12 @@ $object = $singledept->single_dept($deptid);
  <form class="form-horizontal well span6" action="controller.php?action=edit&id=<?php echo $deptid;?>" method="POST">
 
           <fieldset>
-            <legend>Edit Department</legend>
+            <legend style="margin-top:5px; font-family:Poppins; font-weight:900; ">Edit Department</legend>
                               
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "deptname">Department Name</label>
+                      "deptname" style="color:#780000; font-family:Poppins; font-size:14px;">Department Name</label>
 
                       <div class="col-md-8">
                         <input name="deptid" type="hidden" value="<?php echo $object->DEPT_ID;?>">
@@ -31,7 +31,7 @@ $object = $singledept->single_dept($deptid);
              <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "deptdesc">Department Description</label>
+                      "deptdesc" style="color:#780000; font-family:Poppins; font-size:14px;">Department Description</label>
 
                       <div class="col-md-8">
                            <input class="form-control input-sm" id="deptdesc" name="deptdesc" placeholder=
@@ -45,7 +45,7 @@ $object = $singledept->single_dept($deptid);
                       "idno"></label>
 
                       <div class="col-md-8">
-                        <button class="btn btn-primary" name="save" type="submit" >Save</button>
+                        <button class="btn btn-primary" name="save" type="submit" style="background-color:#780000; font-family:Poppins; ">Save</button>
                       </div>
                     </div>
                   </div>

@@ -25,8 +25,8 @@
 						$course = new Course();
 						$studcourse = $course->single_course($sy->COURSE_ID);
 						//the button in assigning the subjects.
-						$button ='<a href = "index.php?view=assign&studentId='.$_GET['studentId'].'&SY='.$sy->AY.'&cid='.$sy->COURSE_ID.'&sy='.$_GET['sy'].'" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>Assign Subject</a>
-						 <button type="submit" class="btn btn-default" name="delete"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>';
+						$button ='<a href = "index.php?view=assign&studentId='.$_GET['studentId'].'&SY='.$sy->AY.'&cid='.$sy->COURSE_ID.'&sy='.$_GET['sy'].'" class="btn btn-default" style="background-color:#780000; font-family:Poppins;"><span class="glyphicon glyphicon-plus-sign" ></span>Assign Subject</a>
+						 <button type="submit" class="btn btn-default" name="delete" style="background-color:#780000; font-family:Poppins;"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>';
 
 					}
 
@@ -41,7 +41,7 @@
 		  <!-- <form class="form-horizontal span4" action="#.php" method="POST"> -->
 					<div class="panel panel-primary">
 					  <div class="panel-heading">
-					    <h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> Enrolled Subject by the Student </h3>
+					    <h3 class="panel-title" style="margin-top:5px; font-family:Poppins; font-weight:900; "><span class="glyphicon glyphicon-user" ></span> Enrolled Subject by the Student </h3>
 					  </div>
 					  <div class="panel-body">
 					   <div class="row">      	  		            		          
@@ -54,7 +54,7 @@
 						     	<tr>
 						     		
 						     		<td>
-						     			<p><b>ID Number : </b><?php echo (isset($cur)) ? $cur->IDNO : 'ID' ;?><br/>
+						     			<p style="font-size:16px; font-family:Poppins; font-weight:500; margin-left:10px;"><b>ID Number : </b><?php echo (isset($cur)) ? $cur->IDNO : 'ID' ;?><br/>
 						     		<b>Name :</b><?php echo (isset($cur)) ? $cur->LNAME.', '.$cur->FNAME : 'Fullname' ;?><br/>
 						     		<b>Status : </b><?php echo (isset($sy)) ? $sy->STATUS : 'STATUS' ;?><br/>
 						     		<b>AY : </b><?php echo (isset($sy)) ? $sy->AY : 'STATUS' ;?><br/>
@@ -76,18 +76,18 @@
 								  		
 
 								  			<?php if($_SESSION['ACCOUNT_TYPE']=='Administrator'){
-								  				echo '<th width="20%" align="left"><input type="checkbox" name="chkall" id="chkall" onclick="return checkall("selector[]");">Subject</th>';
+								  				echo '<th style="font-size:16px; font-family:Poppins; font-weight:900;" width="20%" align="left"><input type="checkbox" name="chkall" id="chkall" onclick="return checkall("selector[]");">Subject</th>';
 								  			}else{
 
 								  				echo '<th>Subject</th>';	
 								  			}
 								  			?>								  		 
 								  		 							  	
-								  		<th class="bottom">Description</th>
-								  		<th>Midterm</th>
-								  		<th>Finals</th>
-										<th>Average</th>				  		
-								  		<th>Remarks</th>
+								  		<th class="bottom" style="font-size:16px; font-family:Poppins; font-weight:900;">Description</th>
+								  		<th style="font-size:16px; font-family:Poppins; font-weight:900;">Midterm</th>
+								  		<th style="font-size:16px; font-family:Poppins; font-weight:900;">Finals</th>
+										<th style="font-size:16px; font-family:Poppins; font-weight:900;">Average</th>				  		
+								  		<th style="font-size:16px; font-family:Poppins; font-weight:900;">Remarks</th>
 								  	<!--	<th class="bottom">Semester</th>
 								 		<th class="bottom">Department</th>
 								 		<th class="bottom">Pre-requisite</th>
@@ -108,16 +108,16 @@
 											foreach ($cur as $result) {
 										  		echo '<tr>';
 
-										  		echo '<td width="15%">';
+										  		echo '<td width="15%" style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">';
 										  		 if($_SESSION['ACCOUNT_TYPE']=='Administrator'){
 
 										  		echo '<input type="checkbox" name="selector[]" id="selector[]" value="'.$result->GRADE_ID. '"/>';
 										  		}  echo $result->SUBJ_CODE .'</td>';
-										  		echo '<td width="30%">'. $result->SUBJ_DESCRIPTION.'</td>';
-									  			echo '<td>'.$result->FIRST.'</td>';
-										  		echo '<td>'. $result->SECOND.'</td>';
-										  		echo '<td>'. $result->AVE.'</td>';  
-										  		echo '<td>'. $result->REMARKS.'</td>';  	
+										  		echo '<td width="30%" style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $result->SUBJ_DESCRIPTION.'</td>';
+									  			echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'.$result->FIRST.'</td>';
+										  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $result->SECOND.'</td>';
+										  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $result->AVE.'</td>';  
+										  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $result->REMARKS.'</td>';  	
 										  	//	echo '<td>'. $result->SEMESTER.'</td>';
 										  	//	echo '<td>'. $result->COURSE_NAME.'</td>';
 										  		//echo '<td>'. $result->COURSE_LEVEL.'</td>';
@@ -135,15 +135,15 @@
 
 
 
-						<div class="btn-group" id="divButtons" name="divButtons">
-						<a href="index.php?view=view&studentId=<?php echo $_GET['studentId'];?>" class="btn btn-default">  Back</a>
+						<div class="btn-group" id="divButtons" name="divButtons" style="background-color:#780000; border-radius:5px;">
+						<a href="index.php?view=view&studentId=<?php echo $_GET['studentId'];?>" class="btn btn-default" style="background-color:#780000; font-family:Poppins;">  Back</a>
 						<?php 
 						 if($_SESSION['ACCOUNT_TYPE']=='Administrator'){
 						 	echo (isset($button)) ? $button : ''; 
 						 }
 
 						?>
-						<input type="button" value="Print" onclick="tablePrint();" class="btn btn-default">
+						<input type="button" value="Print" onclick="tablePrint();" class="btn btn-default" style="background-color:#780000; font-family:Poppins;">
 			 				<!-- <a href = "assignstudentsubjects.php?studentId=<?php // echo (isset($_GET['studentId'])) ? $_GET['studentId'] : 'ID' ; ?>" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>Assign Subject</a> -->
 					  <!--  <button type="submit" class="btn btn-default" name="delete"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button> -->
 					</form>

@@ -36,9 +36,9 @@
 				<?php
 				if($_SESSION['ACCOUNT_TYPE']=='Administrator'){
 						echo '
-				<div class="btn-group" style="background-color:#780000; border-radius:5px;">
-				  <a href="index.php?view=add" class="btn btn-default" style="background-color:#780000; ><span class="glyphicon glyphicon-plus-sign"></span> New</a>
-				  <button type="submit" class="btn btn-default" name="delete" style="background-color:#780000; ><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>
+				<div class="btn-group" style="background-color:#780000; border-radius:5px; font-family:Poppins;">
+				  <a href="index.php?view=add" class="btn btn-default" style="background-color:#780000; font-family:Poppins; "><span class="glyphicon glyphicon-plus-sign"></span> New</a>
+				  <button type="submit" class="btn btn-default" name="delete" style="background-color:#780000; font-family:Poppins; "><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>
 				</div>';
 			}
 			?>

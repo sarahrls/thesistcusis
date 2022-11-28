@@ -1,6 +1,6 @@
 
            <div class="card-header">
-             <h5>Add New Student</h5>
+             <h5 style="margin-top:20px; font-family:Poppins; font-weight:900;">Add New Student</h5>
            </div>
               <div class="card-body">
                 <form action="controller.php?action=add" class="form-horizontal  span9" method="post" autocomplete="off"> 
@@ -9,7 +9,7 @@
         <div class="row"> 
         <div class="col-md-4">
           <div class="form-group">
-            <label  for="idno">Student ID Number*</label> 
+            <label  for="idno" style="color:#780000; font-family:Poppins; font-size:14px;">Student ID Number*</label> 
               <input class="form-control input-sm" id="idno" name="idno" placeholder=
               "ID Number" type="text" value=""> 
           </div>
@@ -19,7 +19,7 @@
         <div class="row">  
           <div class="col-md-4">
             <div class="form-group">
-              <label for="lName">Last Name:*</label> 
+              <label for="lName" style="color:#780000; font-family:Poppins; font-size:14px;">Last Name:*</label> 
                 <input class="form-control input-sm" id="lName" name="lName"
                 placeholder="Last Name" type="text">
             </div>
@@ -27,7 +27,7 @@
 
           <div class="col-md-4">
             <div class="form-group">
-            <label for="fName">First Name:*</label> 
+            <label for="fName" style="color:#780000; font-family:Poppins; font-size:14px;">First Name:*</label> 
               <input class="form-control input-sm" id="fName" name="fName"
               placeholder="First Name" type="text">
             </div>
@@ -35,7 +35,7 @@
 
           <div class="col-md-4">
             <div class="form-group">
-            <label for="mName">Middle Name:*</label> 
+            <label for="mName" style="color:#780000; font-family:Poppins; font-size:14px;">Middle Name:*</label> 
               <input class="form-control input-sm" id="mName" name="mName"
               placeholder="Middle Name" type="text">
             </div>
@@ -45,7 +45,7 @@
         <div class="row">
           <div class="col-md-4">
            <div class="form-group">
-            <label for="gender">Gender*</label> 
+            <label for="gender" style="color:#780000; font-family:Poppins; font-size:14px;">Gender*</label> 
               <select class="form-control input-sm" id="gender" name="gender">
                 <option value="M">
                   Male
@@ -61,7 +61,7 @@
            <div class="col-md-4">
             <div class="form-group">
                 <label for=
-                "bday">Birth Date*</label> 
+                "bday" style="color:#780000; font-family:Poppins; font-size:14px;">Birth Date*</label> 
                     <div class="input-group date form_curdate col-md-15" data-date="" data-date-format="yyyy-mm-dd" data-link-field="any" data-link-format="yyyy-mm-dd">
                     <input class="form-control" size="11" type="text" value="" readonly name="bday" id="bday">
                     <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
@@ -71,7 +71,7 @@
            </div>
           <div class="col-md-4">
       <div class="form-group">
-            <label for="bplace">Birth Place*</label> 
+            <label for="bplace" style="color:#780000; font-family:Poppins; font-size:14px;">Birth Place*</label> 
               <input class="form-control input-sm" id="bplace" name="bplace"
               placeholder="Birth Place" type="text">
             </div>
@@ -81,7 +81,7 @@
         <div class="row">
           <div class="col-md-4">
          <div class="form-group">
-            <label for="status">Civil Status*</label>
+            <label for="status" style="color:#780000; font-family:Poppins; font-size:14px;">Civil Status*</label>
               <select class="form-control  " id="status" name="status">
                 <option value="Single">
                   Single
@@ -96,7 +96,7 @@
 
           <div class="col-md-4">
             <div class="form-group">
-            <label for="age">Age*</label> 
+            <label for="age" style="color:#780000; font-family:Poppins; font-size:14px;">Age*</label> 
               <input class="form-control input-sm" id="age" name="age" placeholder=
               "age" type="number">
             </div>
@@ -104,7 +104,7 @@
 
           <div class="col-md-4">
             <div class="form-group">
-            <label for="nationality">Nationality*</label> 
+            <label for="nationality" style="color:#780000; font-family:Poppins; font-size:14px;">Nationality*</label> 
               <input class="form-control input-sm" id="nationality" name=
               "nationality" placeholder="Nationality" type="text">
             </div>
@@ -114,7 +114,7 @@
         <div class="row">
           <div class="col-md-4">
          <div class="form-group">
-            <label for="religion">Religion*</label> 
+            <label for="religion" style="color:#780000; font-family:Poppins; font-size:14px;">Religion*</label> 
               <input class="form-control input-sm" id="religion" name="religion"
               placeholder="Religion" type="text">
             </div>
@@ -122,7 +122,7 @@
 
           <div class="col-md-4">
          <div class="form-group">
-            <label for="contact">Contact*</label> 
+            <label for="contact" style="color:#780000; font-family:Poppins; font-size:14px;">Contact*</label> 
               <input class="form-control input-sm" id="contact" name="contact"
               placeholder="Contact Number" type="text">
             </div>
@@ -130,7 +130,7 @@
 
           <div class="col-md-4">
          <div class="form-group">
-            <label for="email">Email*</label> 
+            <label for="email" style="color:#780000; font-family:Poppins; font-size:14px;">Email*</label> 
               <input class="form-control input-sm" id="email" name="email"
               placeholder="Email address" type="email">
             </div>
@@ -141,7 +141,7 @@
         <div class="row">
           <div class="col-md-8">
          <div class="form-group">
-            <label  for="home">Home*</label> 
+            <label  for="home" style="color:#780000; font-family:Poppins; font-size:14px;">Home*</label> 
               <input class="form-control input-sm" id="home" name="home" placeholder=
               "Home Address" type="text">
             </div>
@@ -150,12 +150,12 @@
     </fieldset>
 
     <fieldset>
-      <legend>Secondary Details</legend>
+      <legend style="margin-top:20px; font-family:Poppins; font-weight:900;">Secondary Details</legend>
 
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-            <label for="guardian">Guardian*</label> 
+            <label for="guardian" style="color:#780000; font-family:Poppins; font-size:14px;">Guardian*</label> 
               <input class="form-control input-sm" id="guardian" name="guardian"
               placeholder="Guardian" type="text">
             </div>
@@ -163,7 +163,7 @@
 
           <div class="col-md-6">
             <div class="form-group">
-            <label for="guardianAdd">Address*</label> 
+            <label for="guardianAdd" style="color:#780000; font-family:Poppins; font-size:14px;">Address*</label> 
               <input class="form-control input-sm" id="guardianAdd" name=
               "guardianAdd" placeholder="Guardian Address" type="text">
             </div>
@@ -173,7 +173,7 @@
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-            <label class="" for="otherperson">Other Person Supporting*</label> 
+            <label class="" for="otherperson" style="color:#780000; font-family:Poppins; font-size:14px;">Other Person Supporting*</label> 
               <input class="form-control input-sm" id="otherperson" name=
               "otherperson" placeholder="Other Person Supporting" type="text">
             </div>
@@ -181,7 +181,7 @@
 
           <div class="col-md-6">
             <div class="form-group">
-            <label for="otherAddress">Address*</label> 
+            <label for="otherAddress" style="color:#780000; font-family:Poppins; font-size:14px;">Address*</label> 
               <input class="form-control input-sm" id="otherAddress" name=
               "otherAddress" placeholder="Address" type="text">
             </div>
@@ -196,7 +196,7 @@
         </div>
 
         <div class="col-md-6" style="text-align: right">
-          <button class="btn btn-default" name="submit" type="submit">Save</button>
+          <button class="btn btn-default" name="submit" type="submit" style="background-color:#780000; font-family:Poppins;">Save</button>
         </div>
       </div>
     </div>

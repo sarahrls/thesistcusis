@@ -228,7 +228,7 @@ function doEdit(){
 			$inst->EMPLOYMENT_STATUS	 = $empStats;
 			$inst->update($instid);
 			 	
-			 	message($name."has been updated successfully!","success");
+			 	message($name." has been updated successfully!","success");
 			 	redirect('index.php');
 		}	 
 

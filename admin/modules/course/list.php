@@ -38,7 +38,7 @@
 				  	
 				  		//echo '<td>'. $result->COURSE_MAJOR.'</td>';
 				  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500;">'. $result->COURSE_DESC.'</td>';
-                        echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:70px; font-color:#780000;"> <a href="index.php?view=edit&id='.$result->COURSE_ID.'" style="color:#780000;"> Edit</a></td>';
+                        echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:70px; font-color:#780000;"> <a href="index.php?view=edit&id='.$result->COURSE_ID.'" style="color:#780000; margin-left:18px;"> Edit</a></td>';
 				  		//echo '<td align="left">'. $result->COURSE_LEVEL.'</td>';
 				  		//echo '<td>'. $result->DEPARTMENT_DESC.'</td>';
 				  		echo '</tr>';

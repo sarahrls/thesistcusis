@@ -8,13 +8,13 @@ $object = $singlesubject->single_user($userid);
 <form class="form-horizontal well span4" action="controller.php?action=edit&id=<?php echo $userid;?>" method="POST">
 
  <fieldset>
-            <legend>New User Account</legend>
+            <legend  style="margin-top:5px; font-family:Poppins; font-weight:900; ">Edit User Account</legend>
                               
                   
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "name">Name:</label>
+                      "name" style="color:#780000; font-family:Poppins; font-size:14px;">Name:</label>
 
                       <div class="col-md-8">
                         <input name="deptid" type="hidden" value="">
@@ -27,7 +27,7 @@ $object = $singlesubject->single_user($userid);
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "username">Username:</label>
+                      "username" style="color:#780000; font-family:Poppins; font-size:14px;">Username:</label>
 
                       <div class="col-md-8">
                         <input name="deptid" type="hidden" value="">
@@ -40,7 +40,7 @@ $object = $singlesubject->single_user($userid);
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "pass">Password:</label>
+                      "pass" style="color:#780000; font-family:Poppins; font-size:14px;">Password:</label>
 
                       <div class="col-md-8">
                         <input name="deptid" type="hidden" value="">
@@ -52,7 +52,7 @@ $object = $singlesubject->single_user($userid);
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "type">Type:</label>
+                      "type" style="color:#780000; font-family:Poppins; font-size:14px;">Type:</label>
 
                       <div class="col-md-8">
                        <select class="form-control input-sm" name="type" id="type">
@@ -72,7 +72,7 @@ $object = $singlesubject->single_user($userid);
                       "idno"></label>
 
                       <div class="col-md-8">
-                        <button class="btn btn-primary" name="save" type="submit" >Save</button>
+                        <button class="btn btn-primary" name="save" type="submit" style="background-color:#780000; font-family:Poppins; ">Save</button>
                       </div>
                     </div>
                   </div>

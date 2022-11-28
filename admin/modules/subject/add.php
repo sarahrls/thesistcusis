@@ -1,13 +1,13 @@
 <form class="form-horizontal well span4" action="controller.php?action=add" method="POST">
 
     <fieldset>
-      <legend>New Subject</legend>
+      <legend style="margin-top:20px; font-family:Poppins; font-weight:900;">New Subject</legend>
                         
 
         <div class="form-group">
               <div class="col-md-8">
                 <label class="col-md-4 control-label" for=
-                "subjcode">Subject Code</label>
+                "subjcode" style="color:#780000; font-family:Poppins; font-size:14px;">Subject Code</label>
 
                 <div class="col-md-8">
                    <input class="form-control input-sm" id="subjcode" name="subjcode" placeholder=
@@ -19,7 +19,7 @@
             <div class="form-group">
               <div class="col-md-8">
                 <label class="col-md-4 control-label" for=
-                "subjdesc">Subject Description</label>
+                "subjdesc" style="color:#780000; font-family:Poppins; font-size:14px;">Subject Description</label>
 
                 <div class="col-md-8">
                    <input class="form-control input-sm" id="subjdesc" name="subjdesc" placeholder=
@@ -31,7 +31,7 @@
              <div class="form-group">
               <div class="col-md-8">
                 <label class="col-md-4 control-label" for=
-                "unit">No of units</label>
+                "unit" style="color:#780000; font-family:Poppins; font-size:14px;">No of units</label>
 
                 <div class="col-md-8">
                    <input class="form-control input-sm" id="unit" name="unit" placeholder=
@@ -53,7 +53,7 @@
              <div class="form-group">
               <div class="col-md-8">
                 <label class="col-md-4 control-label" for=
-                "course">Year level</label>
+                "course" style="color:#780000; font-family:Poppins; font-size:14px;">Year level</label>
 
                 <div class="col-md-8">
                  <select class="form-control input-sm" name="course" id="course">
@@ -74,7 +74,7 @@
             <div class="form-group">
               <div class="col-md-8">
                 <label class="col-md-4 control-label" for=
-                "ay">Academic Year</label>
+                "ay" style="color:#780000; font-family:Poppins; font-size:14px;">Academic Year</label>
 
                 <div class="col-md-8">
                   <select class="form-control input-sm" name="ay" id="ay">
@@ -113,8 +113,8 @@
                 "idno"></label>
 
                 <div class="col-md-8">
-                  <button class="btn btn-default" name="savecourse" type="submit" ><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
-                 <button class="btn btn-default" name="saveandnewcourse" type="submit" ><span class="glyphicon glyphicon-floppy-save"></span> Save and Add new</button>
+                  <button class="btn btn-default" name="savecourse" type="submit" style="background-color:#780000; font-family:Poppins;"><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
+                 <button class="btn btn-default" name="saveandnewcourse" type="submit" style="background-color:#780000; font-family:Poppins;"><span class="glyphicon glyphicon-floppy-save"></span> Save and Add new</button>
                 </div>
               </div>
             </div>

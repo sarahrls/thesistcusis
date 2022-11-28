@@ -2,12 +2,12 @@
 
 
           <fieldset>
-            <legend>New Room</legend>
+            <legend style="margin-top:5px; font-family:Poppins; font-weight:900; ">New Room</legend>
                               
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "rmname">Room Name</label>
+                      "rmname" style="color:#780000; font-family:Poppins; font-size:14px;">Room Name</label>
 
                       <div class="col-md-8">
                         <input name="roomid" type="hidden" value="">
@@ -20,7 +20,7 @@
              <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "roomdesc">Department Description</label>
+                      "roomdesc" style="color:#780000; font-family:Poppins; font-size:14px;">Department Description</label>
 
                       <div class="col-md-8">
                            <input class="form-control input-sm" id="roomdesc" name="roomdesc" placeholder=
@@ -34,7 +34,7 @@
                       "idno"></label>
 
                       <div class="col-md-8">
-                        <button class="btn btn-default" name="save" type="submit" ><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
+                        <button class="btn btn-default" name="save" type="submit" style="background-color:#780000; font-family:Poppins;"><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
                       </div>
                     </div>
                   </div>

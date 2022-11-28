@@ -7,13 +7,13 @@
  <form class="form-horizontal well span4" action="controller.php?action=edit&id=<?php echo $instid;?>" method="POST">
 
           <fieldset>
-            <legend>New Faculty</legend>
+            <legend style="margin-top:5px; font-family:Poppins; font-weight:900; ">Edit Faculty</legend>
                               
 
               <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "name">Fullname:</label>
+                      "name" style="color:#780000; font-family:Poppins; font-size:14px;">Fullname:</label>
 
                       <div class="col-md-8">
                         <input name="deptid" type="hidden" value="">
@@ -26,7 +26,7 @@
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "address">Current Address:</label>
+                      "address" style="color:#780000; font-family:Poppins; font-size:14px;">Current Address:</label>
 
                       <div class="col-md-8">
                         <input name="deptid" type="hidden" value="">
@@ -39,7 +39,7 @@
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "Gender">Gender:</label>
+                      "Gender" style="color:#780000; font-family:Poppins; font-size:14px;">Gender:</label>
 
                       <div class="col-md-8">
                        <select class="form-control input-sm" name="Gender" id="Gender">
@@ -54,7 +54,7 @@
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "civilstats">Civil Status:</label>
+                      "civilstats" style="color:#780000; font-family:Poppins; font-size:14px;">Civil Status:</label>
 
                       <div class="col-md-8">
                        <select class="form-control input-sm" name="civilstats" id="civilstats">
@@ -69,7 +69,7 @@
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "specialization">Specialization:</label>
+                      "specialization" style="color:#780000; font-family:Poppins; font-size:14px;">Specialization:</label>
 
                       <div class="col-md-8">
                         <input name="deptid" type="hidden" value="">
@@ -82,7 +82,7 @@
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "empStats">Employment Status:</label>
+                      "empStats" style="color:#780000; font-family:Poppins; font-size:14px;">Employment Status:</label>
 
                       <div class="col-md-8">
                         <input name="deptid" type="hidden" value="">
@@ -119,8 +119,8 @@
                       <label class="col-md-4 control-label" for=
                       "idno"></label>
 
-                      <div class="col-md-8">
-                        <button class="btn btn-default" name="savefaculty" type="submit" ><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
+                      <div class="col-md-8" >
+                        <button class="btn btn-default" name="savefaculty" type="submit" style="background-color:#780000;"><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
                       </div>
                     </div>
                   </div>';
