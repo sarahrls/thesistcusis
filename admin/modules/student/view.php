@@ -53,7 +53,8 @@
 				<?php
 				if($_SESSION['ACCOUNT_TYPE']=='Administrator') {
 		
-			echo   '<div class="btn-group" >
+			echo   '<div class="btn-group" style="background-color:#780000; border-radius:5px; margin-bottom:10px;">
+                   <a href="index.php" name="back" class="btn btn-default" style="background-color:#780000; font-family:Poppins; border-radius:5px;"></span>Back</a>
 				  <a href="index.php?view=enroll&studentId='. $_GET['studentId'].'" class="btn btn-default" style="background-color:#780000; font-family:Poppins;"><span class="glyphicon glyphicon-plus-sign"></span > New</a>
 				  <button type="submit" class="btn btn-default" name="delete" style="background-color:#780000; font-family:Poppins;"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>
 				</div>';

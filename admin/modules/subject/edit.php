@@ -119,6 +119,7 @@ $object = $singlesubject->single_subject($subjid);
           "idno"></label>
 
           <div class="col-md-8">
+             <a href="index.php" name="back" class="btn btn-default" style="background-color:#780000; font-family:Poppins; border-radius:5px;"></span>Back</a>
             <button class="btn btn-primary" name="savecourse" type="submit" style="background-color:#780000;">Save</button>
           </div>
         </div>
