@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2022 at 03:00 PM
+-- Generation Time: Nov 28, 2022 at 03:27 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.24
 
@@ -284,7 +284,7 @@ CREATE TABLE `room` (
 --
 
 INSERT INTO `room` (`ROOM_ID`, `ROOM_NAME`, `ROOM_DESC`) VALUES
-(5, 'Robert''); DROP TABLE tblstuden', '4th Floor'),
+(5, '401', '4th Floor'),
 (6, '402', '4th Floor'),
 (7, '403', '4th Floor'),
 (8, '404', '4th Floor'),
@@ -472,6 +472,25 @@ INSERT INTO `tblrequirements` (`REQ_ID`, `NSO`, `BAPTISMAL`, `ENTRANCE_TEST_RESU
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tblstudcoe`
+--
+
+CREATE TABLE `tblstudcoe` (
+  `COE_ID` int(255) NOT NULL,
+  `IDNO` int(255) NOT NULL,
+  `COE` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tblstudcoe`
+--
+
+INSERT INTO `tblstudcoe` (`COE_ID`, `IDNO`, `COE`) VALUES
+(1, 0, 'Interview Request.pdf');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tblstuddetails`
 --
 
@@ -487,6 +506,7 @@ CREATE TABLE `tblstuddetails` (
   `GUARDIAN_ADDRESS` varchar(255) NOT NULL,
   `OTHER_PERSON_SUPPORT` varchar(255) NOT NULL,
   `ADDRESS` text NOT NULL,
+  `COE` varchar(300) NOT NULL,
   `IDNO` int(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -494,15 +514,22 @@ CREATE TABLE `tblstuddetails` (
 -- Dumping data for table `tblstuddetails`
 --
 
-INSERT INTO `tblstuddetails` (`DETAIL_ID`, `FATHER`, `FATHER_OCCU`, `MOTHER`, `MOTHER_OCCU`, `BOARDING`, `WITH_FAMILY`, `GUARDIAN`, `GUARDIAN_ADDRESS`, `OTHER_PERSON_SUPPORT`, `ADDRESS`, `IDNO`) VALUES
-(48, 'BENIGNO B. CORTEZ', 'FARMER', 'TERESITA P. CORTEZ', 'HOUSE WIFE', 'Yes', 'No', 'BENIGNO B. CORTEZ', 'TABUGON,kABANKALAN CITY', 'NONE', 'NONE', 20001550),
-(60, 'Abraham I. Sison', 'Retired', 'Rosita Lim', 'House Wife', '', '', 'Abraham I. Sison', '120P MLQ St. New Lower Bicutan, Taguig City', 'Rosita Lim', '120P MLQ St. New Lower Bicutan, Taguig City', 1900742),
-(61, '', '', '', '', '', '', '', '', '', '', 19),
-(62, '', '', '', '', '', '', 'nkn', 'knkjnk', 'kjnkn', 'knkj', 12),
-(63, '', '', '', '', 'no', 'yes', 'kvbh', 'vhj', 'mbbb', 'jjhbb', 123),
-(64, '', '', '', '', 'no', 'yes', 'kvbh', 'vhj', 'mbbb', 'jjhbb', 123),
-(65, '', '', '', '', 'no', 'yes', 'kkj', 'knk', 'nnkn', 'nknk', 3232),
-(66, '', '', '', '', 'no', 'yes', 'Eric Mendiola', 'Ibayo Tipas, Taguig', 'Christel Mendiola', 'Ibayo Tipas, Taguig', 1900664);
+INSERT INTO `tblstuddetails` (`DETAIL_ID`, `FATHER`, `FATHER_OCCU`, `MOTHER`, `MOTHER_OCCU`, `BOARDING`, `WITH_FAMILY`, `GUARDIAN`, `GUARDIAN_ADDRESS`, `OTHER_PERSON_SUPPORT`, `ADDRESS`, `COE`, `IDNO`) VALUES
+(48, 'BENIGNO B. CORTEZ', 'FARMER', 'TERESITA P. CORTEZ', 'HOUSE WIFE', 'Yes', 'No', 'BENIGNO B. CORTEZ', 'TABUGON,kABANKALAN CITY', 'NONE', 'NONE', '', 20001550),
+(60, 'Abraham I. Sison', 'Retired', 'Rosita Lim', 'House Wife', '', '', 'Abraham I. Sison', '120P MLQ St. New Lower Bicutan, Taguig City', 'Rosita Lim', '120P MLQ St. New Lower Bicutan, Taguig City', '', 1900742),
+(61, '', '', '', '', '', '', '', '', '', '', '', 19),
+(62, '', '', '', '', '', '', 'nkn', 'knkjnk', 'kjnkn', 'knkj', '', 12),
+(63, '', '', '', '', 'no', 'yes', 'kvbh', 'vhj', 'mbbb', 'jjhbb', '', 123),
+(64, '', '', '', '', 'no', 'yes', 'kvbh', 'vhj', 'mbbb', 'jjhbb', '', 123),
+(65, '', '', '', '', 'no', 'yes', 'kkj', 'knk', 'nnkn', 'nknk', '', 3232),
+(66, '', '', '', '', 'no', 'yes', 'Eric Mendiola', 'Ibayo Tipas, Taguig', 'Christel Mendiola', 'Ibayo Tipas, Taguig', '', 1900664),
+(67, '', '', '', '', 'no', 'yes', 'Marcela Macabante', 'Lower Bicutan, Taguig City', 'Bruno Macabante', 'Lower Bicutan, Taguig City', '', 1902245),
+(68, '', '', '', '', 'no', 'yes', ',mn,mn', 'jhgg', 'jbgjhbjh', 'hbjh', '', 123141),
+(69, '', '', '', '', 'no', 'yes', 'hvfvhgv', 'vgh', 'hb hb ', 'hbhbh', '', 12467),
+(70, '', '', '', '', 'no', 'yes', '', '', '', '', 'JeremiahS.pdf', 0),
+(71, '', '', '', '', 'no', 'yes', '', '', '', '', 'Interview Request.pdf', 0),
+(72, '', '', '', '', 'no', 'yes', '', '', '', '', 'Interview Request.pdf', 0),
+(73, '', '', '', '', 'no', 'yes', '', '', '', '', 'print.pdf', 0);
 
 -- --------------------------------------------------------
 
@@ -657,6 +684,12 @@ ALTER TABLE `tblrequirements`
   ADD PRIMARY KEY (`REQ_ID`);
 
 --
+-- Indexes for table `tblstudcoe`
+--
+ALTER TABLE `tblstudcoe`
+  ADD PRIMARY KEY (`COE_ID`);
+
+--
 -- Indexes for table `tblstuddetails`
 --
 ALTER TABLE `tblstuddetails`
@@ -756,15 +789,20 @@ ALTER TABLE `subject`
 ALTER TABLE `tblrequirements`
   MODIFY `REQ_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
+-- AUTO_INCREMENT for table `tblstudcoe`
+--
+ALTER TABLE `tblstudcoe`
+  MODIFY `COE_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `tblstuddetails`
 --
 ALTER TABLE `tblstuddetails`
-  MODIFY `DETAIL_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `DETAIL_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 --
 -- AUTO_INCREMENT for table `tblstudent`
 --
 ALTER TABLE `tblstudent`
-  MODIFY `S_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `S_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 --
 -- AUTO_INCREMENT for table `useraccounts`
 --
