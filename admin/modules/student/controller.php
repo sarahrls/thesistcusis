@@ -109,7 +109,7 @@ $EMAIL   = $_POST['email'];
 
 $studentAES = new StudentEncryption();
 $student = new Student();
-$student->S_ID				= "null";
+$student->S_ID				=    "null";
 $student->IDNO 				=	$studentAES->encryptData($IDNO);
 $student->LNAME				=	$studentAES->encryptData($LNAME);
 $student->FNAME				=	$studentAES->encryptData($FNAME);

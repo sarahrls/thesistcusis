@@ -147,7 +147,7 @@
             </div>
           </div>
         </div> 
-    </fieldset>
+    
 
     <fieldset>
       <legend style="margin-top:20px; font-family:Poppins; font-weight:900;">Secondary Details</legend>
@@ -181,7 +181,11 @@
 
           <div class="col-md-6">
             <div class="form-group">
+
             <label for="otherAddress" style="color:#780000; font-family:Poppins; font-size:14px;">Address*</label> 
+
+            <label class="lbl" for="otherAddress">Address*</label> 
+
               <input class="form-control input-sm" id="otherAddress" name=
               "otherAddress" placeholder="Address" type="text">
             </div>
@@ -200,6 +204,15 @@
         </div>
       </div>
     </div>
+                  
+                  <style>
+                    
+                      .lbl{
+                          color: red;
+                          font-size: 100px;
+                      }
+                  
+                  </style>
   </form>
 </div><!==End of well-->
   <!--End of container-->

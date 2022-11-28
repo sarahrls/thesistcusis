@@ -18,6 +18,9 @@ switch ($view) {
     case 'view' :
 		$content    = 'view.php';		
 		break;
+    case 'upload' :
+		$content    = 'upload.php';		
+		break;
 	case 'subject' :
 		$content    = 'studentsubject.php';		
 		break;
