@@ -13,7 +13,7 @@ $object = $room->single_room($rmid);
  <form class="form-horizontal well span6" action="controller.php?action=edit&id=<?php echo $rmid;?>" method="POST">
 
           <fieldset>
-            <legend style="margin-top:5px; font-family:Poppins; font-weight:900; ">Edit Room</legend>
+            <legend style="margin-top:5px; font-family:Poppins; font-size:24px; font-weight:900; ">Edit Room</legend>
                               
                   <div class="form-group">
                     <div class="col-md-8">
@@ -45,6 +45,7 @@ $object = $room->single_room($rmid);
                       "idno"></label>
 
                       <div class="col-md-8">
+                        <a href="index.php" class="btn btn-default" style="background-color:#780000;">Back</a>
                         <button class="btn btn-primary" name="save" type="submit" style="background-color:#780000; font-family:Poppins;">Save</button>
                       </div>
                     </div>

@@ -175,6 +175,7 @@
 				              "idno"></label>
 
 				              <div class="col-md-8">
+                                <a href="index.php" class="btn btn-default" style="background-color:#780000;">Back</a>
 				                <button class="btn btn-primary" name="savecourse" type="submit" style="background-color:#780000; font-family:Poppins; ">Save</button>
 				              </div>
 				            </div>

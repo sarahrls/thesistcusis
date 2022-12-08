@@ -8,7 +8,7 @@ $object = $singlesubject->single_user($userid);
 <form class="form-horizontal well span4" action="controller.php?action=edit&id=<?php echo $userid;?>" method="POST">
 
  <fieldset>
-            <legend  style="margin-top:5px; font-family:Poppins; font-weight:900; ">Edit User Account</legend>
+            <legend  style="margin-top:5px; font-family:Poppins; font-size:24px; font-weight:900; ">Edit User Account</legend>
                               
                   
                   <div class="form-group">
@@ -72,6 +72,7 @@ $object = $singlesubject->single_user($userid);
                       "idno"></label>
 
                       <div class="col-md-8">
+                        <a href="index.php" class="btn btn-default" style="background-color:#780000;">Back</a>
                         <button class="btn btn-primary" name="save" type="submit" style="background-color:#780000; font-family:Poppins; ">Save</button>
                       </div>
                     </div>

@@ -1,96 +1,425 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
-<head>
-  <meta charset="utf-8" />
+ <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="apple-touch-icon" sizes="76x76" href="plugins/assets/img/apple-icon.png">
  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+ <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />   -->
   <title>
     TCUSIS
   </title>
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
   <!--     Fonts and icons     -->
   <link href="@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'); "/>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <!-- CSS Files -->
   <link href="<?php echo WEB_ROOT; ?>plugins/assets/css/bootstrap.min.css" rel="stylesheet" /> 
-  <link href="<?php echo WEB_ROOT; ?>plugins/assets/css/now-ui-dashboard.css?v=1.3.0" rel="stylesheet" />
+<link href="<?php echo WEB_ROOT; ?>plugins/assets/css/now-ui-dashboard.css?v=1.3.0" rel="stylesheet" />
+
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="<?php echo WEB_ROOT; ?>plugins/assets/demo/demo.css" rel="stylesheet" />
   <link href="<?php echo WEB_ROOT; ?>css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
   <link href="<?php echo WEB_ROOT; ?>css/dataTables.bootstrap.css" rel="stylesheet" media="screen">
   <link rel="stylesheet" type="text/css" href="<?php echo WEB_ROOT; ?>css/jquery.dataTables.css">
   <link rel="icon" href="images/tcu.jpg" type="image/x-icon">
-</head>
+</head>   
+
 <style type="text/css">
+        /* Google Font Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+        
 table { 
   font-size: 9px;
 }
   table tr td{
     font-size: 12px;
   }
+        
+*{
+
+  box-sizing: border-box;
+  font-family: "Poppins" , sans-serif;
+  text-decoration: none;
+
+  box-sizing: border-box;
+}
+
+body {  
+    font-family: 'Poppins', sans-serif;
+} 
     
-    .logo i{
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.data {
+    background: url(undefined);
+    height: 100vh;
+    margin-left: 142px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    min-height: calc(100vh - 90px;)
+}
+
+
+label {
+    line-height: 55px;
+    font-size: 30px;
+    color: white;
+    font-weight: 200;
+    margin-left: 30px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.panel-header{
+    position: fixed
+    top:0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 15vh;
+    
+}
+
+
+
+
+.side-menu {
+    position: fixed;
+    background: #780000;
+    top: 0;
+    left: 0;
+    width: 16%;
+    height: 100%;
+    overflow-y: hidden;
+    z-index: 9999;
+}
+.sample-container{
+	width: 750px;
+	height: 750px;
+	background-color: yellow;
+	float:right;
+
+}
+    
+
+    
+
+  
+/* Responsive Menu Bar */    
+.checkbtn{
+	font-size:30px; 
+	color:white;
+	float:left;
+	line-height:10px;
+	margin-right:40px;
+    cursor: pointer;
+    display: none;
+}
+    
+#check{
+    display: none;
+        
+    }
+    
+    @media (max-width:952px){
+        label.logo{
+            font-size: :20px;
+            padding-left: 30px;
+        }
+        .side-menu ul li a{
+            font-size: 16px;
+        }
+    }
+    
+  @media (max-width:858px){
+      .checkbtn{
+          display: block;
+      }
+      ul{
+          position: fixed;
+          width: 100%;
+          height: 100vh;
+          background: #780000;
+          top:80px;
+          left: -100;
+          text-align: center;
+          transition: all .5s;
+      }
+      nav.side-menu ul li{
+          display: block;
+          margin: 50px 0;
+          line-height: 30px;
+      }
+      nav.side-menu ul li a{
+          font-size: 20px;
+      }
+      a:hover,a.active{
+          background: none;
+          color: #FFCCCB;
+      }
+      #check:checked ~ ul{
+          left: 0;
+      }
+    }
+/* End of Responsive Side Bar */   
+    
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.side-menu::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.side-menu{
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+
+.side-menu center img {
+    height: 90px;
+    width: 120px;
+    border-radius: 50%;
+    margin-top: 30px;
+    border: 3px solid white;
+}
+
+.side-menu center h2 {
+    color: white;
+}
+
+.side-menu a {
+    display: block;
+    line-height: 60px;
+    transition: 0.5s;
+}
+
+.side-menu a:hover {
+   background: #A24857;
+    padding-left: 20px;
+    text-decoration: none;
+}
+
+.side-menu span {
+    width: 100%;
+    height: 2px;
+    font-size: 20px;
+    margin-left: 10px;
+    color: white;
+}
+
+.side-menu i {
+    font-size: 20px;
+    margin-left: 20px;
+    color: white;
+}
+
+.navbar-toggle {
   color: #fff;
-  height: 60px;
-  min-width: 50px;
-  font-size: 28px;
-  text-align: center;
-  line-height: 60px;
+  border: 0;
+  margin: 0;
+
 }
     
-.sidebar-wrapper  #btn{
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  font-size: 22px;
-  transition: all 0.4s ease;
-  font-size: 23px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.5s ease;
+.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-right: 15px;
+    font-size: 25px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
 }
     
-.sidebar-wrapper.open  i.bx #btn{
-  text-align: right;
+button{
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    @webkit-appearance: button;
+    cursor: pointer;
+    overflow: visible;
+}
+
+button, select {
+    text-transform: none;
+}
+
+.navbar-collapse {
+    padding-right: 15px;
+    padding-left: 15px;
+    overflow-x: visible;
+    @webkit-overflow-scrolling: touch;
+    border-top: 1px solid transparent;
+    @webkit-box-shadow: inset 0 1px 0 rgb(255 255 255 / 10%);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 10%);
+}
+
+.collapse.in {
+    display: block;
+}
+
+.pull-left {
+    float: left;
+}
+.collapse {
+    display: none;
 }
     
-.sidebar-wrapper i{
-  color: #fff;
-  height: 60px;
-  min-width: 50px;
-  font-size: 28px;
-  text-align: center;
-  line-height: 60px;
+nav .menu-bar {
+    position: absolute;
+    right: 60px;
+    top: -10px;
+    float: right;
+    margin-top: 20px;
+    display: none;
+    margin-right: 20px;
+}
+
+#menu {
+    display: none;
+}
+
+.side-menu .Logout {
+    display: none;
+}
+
+.total_div{
+	margin-top: 50px;
+}
+
+@media (max-width:850px) {
+    .side-menu a span {
+        display: none;
+    }
+
+    .side-menu center {
+        display: none;
+    }
+
+    .side-menu {
+        width: 100px;
+    }
+
+    .side-menu a i {
+        display: block;
+        line-height: 80px;
+        text-align: center;
+        margin-left: 0;
+        font-size: 35px;
+    }
+
+    .data {
+        margin-left: 0px;
+    }
+}
+
+ 
+@media (max-width:991px) {
+    .menu-bar{
+        display: block;
+    }
+    
+    .side-menu{
+        display: none;
+    }
+   html{
+      font-size: 55%;
+   }
+
+    .navbar-collapse.pull-left {
+    float: none !important;
 }
     
-.sidebar-wrapper li .tooltip{
-  position: absolute;
-  top: -20px;
-  left: calc(100% + 15px);
-  z-index: 3;
-  background: #fff;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-  padding: 6px 12px;
-  border-radius: 4px;
-  font-size: 15px;
-  font-weight: 400;
-  opacity: 0;
-  white-space: nowrap;
-  pointer-events: none;
-  transition: 0s;
+    
+@media screen and (max-width:768px) {
+    .col-md-12{
+      
+      display: block;
+    }
+  
+    label {
+    display: inline;
+    white-space: nowrap;
+    line-height: 80px;
+    font-size: 30px;
+    color: white;
+    font-weight: 200;
+    margin-left: 15px;
+    margin-top: 5px;
+    cursor: pointer;
 }
-.sidebar-wrapper li:hover .tooltip{
-  opacity: 1;
-  pointer-events: auto;
-  transition: all 0.4s ease;
-  top: 50%;
-  transform: translateY(-50%);
+
+    nav ul {
+        display: none;
+    }
+
+    .side-menu {
+        width: 100%;
+        text-align: center;
+        left: 100%;
+        background-color:#990F02;
+        color: A24857;
+        transition: all 0.5s;
+    }
+    
+    .side-menu a:hover {
+        background: #A24857;
+        padding-left: 20px;
+        text-decoration: none;
+    }
+
+    .side-menu a i {
+        display: none;
+    }
+
+    .side-menu a span {
+        display: block;
+    }
+
+    .side-menu .Logout {
+        display: block;
+    }
+
+    nav .menu-bar {
+        display: block;
+    }
+    
+    
+    .cards{
+        font-size: 50%;
+        display: grid;
+        grid-template-columns: repeat(1fr);
+        grid-gap:1.5rem;
+        align-items: flex-start;
+    }
 }
-.sidebar-wrapper.open li .tooltip{
-  display: none;
+    
+    @media (min-width:450px) {
+         html{
+      font-size: 50%;
+             
+             
+   }
+    }
+
+#menu:checked~.side-menu {
+    left: 0;
 }
     
 
@@ -102,76 +431,87 @@ table {
   ?>
 
 <body class="">
-  <div class="wrapper ">
-    <div class="sidebar" data-color="red">
-      <!--
-        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
-    -->
-      <div class="logo" style="text-align: left;" >
-        <a href="<?php echo WEB_ROOT; ?>admin/index.php" class="simple-text logo-normal" style="font-style:poppins; font-size:20px;"><img src="<?php echo (!empty($user['photo'])) ? '../images/'.$user['photo'] : '../images/tculogo.png'; ?>" style="margin-right:10px; width:50px; font-family:Poppins;  height:50px;"
->TCUSIS
-        </a>
-           <i class='bx bx-menu' id="btn" ></i>
-      </div>
-      <div class="sidebar-wrapper" id="sidebar-wrapper">
-        <ul class="nav">
-            <li class="<?php echo (currentpage_admin() == '') ? "active" : false;?>"><a href="<?php echo WEB_ROOT; ?>admin/index.php"> 
+    <input type="checkbox" id="menu">
+ 
+  <nav>
+    <div class="side-menu">
+       
+        <ul class="nav-list">
+            <label class="logo" style="font-family:poppins; font-size:25px; font-weight:700; text-decoration:none; color:#fff;">
+         <img src="<?php echo (!empty($user['photo'])) ? '../images/'.$user['photo'] : '../images/tculogo.png'; ?>" style=" width:70px; font-family:Poppins;  height:70px;" ><br>TCUSIS 
+          <span href="<?php echo WEB_ROOT; ?>admin/index.php" class="simple-text logo-normal" ></span>
+           </label>
+            
+            
+           
+            
+         
+            
+         
+            <li>
+                <a class="active" href="<?php echo WEB_ROOT; ?>admin/index.php"> 
              <i class='bx bx-home-alt' ></i>
-              <p style="font-family:Poppins; font-weight:500; font-size:15px;">Home</p>
+              <span class="links_name" style="font-family:Poppins; font-weight:500; font-size:15px;">Home</span>
             </a>
-                 <span class="tooltip">Home</span>
-            </li> 
+            </li>
+  
               <?php if($_SESSION['ACCOUNT_TYPE']=='Administrator'){ 
                 ?> 
+            
               <li class="<?php echo (currentpage_admin() == 'student') ? "active" : false;?>">
                 <a href="<?php echo WEB_ROOT; ?>admin/modules/student/index.php">
                     <i class='bx bx-user'></i>
-                    <p style="font-family:Poppins; font-weight:500; font-size:15px;">Students</p>
+                    <span class="links_name" style="font-family:Poppins; font-weight:500; font-size:15px;">Students</span>
                 </a>
-                   <span class="tooltip">Students</span>
+                
               </li>
+            
               <li class="<?php echo (currentpage_admin() == 'subject') ? "active" : false;?>">
                 <a href="<?php echo WEB_ROOT; ?>admin/modules/subject/index.php">
                     <i class='bx bxs-book-bookmark'></i>
-                    <p style="font-family:Poppins; font-weight:500; font-size:15px;">Subjects</p> 
+                    <span class="links_name" class="links_name" style="font-family:Poppins; font-weight:500; font-size:15px;">Subjects</span> 
                 </a>
-                   <span class="tooltip">Subject</span>
+                  
               </li>
+            
               <li class="<?php echo (currentpage_admin() == 'course') ? "active" : false;?>">
                 <a href="<?php echo WEB_ROOT; ?>admin/modules/course/index.php">
                     <i class='bx bxs-objects-vertical-bottom'></i>
-                    <p style="font-family:Poppins; font-weight:500; font-size:15px;">Year/Sem</p>  
+                    <span class="links_name" style="font-family:Poppins; font-weight:500; font-size:15px;">Year/Sem</span>  
                 </a>
-                   <span class="tooltip">Year/Sem</span>
+                  
               </li>
+            
               <li class="<?php echo (currentpage_admin() == 'instructor') ? "active" : false;?>">
                 <a href="<?php echo WEB_ROOT; ?>admin/modules/instructor/index.php">
                    <i class='bx bx-user-circle' ></i>
-                    <p style="font-family:Poppins; font-weight:500; font-size:15px;">Faculty</p>  
+                    <span class="links_name" style="font-family:Poppins; font-weight:500; font-size:15px;">Faculty</span>  
                 </a>
-                   <span class="tooltip">Faculty</span>
+                  
               </li>
+            
               <li class="<?php echo (currentpage_admin() == 'department') ? "active" : false;?>">
                 <a href="<?php echo WEB_ROOT; ?>admin/modules/department/index.php">
                    <i class='bx bxs-building'></i>
-                    <p style="font-family:Poppins; font-weight:500; font-size:15px;">Department</p>  
+                    <span class="links_name" style="font-family:Poppins; font-weight:500; font-size:15px;">Department</span>  
                 </a>
-                   <span class="tooltip">Department</span>
+                  
               </li>
+            
               <li class="<?php echo (currentpage_admin() == 'room') ? "active" : false;?>">
                 <a href="<?php echo WEB_ROOT; ?>admin/modules/room/index.php">
                    <i class='bx bx-store-alt'></i>
-                    <p style="font-family:Poppins; font-weight:500; font-size:15px;">Rooms</p>  
+                    <span class="links_name" style="font-family:Poppins; font-weight:500; font-size:15px;">Rooms</span>  
                 </a>
-                   <span class="tooltip">Rooms</span>
+                  
               </li>
               
                  <li  class="<?php echo (currentpage_admin() == 'class') ? "active" : false;?>">
                     <a href="<?php echo WEB_ROOT; ?>admin/modules/class/index.php">
                      <i class='bx bxs-buildings'></i>
-                      <p style="font-family:Poppins; font-weight:500; font-size:15px;">Class</p>   
+                      <span class="links_name" style="font-family:Poppins; font-weight:500; font-size:15px;">Class</span>   
                    </a>
-                      <span class="tooltip">Class</span>
+                     
                  </li>   
 
                 
@@ -183,9 +523,9 @@ table {
                    <li class="<?php echo (currentpage_admin() == 'inst_front') ? "active" : false;?>">
                     <a href="<?php echo WEB_ROOT; ?>admin/modules/inst_front/index.php?view=record">
                       <i class='bx bxs-user'></i>
-                      <p style="font-family:Poppins; font-weight:500; font-size:15px;">Record</p>    
+                      <span class="links_name" style="font-family:Poppins; font-weight:500; font-size:15px;">Record</span>    
                     </a>
-                        <span class="tooltip">Record</span>
+                       
                    </li>  
               <?php
               }?> 
@@ -195,9 +535,9 @@ table {
             <li  class="<?php echo (currentpage_admin() == 'logout') ? "active" : false;?>">
                     <a href="<?php echo WEB_ROOT; ?>admin/logout.php">
                       <i class='bx bx-log-out-circle'></i>
-                      <p style="font-family:Poppins; font-weight:500; font-size:15px;">Logout</p>   
+                      <span class="links_name" style="font-family:Poppins; font-weight:500; font-size:15px;">Logout</span>   
                    </a>
-                 <span class="tooltip">Logout</span>
+                
                  </li>
             <?php
               }?> 
@@ -208,31 +548,54 @@ table {
                 <li class="<?php echo (currentpage_admin() == 'user') ? "active" : false;?>">
                   <a href="<?php echo WEB_ROOT; ?>admin/modules/user/index.php">
                        <i class='bx bx-user'></i>
-                      <p style="font-family:Poppins; font-weight:500; font-size:15px;">Manage Users</p>     
+                      <span class="links_name" style="font-family:Poppins; font-weight:500; font-size:15px;">Manage Users</span>     
                   </a>
-                     <span class="tooltip">Manage Users</span>
+                    
                 </li>
+            
                 <li  class="<?php echo (currentpage_admin() == 'logout') ? "active" : false;?>">
                     <a href="<?php echo WEB_ROOT; ?>admin/logout.php">
                      <i class='bx bx-log-out-circle'></i>
-                      <p style="font-family:Poppins; font-weight:500; font-size:15px;">Logout</p>   
+                      <span class="links_name" style="font-family:Poppins; font-weight:500; font-size:15px;">Logout</span>   
                    </a>
                      <span class="tooltip">Logout</span>
                  </li> 
+               
                  <?php
               }?> 
                 <!-- <li><a href="<?php echo WEB_ROOT; ?>admin/logout.php">Logout</a></li>  -->
 
           </ul> 
       </div>
-    </div>
-    <div class="main-panel" id="main-panel">
+    </nav>
+   
+    <div class="data" id="main-panel">
       <!-- Navbar -->
-      
-        <div class="panel-header panel-header-sm" style="background:#780000;">
+        
+        <header>
+             <div class="panel-header panel-header-sm" style="background:#780000;">
+             
+              <label for="nav-toggle" class="checkbtn">
+            <span><i class='bx bx-menu'></i></span> 
+            </label>
+            
       </div>
-<div class="content">
-  <div class="row">
+        
+        </header>
+       
+        
+        
+          <!-- Collect the nav links, forms, and other content for toggling -->
+         <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+             <ul class="nav navbar-nav">
+                 <li>
+                      <a href="<?php echo WEB_ROOT; ?>admin/index.php">HOME</a>
+                 </li>
+             </ul>
+             
+        </div>
+ <div class="data " >
+  <div class="row total_div">
     <div class="col-md-12">
       <div class="card">
        <div class="container">
@@ -243,12 +606,16 @@ table {
         </div>
     </div>
   </div>
-</div>
+</div> 
+
       <!-- End Navbar -->
      
     
     </div>
-  </div>
+		<!-- Sample Container -->
+	
+	
+
   <!--   Core JS Files   -->
   <script src="<?php echo WEB_ROOT; ?>plugins/assets/js/core/jquery.min.js"></script>
   <script src="<?php echo WEB_ROOT; ?>plugins/assets/js/core/popper.min.js"></script>

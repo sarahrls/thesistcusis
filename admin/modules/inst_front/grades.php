@@ -10,7 +10,7 @@ $cur = $grade->single_grades($gradeId);
 <form class="form-horizontal well span4" action="controller.php?action=grade&classId=<?php echo $_GET['classId'];?>&gradeId=<?php echo $_GET['gradeId'];?>&instructorId=<?php echo $_GET['instructorId'];?>" method="POST">
 
 	<fieldset>
-		<legend>Add Grades</legend>
+		<legend style="margin-top:5px; font-family:Poppins; font-weight:900; ">Add Grades</legend>
 		 <div class="form-group">
         <div class="col-md-8">
         <?php 
@@ -18,7 +18,7 @@ $cur = $grade->single_grades($gradeId);
         	$cur=$stud->single_student($studentId);
         ?>
           <label class="col-md-4 control-label" for=
-          "subjdesc">Name</label>
+          "subjdesc" style="color:#780000; font-family:Poppins; font-size:14px;">Name</label>
 
           <div class="col-md-8">
              <input class="form-control input-sm" id="studname" name="studname" readonly placeholder=
@@ -30,7 +30,7 @@ $cur = $grade->single_grades($gradeId);
 			<div class="form-group">
             <div class="col-md-8">
               <label class="col-md-4 control-label" for=
-              "subjcode">Subject Code</label>
+              "subjcode" style="color:#780000; font-family:Poppins; font-size:14px;">Subject Code</label>
 		<?php 
 			$singlesubject = new Subject();
 			$cur = $singlesubject->single_subject($subjid);
@@ -45,7 +45,7 @@ $cur = $grade->single_grades($gradeId);
           <div class="form-group">
             <div class="col-md-8">
               <label class="col-md-4 control-label" for=
-              "subjdesc">Subject Description</label>
+              "subjdesc" style="color:#780000; font-family:Poppins; font-size:14px;">Subject Description</label>
 
               <div class="col-md-8">
                  <input class="form-control input-sm" id="subjdesc" name="subjdesc" readonly placeholder=
@@ -60,20 +60,48 @@ $cur = $grade->single_grades($gradeId);
            <div class="form-group">
             <div class="col-md-8">
               <label class="col-md-4 control-label" for=
-              "first">First Grading</label>
+              "first" style="color:#780000; font-family:Poppins; font-size:14px;">Midterm</label>
 
-              <div class="col-md-8">
-                 <input class="form-control input-sm" id="first" name="first"  onkeyup="calculate();javascript:checkNumber(this);"  type="text" value="<?php echo (isset($cur)) ? $cur->FIRST  : 'FIRST' ;?>">
+               <div class="col-md-8">
+                          <select class="form-control input-sm" id="first" name="first" value="<?php echo (isset($cur)) ? $cur->FIRST  : 'FIRST' ;?>">
+                          <option value="1.00">1.00</option>
+                          <option value="1.25">1.25</option>
+                          <option value="1.50">1.50</option>
+                          <option value="1.75">1.75</option>
+                          <option value="2.00">2.00</option>
+                          <option value="2.25">2.25</option>
+                          <option value="2.50">2.50</option>
+                          <option value="2.75">2.75</option>
+                          <option value="3.00">3.00</option>
+                          <option value="5.00">5.00</option>
+                          <option value="INC">INC</option>
+                          <option value="UD">UD</option>
+                          <option value="D">D</option>
+                    </select>
               </div>
             </div>
           </div>
            <div class="form-group">
             <div class="col-md-8">
               <label class="col-md-4 control-label" for=
-              "second">Second Grading</label>
+              "second" style="color:#780000; font-family:Poppins; font-size:14px;">Finals</label>
 
               <div class="col-md-8">
-                 <input class="form-control input-sm" id="second" name="second"  onkeyup="calculate();javascript:checkNumber(this);"    type="text" value="<?php echo (isset($cur)) ? $cur->SECOND  : 'SECOND' ;?>">
+                  <select class="form-control input-sm" id="second" name="second" value="<?php echo (isset($cur)) ? $cur->SECOND  : 'SECOND' ;?>">
+                          <option value="1.00">1.00</option>
+                          <option value="1.25">1.25</option>
+                          <option value="1.50">1.50</option>
+                          <option value="1.75">1.75</option>
+                          <option value="2.00">2.00</option>
+                          <option value="2.25">2.25</option>
+                          <option value="2.50">2.50</option>
+                          <option value="2.75">2.75</option>
+                          <option value="3.00">3.00</option>
+                          <option value="5.00">5.00</option>
+                          <option value="INC">INC</option>
+                          <option value="UD">UD</option>
+                          <option value="D">D</option>
+                    </select>
               </div>
             </div>
           </div>
@@ -82,9 +110,24 @@ $cur = $grade->single_grades($gradeId);
            <div class="form-group">
             <div class="col-md-8">
               <label class="col-md-4 control-label" for=
-              "finalave">Average</label>
+              "finalave" style="color:#780000; font-family:Poppins; font-size:14px;">Average</label>
+                
               <div class="col-md-8">
-                 <input class="form-control input-sm" id="finalave" name="finalave"   type="text" value="<?php echo (isset($cur)) ? $cur->AVE  : 'AVE' ;?>">
+                  <select class="form-control input-sm" id="finalave" name="finalave"  value="<?php echo (isset($cur)) ? $cur->AVE  : 'AVE' ;?>">
+                          <option value="1.00">1.00</option>
+                          <option value="1.25">1.25</option>
+                          <option value="1.50">1.50</option>
+                          <option value="1.75">1.75</option>
+                          <option value="2.00">2.00</option>
+                          <option value="2.25">2.25</option>
+                          <option value="2.50">2.50</option>
+                          <option value="2.75">2.75</option>
+                          <option value="3.00">3.00</option>
+                          <option value="5.00">5.00</option>
+                          <option value="INC">INC</option>
+                          <option value="UD">UD</option>
+                          <option value="D">D</option>
+                    </select>
               </div>
             </div>
           </div>
@@ -94,8 +137,8 @@ $cur = $grade->single_grades($gradeId);
               <label class="col-md-4 control-label" for=
               "idno"></label>
               <div class="col-md-8">
-                <a href="index.php?view=class&id=<?php echo $_GET['classId']; ?>&instructorId=<?php echo $_GET['instructorId'];?>" class="btn btn-primary" name="savecourse" type="submit" >Back</a>
-               <button class="btn btn-primary" name="savegrades" type="submit" >Save</button>
+                <a href="index.php?view=class&id=<?php echo $_GET['classId']; ?>&instructorId=<?php echo $_GET['instructorId'];?>" class="btn btn-primary" name="savecourse" type="submit" style="background-color:#780000; font-family:Poppins;">Back</a>
+               <button class="btn btn-primary" name="savegrades" type="submit" style="background-color:#780000; font-family:Poppins;">Save</button>
               </div>
             </div>
           </div>							

@@ -123,6 +123,7 @@
                       "idno"></label>
 
                       <div class="col-md-8">
+                           <a href="index.php" class="btn btn-default" style="background-color:#780000;">Back</a>
                         <button class="btn btn-default" name="savefaculty" type="submit" style="background-color:#780000;"><span class="glyphicon glyphicon-floppy-save" ></span> Save</button>
                       </div>
                     </div>
