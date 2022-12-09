@@ -27,7 +27,7 @@
 </head>   
 
 <style type="text/css">
-        /* Google Font Link */
+      /* Google Font Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
         
 table { 
@@ -69,8 +69,8 @@ body {
     height: 100vh;
     margin-left: 142px;
     background-size: cover;
+    overflow-y: hidden;
     background-repeat: no-repeat;
-    overflow-x: hidden;
     min-height: calc(100vh - 90px;)
 }
 
@@ -91,7 +91,7 @@ label {
     left: 0;
     z-index: 9999;
     width: 100%;
-    height: 15vh;
+    height: 2vh;
     
 }
 
@@ -108,7 +108,6 @@ label {
     overflow-y: hidden;
     z-index: 9999;
 }
-   
 .sample-container{
 	width: 750px;
 	height: 750px;
@@ -160,13 +159,11 @@ label {
           left: -100;
           text-align: center;
           transition: all .5s;
-          overflow-y: hidden;
       }
       nav.side-menu ul li{
           display: block;
           margin: 50px 0;
           line-height: 30px;
-          overflow-y: hidden;
       }
       nav.side-menu ul li a{
           font-size: 20px;
@@ -184,7 +181,7 @@ label {
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .side-menu::-webkit-scrollbar {
-    display: inherit;
+    display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
@@ -425,7 +422,6 @@ nav .menu-bar {
 #menu:checked~.side-menu {
     left: 0;
 }
-    
 
 </style>
   <?php

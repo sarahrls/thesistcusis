@@ -15,6 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     
 	<style type="text/css">
@@ -24,17 +25,20 @@
 		width: 50px;
 	  }
         
-    .floating-btn{
+    .floating-btn {
         background-color: #780000;
         color: #fff;
         padding: 16px 20px;
+        font-size: 30px;
         border: none;
         cursor: pointer;
         opacity: 0.8;
         position: fixed;
         bottom: 23px;
         right: 28px;
-        width: 280;
+        border-radius: 10px;
+        border: solid 2px white;
+        
           }
 
 	@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
@@ -203,7 +207,7 @@
                <button type="submit" class="floating-btn" onclick="openPopup()" ><i class='bx bx-conversation'></i></button>
               
                <div class="popup" id="popup" >
-                <div class="title" onclick="closePopup()">TCUbot</div>
+                <div class="title" onclick="closePopup()"><span style="margin-right:5px; font-size:20px;"><i class='bx bxs-bot' style='color:#ffffff'></i></span>TCUbot</div>
                 <div class="form">
 
                     <div class="bot-inbox inbox">
@@ -244,7 +248,7 @@
         </div>
       </div>
     </div>
-
+     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script>
         $(document).ready(function(){
             $("#send-btn").on("click", function(){
