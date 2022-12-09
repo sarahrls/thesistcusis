@@ -1,3 +1,69 @@
+<style type="text/css">
+    /*
+	Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically.
+	*/
+	@media screen and (max-width: 768px), (min-device-width: 320px) 
+    and (max-device-width: 1024px)  {
+
+		/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr {
+			display: table;
+           
+		}
+
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr {
+            display: none;
+			position: absolute;
+			top: -500px;
+			left: -9999px;
+		}
+
+    tr {
+      margin: 0 0 1rem 0;
+    }
+      
+    tr:nth-child(odd) {
+      background: #ccc;
+        margin: 5rem;
+    }
+    
+		td {
+			/* Behave  like a "row" */
+			border: none;
+			border-bottom: 1px solid #eee;
+			position: relative;
+			padding-left: 50px;
+            margin-bottom: 10px;
+          
+		}
+
+		td:before {
+			/* Now like a table header */
+		
+			/* Top/left values mimic padding */
+			top: 0;
+			left: 6px;
+			width: 30%;
+			padding-right: 5px;
+			white-space: nowrap;
+		}
+
+		/*
+		Label the data
+    You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
+		*/
+		td:nth-of-type(1):before { content: "No."; }
+		td:nth-of-type(2):before { content: "Subject"; }
+		td:nth-of-type(3):before { content: "Description"; }
+		td:nth-of-type(4):before { content: "Grade Level"; }
+		td:nth-of-type(5):before { content: "Room"; }
+		td:nth-of-type(6):before { content: "Days and Time"; }
+		td:nth-of-type(7):before { content: "Students"; }
+	} 
+    
+</style>
+
 <div class="row">
 
   <div class="col-12 col-sm-12 col-lg-12">
@@ -27,11 +93,11 @@
 		     	<tr>
 		     		<td>
 		     			<p>
-				     		<b style="font-size:14px; font-family:Poppins; color:#780000;">Full Name : </b><?php echo (isset($inst)) ? $inst->INST_FULLNAME : 'Fullname' ;?><br/>
-				     		<b style="font-size:14px; font-family:Poppins; color:#780000;">Sex : </b><?php echo (isset($inst)) ? $inst->INST_SEX  : 'Sex' ;?><br/>
-				     		<b style="font-size:14px; font-family:Poppins; color:#780000;">Employment Status : </b><?php echo (isset($inst)) ? $inst->EMPLOYMENT_STATUS : 'EMPLOYMENT STATUS' ;?><br/>
-				     		<b style="font-size:14px; font-family:Poppins; color:#780000;">Specialization : </b><?php echo (isset($inst)) ? $inst->SPECIALIZATION : 'SPECIALIZATION' ;?><br/>
-				     		<b style="font-size:14px; font-family:Poppins; color:#780000;">Address : </b><?php echo (isset($inst)) ? $inst->INST_ADDRESS : 'Address' ;?>
+				     		<b style="font-size:16px; font-family:Poppins; font-weight:500; margin-left:10px;">Full Name : </b><?php echo (isset($inst)) ? $inst->INST_FULLNAME : 'Fullname' ;?><br/>
+				     		<b style="font-size:16px; font-family:Poppins; font-weight:500; margin-left:10px;">Sex : </b><?php echo (isset($inst)) ? $inst->INST_SEX  : 'Sex' ;?><br/>
+				     		<b style="font-size:16px; font-family:Poppins; font-weight:500; margin-left:10px;">Employment Status : </b><?php echo (isset($inst)) ? $inst->EMPLOYMENT_STATUS : 'EMPLOYMENT STATUS' ;?><br/>
+				     		<b style="font-size:16px; font-family:Poppins; font-weight:500; margin-left:10px;">Specialization : </b><?php echo (isset($inst)) ? $inst->SPECIALIZATION : 'SPECIALIZATION' ;?><br/>
+				     		<b style="font-size:16px; font-family:Poppins; font-weight:500; margin-left:10px;">Address : </b><?php echo (isset($inst)) ? $inst->INST_ADDRESS : 'Address' ;?>
 
 		     			</p>
 		     		</td>
@@ -47,7 +113,7 @@
 				
 				  <thead>
 				  	<tr>
-				  		<tr>
+				  		<tr style="font-size:16px; font-family:Poppins; font-weight:500; margin-left:10px;">
 				  		<th width="10" style="font-size:16px; font-family:Poppins; font-weight:900;">No</th>	
 				  		<th  width="20%" class="bottom" style="font-size:16px; font-family:Poppins; font-weight:900;"> <input type="checkbox" name="chkall" id="chkall" onclick="return checkall('selector[]');">Subject</th>
 				  		<th class="bottom" style="font-size:16px; font-family:Poppins; font-weight:900;">Description</th>
@@ -86,7 +152,7 @@
 						//	echo '<td align="center">'. $result->UNIT.'</td>';
 							echo '<td style="font-size:15px; font-family:Poppins; font-weight:500;">'. $result->ROOM.'</td>';
 							echo '<td style="font-size:15px; font-family:Poppins; font-weight:500;">'. $result->DAY.'/'. $result->C_TIME.'</td>';
-							echo '<td style="font-size:15px; font-family:Poppins; font-weight:500;"><a href="index.php?view=class&id='.$result->CLASS_ID.'&instructorId='.$result->INST_ID.'">View</a></td>';
+							echo '<td style="font-size:15px; font-family:Poppins; font-weight:500;"><a style="color:#780000;" href="index.php?view=class&id='.$result->CLASS_ID.'&instructorId='.$result->INST_ID.'">View</a></td>';
 						//	echo '<td><a href="#.php?id='.$result->CLASS_ID.'">'. $result->DAY.'/'. $result->C_TIME.'</a></td>';
 							echo  '<input type="hidden" name="INST_ID" id="INST_ID" value="'.$result->INST_ID.'" style="font-size:15px; font-family:Poppins; font-weight:500;"/>';
 					  		echo '</tr>';

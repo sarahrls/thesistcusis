@@ -3,8 +3,9 @@
 <html lang="en">
 <head>
 	<title>TCUSIS-Admin Site</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	 <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="../plugins/login/images/tculogo.png"/>
 <!--===============================================================================================-->
@@ -28,6 +29,86 @@
 	<link rel="stylesheet" type="text/css" href="../plugins/login/css/main.css">
 <!--===============================================================================================-->
 </head>
+   
+<style>
+    .wrap-login100 {
+  width: 330px;
+  border-radius: 10px;
+  overflow: hidden;
+
+  background: transparent;
+}
+    .input100 {
+  font-family: poppins;
+  font-size: 20px;
+  color: #780000;
+  line-height: 1.2;
+
+  display: block;
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  padding: 0 10px 0 80px;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+    .input100:focus + .focus-input100::after {
+  left: 20px;
+  color: #780000;
+}
+    .has-val.input100 + .focus-input100::after {
+  left: 20px;
+  color: #780000;
+}
+
+.login100-form-btn {
+  font-family: Ubuntu-Bold;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+  min-width: 160px;
+  height: 42px;
+  border-radius: 21px;
+
+  background: #780000;
+  background: -webkit-linear-gradient(#780000);
+  background: -o-linear-gradient(left, #780000, #780000, #780000);
+  background: -moz-linear-gradient(left, #780000, #780000, #780000);
+  background: linear-gradient(left, #780000, #780000, #780000);
+  position: relative;
+  z-index: 1;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+    	@media screen and (max-width: 768px), (min-device-width: 320px) 
+    and (max-device-width: 1024px)  {
+         wrap-login100 {
+        position: fixed;
+        display: flex;
+         width: 100%;
+        font-size:inherit;
+    }
+        container-login100{
+            display: flex;
+        }
+
+    }
+</style>
 <body>
 <?php
  if (logged_in()) {

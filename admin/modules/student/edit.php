@@ -299,6 +299,7 @@
 if($_SESSION['ACCOUNT_TYPE']=='Administrator'){
 						echo '
 		              <div class="col-md-6" align="right">
+                        <a href="index.php" name="back" class="btn btn-default" style="background-color:#780000; font-family:Poppins; border-radius:5px;">Back</a>
 		               <button class="btn btn-primary" name="submit" type="submit" style="background-color:#780000; font-family:Poppins;">Save</button>
 
 		               </div>';

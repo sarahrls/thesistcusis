@@ -202,6 +202,7 @@
         </div>
 
         <div class="col-md-6" style="text-align: right">
+            <a href="index.php" name="back" class="btn btn-default" style="background-color:#780000; font-family:Poppins; border-radius:5px;">Back</a>
           <button class="btn btn-default" name="submit" type="submit" style="background-color:#780000; font-family:Poppins;">Save</button>
         </div>
       </div>

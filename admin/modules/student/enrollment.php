@@ -15,7 +15,7 @@
 
 					<div class="panel panel-primary col-offset-5">
 					  <div class="panel-heading">
-					    <h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> Enroll Student</h3>
+					    <h3 class="panel-title" style="margin-top:5px; font-family:Poppins; font-weight:900; "><span class="glyphicon glyphicon-user"></span> Enroll Student</h3>
 					  </div>
 					  <div class="panel-body">
 
@@ -117,8 +117,8 @@
 				            <div class="col-md-10">  
       						<div class="form-group">
 							         <div class="btn-group"> 
-							          <a href="index.php" name="back" class="btn btn-default">Back </a>
-									    <button type="submit" name="savestep1" class="btn btn-default"><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
+							          <a href="index.php" name="back" class="btn btn-default" style="background-color:#780000; font-family:Poppins;">Back </a>
+									    <button type="submit" name="savestep1" class="btn btn-default" style="background-color:#780000; font-family:Poppins;"><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
 									  
 									  
 									  

@@ -446,7 +446,7 @@ h1, h2, h3, h4, h5,
     @media (max-width: 991.98px) {
       .site-navbar .site-logo {
         float: left;
-        position: relative; } }
+        position: fixed; } }
   .site-navbar .site-navigation.border-bottom {
     border-bottom: 1px solid white !important; }
   .site-navbar .site-navigation .site-menu {
@@ -454,7 +454,7 @@ h1, h2, h3, h4, h5,
     padding: 0;
     margin-bottom: 0; }
     .site-navbar .site-navigation .site-menu .active {
-      color: #fb7400 !important; }
+      color: #FFCCCB !important; }
     .site-navbar .site-navigation .site-menu a {
       text-decoration: none !important;
       display: inline-block; }
@@ -464,13 +464,13 @@ h1, h2, h3, h4, h5,
         margin-left: 15px;
         margin-right: 15px;
         padding: 20px 0px;
-        color: #fff !important;
+        color: #780000 !important;
         display: inline-block;
         text-decoration: none !important; }
         .site-navbar .site-navigation .site-menu > li > a:hover {
-          color: #fb7400; }
+          color: #fff; }
       .site-navbar .site-navigation .site-menu > li.active > a {
-        color: #fb7400 !important; }
+        color: #fff !important; }
     .site-navbar .site-navigation .site-menu .has-children {
       position: relative; }
       .site-navbar .site-navigation .site-menu .has-children > a {
@@ -630,14 +630,14 @@ h1, h2, h3, h4, h5,
       position: relative;
       color: #212529; }
       .site-mobile-menu .site-nav-wrap a:hover {
-        color: #fb7400; }
+        color: #780000; }
     .site-mobile-menu .site-nav-wrap li {
       position: relative;
       display: block; }
       .site-mobile-menu .site-nav-wrap li .nav-link.active {
-        color: #fb7400; }
+        color: #780000; }
       .site-mobile-menu .site-nav-wrap li.active > a {
-        color: #fb7400; }
+        color: #780000; }
     .site-mobile-menu .site-nav-wrap .arrow-collapse {
       position: absolute;
       right: 0px;
@@ -1771,7 +1771,7 @@ form .btn {
         height: 2px;
         background: rgba(255, 255, 255, 0.1); }
     .project-item .project-title:hover span:before {
-      background-color: #fb7400; }
+      background-color: #780000; }
   .project-item:hover .project-item-overlay {
     opacity: 1;
     visibility: visible; }

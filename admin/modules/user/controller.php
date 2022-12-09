@@ -87,7 +87,7 @@ function doEdit(){
 				$user->ACCOUNT_TYPE = $acc_type;
 				
 				$user->update($acctid);
-			 	message("New [". $acc_name ."] created successfully!", "success");
+			 	message(" ". $acc_name ." updated successfully!", "success");
 				redirect('index.php');
 				
 			

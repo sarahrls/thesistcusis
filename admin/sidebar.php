@@ -1,6 +1,12 @@
 <div class="row row-offcanvas row-offcanvas-right">
 <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-	<div class="sidebar-nav">
+	<nav>
+          <i class='bx bx-menu' id="btn" ></i>
+    </nav>
+    
+    
+    
+    <div class="sidebar-nav">
 		<div class="panel panel-success">
 					
 					  <div class="panel-heading">User Login</div>

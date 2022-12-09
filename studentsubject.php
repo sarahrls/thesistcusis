@@ -1,5 +1,70 @@
+<style type="text/css">
+    /*
+	Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically.
+	*/
+	@media screen and (max-width: 768px), (min-device-width: 320px) 
+    and (max-device-width: 1024px)  {
 
-<div class="rows" style="margin-top: 90px"> 
+		/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr {
+			display: table;
+           
+		}
+
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr {
+            display: none;
+			position: absolute;
+			top: -500px;
+			left: -9999px;
+		}
+
+    tr {
+      margin: 0 0 1rem 0;
+    }
+      
+    tr:nth-child(odd) {
+      background: #ccc;
+        margin: 5rem;
+    }
+    
+		td {
+			/* Behave  like a "row" */
+			border: none;
+			border-bottom: 1px solid #eee;
+			position: relative;
+			padding-left: 50px;
+            margin-bottom: 10px;
+          
+		}
+
+		td:before {
+			/* Now like a table header */
+		
+			/* Top/left values mimic padding */
+			top: 0;
+			left: 6px;
+			width: 30%;
+			padding-right: 5px;
+			white-space: nowrap;
+		}
+
+		/*
+		Label the data
+    You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
+		*/
+		td:nth-of-type(1):before { content: "Subject"; }
+		td:nth-of-type(2):before { content: "Description"; }
+		td:nth-of-type(3):before { content: "Midterm"; }
+		td:nth-of-type(4):before { content: "Finals"; }
+		td:nth-of-type(5):before { content: "Average"; }
+		td:nth-of-type(6):before { content: "Remarks"; }
+	} 
+
+</style>
+
+
+<div class="rows" style="display=flex; margin-top: 100px; border: 2px solid black; border-radius: 10px; background-color:white; width:90%; margin-left:80px;" > 
 
   <div class="col-12 col-sm-12 col-lg-12">
 	<?php
@@ -44,7 +109,7 @@
 		  <!-- <form class="form-horizontal span4" action="#.php" method="POST"> -->
 					<div class="panel panel-primary">
 					  <div class="panel-heading">
-					    <h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> Report card of Students </h3>
+					    <h3 class="panel-title" style="margin-top:10px; color:#780000; font-size:35px; margin-left:140px; font-family:Poppins; font-weight:1000px;"><span class="glyphicon glyphicon-user"></span> Report Card of Students </h3>
 					  </div>
 					  <div class="panel-body">
 					   <div class="row">      	  		            		          
@@ -78,8 +143,10 @@
 								  	<tr >
 
 
+
 								  			<th>Subject</th>	
-								  					  	
+								  			<th>Subject</th>
+
 								  		<th class="bottom">Description</th>
 								  		<th>Midterm</th>
 								  		<th>Finals</th>
@@ -136,8 +203,12 @@
 
                             
 						<div class="btn-group" id="divButtons" name="divButtons">
+
 						<input type="button" value="Print" onclick="tablePrint();" class="btn btn-default" style="background-color:#780000; color:white; font-family:Poppins;">
 					
+
+						
+						
 			 				<!-- <a href = "assignstudentsubjects.php?studentId=<?php // echo (isset($_GET['studentId'])) ? $_GET['studentId'] : 'ID' ; ?>" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>Assign Subject</a> -->
 					  <!--  <button type="submit" class="btn btn-default" name="delete"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button> -->
 					

@@ -6,7 +6,7 @@
 				<table class="table table-hover">
 				  <thead>
 				  	<tr>
-				  		<th> Grade and Section</th> 
+				  		<th>Year and Sem</th> 
 				  		<th>Schoolyr</th>
 				  		<th>Status</th>
 				  		<th>Date Enrolled</th>

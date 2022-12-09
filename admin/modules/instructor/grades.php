@@ -134,8 +134,8 @@ $cur = $grade->single_grades($gradeId);
             <div class="col-md-8">
               <label class="col-md-4 control-label" for=
               "finalave" style="color:#780000; font-family:Poppins; font-size:14px;">Average</label>
+                
               <div class="col-md-8">
-                  
                   <select class="form-control input-sm" id="finalave" name="finalave"  value="<?php echo (isset($cur)) ? $cur->AVE  : 'AVE' ;?>">
                           <option value="1.00">1.00</option>
                           <option value="1.25">1.25</option>
@@ -151,7 +151,6 @@ $cur = $grade->single_grades($gradeId);
                           <option value="UD">UD</option>
                           <option value="D">D</option>
                     </select>
-                  
               </div>
             </div>
           </div>
