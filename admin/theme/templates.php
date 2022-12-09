@@ -108,6 +108,7 @@ label {
     overflow-y: hidden;
     z-index: 9999;
 }
+   
 .sample-container{
 	width: 750px;
 	height: 750px;
@@ -159,11 +160,13 @@ label {
           left: -100;
           text-align: center;
           transition: all .5s;
+          overflow-y: hidden;
       }
       nav.side-menu ul li{
           display: block;
           margin: 50px 0;
           line-height: 30px;
+          overflow-y: hidden;
       }
       nav.side-menu ul li a{
           font-size: 20px;
@@ -181,7 +184,7 @@ label {
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .side-menu::-webkit-scrollbar {
-    display: none;
+    display: inherit;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
@@ -212,6 +215,7 @@ label {
    background: #A24857;
     padding-left: 20px;
     text-decoration: none;
+    border-radius: 15px;
 }
 
 .side-menu span {
@@ -434,9 +438,9 @@ nav .menu-bar {
     <input type="checkbox" id="menu">
  
   <nav>
-    <div class="side-menu">
+    <div class="side-menu" style="overflow-y:scroll;">
        
-        <ul class="nav-list">
+        <ul class="nav-list" >
             <label class="logo" style="font-family:poppins; font-size:25px; font-weight:700; text-decoration:none; color:#fff;">
          <img src="<?php echo (!empty($user['photo'])) ? '../images/'.$user['photo'] : '../images/tculogo.png'; ?>" style=" width:70px; font-family:Poppins;  height:70px;" ><br>TCUSIS 
           <span href="<?php echo WEB_ROOT; ?>admin/index.php" class="simple-text logo-normal" ></span>
@@ -515,11 +519,10 @@ nav .menu-bar {
                  </li>   
             
                 <li  class="<?php echo (currentpage_admin() == 'class') ? "active" : false;?>">
-                    <a href="<?php echo WEB_ROOT; ?>admin/modules/chatbot/index.php">
-                     <i class='bx bxs-buildings'></i>
-                      <p style="font-family:Poppins; font-weight:500; font-size:15px;">Chatbot</p>   
-                   </a>
-                      <span class="tooltip">Chatbot</span>
+                    <a href="<?php echo WEB_ROOT; ?>admin/modules/chatbot/index.php"> 
+                  <i class='bx bxs-chat'></i>
+                      <span class="links_name" style="font-family:Poppins; font-weight:500; font-size:15px;">Chatbot</span>
+                         </a>
                  </li>  
 
                 
@@ -597,7 +600,7 @@ nav .menu-bar {
          <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
              <ul class="nav navbar-nav">
                  <li>
-                      <a href="<?php echo WEB_ROOT; ?>admin/index.php">HOME</a>
+                     
                  </li>
              </ul>
              

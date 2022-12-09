@@ -15,14 +15,14 @@
               <p style="font-size:16px; font-family:Poppins; font-weight:500; margin-left:10px;">
                     <b>ID Number: </b><?php echo (isset($cur)) ? $cur->IDNO : 'ID' ;?><br>
                 <?php 
-                $coeId = $_GET['coeId'];
-                $upload = new Upload();
-				$cur = $upload->single_upload($_GET['coeId']);
+                //$coeId = $_GET['coeId'];
+                //$upload = new Upload();
+				//$cur = $upload->single_upload($_GET['coeId']);
             
     ?>
                   <input name="coeId" type="hidden" value="">
                   <input class="form-control input-sm" id="idno" name="idno" placeholder=
-												  "ID Number" type="number" value="<?php echo $cur->coeId; ?>" readonly>
+												  "ID Number" type="number" value="<?php echo $cur->IDNO; ?>" readonly>
                   
 				    <b>Name: </b><?php echo (isset($cur)) ? $cur->LNAME.', '.$cur->FNAME : 'Fullname' ;?><br/>
 				</p>
