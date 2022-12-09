@@ -37,6 +37,9 @@
 			}
 
   ?>
+      
+      
+      
      
 		  <!-- <form class="form-horizontal span4" action="#.php" method="POST"> -->
 					<div class="panel panel-primary">
@@ -67,6 +70,7 @@
 						     
 					     </table>
 					     <br>
+                            
 					     <form class="form-horizontal span4" action="controller.php?action=delsubj&studentId=<?php echo $_GET['studentId']; ?>&cid=<?php echo $_GET['cid']; ?>&sy=<?php echo $_GET['sy']; ?>" method="POST">					    
 								<table  class="table table-striped" cellspacing="0" id="table">
 							
@@ -74,7 +78,7 @@
 								  	<tr >
 
 
-								  			<th>Subject</th>';	
+								  			<th>Subject</th>	
 								  					  	
 								  		<th class="bottom">Description</th>
 								  		<th>Midterm</th>
@@ -119,25 +123,30 @@
 									  		}
 									  	 
 								  	?>
+                                      
+                                      
+                                    
 								  </tbody>
 								 
 								</table>
+                             </form>
+                            <p type="hidden" style="font-style:italic;">Note: This document is computer generated and is not valid without official School dry seal.</p>
 								</span>
 
 
-
+                            
 						<div class="btn-group" id="divButtons" name="divButtons">
-						
-					<!-- 	<input type="button" value="Print" onclick="tablePrint();" class="btn btn-primary"> -->
+						<input type="button" value="Print" onclick="tablePrint();" class="btn btn-default" style="background-color:#780000; color:white; font-family:Poppins;">
+					
 			 				<!-- <a href = "assignstudentsubjects.php?studentId=<?php // echo (isset($_GET['studentId'])) ? $_GET['studentId'] : 'ID' ; ?>" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>Assign Subject</a> -->
 					  <!--  <button type="submit" class="btn btn-default" name="delete"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button> -->
-					</form>
+					
 						</body>
 						</html>		
 					  </div>
 					</div>
 									
-				</form>
+				
 					 
 					    </div>	
 					   </div>				            	              
@@ -152,7 +161,7 @@
 </div>
   <script>
 function tablePrint(){ 
- document.all.divButtons.style.visibility = 'hidden';  
+ document.all.divButtons.style.visibility = 'vissible';  
     var display_setting="toolbar=no,location=no,directories=no,menubar=no,";  
     display_setting+="scrollbars=no,width=500, height=500, left=100, top=25";  
  //   var tableData = '<table border="1">'+document.getElementsByTagName('table')[0].innerHTML+'</table>';

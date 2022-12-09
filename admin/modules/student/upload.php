@@ -1,66 +1,81 @@
+
+
 <div class="container">
 <div class="well">
-
+    <?php 
+                $student = new Student();
+				$cur = $student->single_student($_GET['studentId']);
+            
+    ?>
     <div>
-      <form action="controller.php?action=delsy&studentId=<?php echo $_GET['studentId']; ?>" method="POST" enctype="multipart/form-data">
-        <h3 for="" style="margin-top:5px; font-family:Poppins; font-weight:900; ">Choose Your PDF File</h3><br>
+      <form action="controller.php?action=uploadcoe&studentId=<?php echo $cur->IDNO; ?>" method="POST" enctype="multipart/form-data">
+          
+          <td>
+              <br>              
+              <p style="font-size:16px; font-family:Poppins; font-weight:500; margin-left:10px;">
+                    <b>ID Number: </b><?php echo (isset($cur)) ? $cur->IDNO : 'ID' ;?><br>
+                <?php 
+                $coeId = $_GET['coeId'];
+                $upload = new Upload();
+				$cur = $upload->single_upload($_GET['coeId']);
+            
+    ?>
+                  <input name="coeId" type="hidden" value="">
+                  <input class="form-control input-sm" id="idno" name="idno" placeholder=
+												  "ID Number" type="number" value="<?php echo $cur->coeId; ?>" readonly>
+                  
+				    <b>Name: </b><?php echo (isset($cur)) ? $cur->LNAME.', '.$cur->FNAME : 'Fullname' ;?><br/>
+				</p>
+          </td>
+          
+          <h3 for="" style="margin-top:5px; font-family:Poppins; font-weight:900; ">Choose PDF File</h3>
         
-         <div style="display:flex; justify-content:space-between; padding:2rem; ">
-             <h5 style="margin-top:5px; font-family:Poppins; font-weight:900; fon">1st Year</h5>
-          <div class="">
-        <label style="color:#780000; font-family:Poppins; font-size:15px; margin-right:20px;">1st Sem</label>  
-        <input id="COE" type="file" name="COE" value="" required><br><br>
-          </div>
+      
+             
+    <div class="">
+              
+        <h5 style="margin-top:5px; font-family:Poppins; font-weight:900; fon">1st Year</h5>
+            <label style="color:#780000; font-family:Poppins; font-size:15px; margin-right:20px;">1st Sem</label> 
+            <input id="COE" type="file" name="COE" value="" ><br>
+              
+            <label style="color:#780000; font-family:Poppins; font-size:15px; margin-right:10px;">2nd Sem</label>  
+            <input id="COE2" type="file" name="COE2" value="" ><br><br>
+    </div>
           
-           <div class="">
-        <label style="color:#780000; font-family:Poppins; font-size:15px; margin-right:10px;">2nd Sem</label>  
-        <input id="COE" type="file" name="COE" value="" required><br><br>
-          </div>
-        </div>
+    <div class="">
+        <h5 style="margin-top:5px; font-family:Poppins; font-weight:900; fon">2nd Year</h5>
+            <label style="color:#780000; font-family:Poppins; font-size:15px; margin-right:20px;">1st Sem</label> 
+            <input id="COE3" type="file" name="COE3" value="" ><br>
+              
+            <label style="color:#780000; font-family:Poppins; font-size:15px; margin-right:10px;">2nd Sem</label>  
+            <input id="COE4" type="file" name="COE4" value="" ><br><br>
+        
+    </div>
           
-           <div style="display:flex; justify-content:space-between; padding:2rem; ">
-                <h5 style="margin-top:5px; font-family:Poppins; font-weight:900; fon">2nd Year</h5>
-             <div class="">
-        <label style="color:#780000; font-family:Poppins; font-size:15px; margin-right:10px;">1st Sem</label>  
-        <input id="COE" type="file" name="COE" value="" required><br><br>
-          </div>
+    <div class="">
+        <h5 style="margin-top:5px; font-family:Poppins; font-weight:900; fon">3rd Year</h5>
+            <label style="color:#780000; font-family:Poppins; font-size:15px; margin-right:20px;">1st Sem</label> 
+            <input id="COE5" type="file" name="COE5" value="" ><br>
+              
+            <label style="color:#780000; font-family:Poppins; font-size:15px; margin-right:10px;">2nd Sem</label>  
+            <input id="COE6" type="file" name="COE6" value="" ><br><br>
+    </div>
+    
+    <div class="">
+        <h5 style="margin-top:5px; font-family:Poppins; font-weight:900; fon">4th Year</h5>
+            <label style="color:#780000; font-family:Poppins; font-size:15px; margin-right:20px;">1st Sem</label> 
+            <input id="COE7" type="file" name="COE7" value="" ><br>
+              
+            <label style="color:#780000; font-family:Poppins; font-size:15px; margin-right:10px;">2nd Sem</label>  
+            <input id="COE8" type="file" name="COE8" value="" ><br><br>
+    </div>
           
-            <div class="">
-        <label style="color:#780000; font-family:Poppins; font-size:15px; ">2nd Sem</label>  
-        <input id="COE" type="file" name="COE" value="" required><br><br>
-          </div>
-          </div>
-          
-           <div style="display:flex; justify-content:space-between; padding:2rem; ">
-                <h5 style="margin-top:5px; font-family:Poppins; font-weight:900; fon">3rd Year</h5>
-          <div class="">
-        <label style="color:#780000; font-family:Poppins; font-size:15px; margin-right:10px;">1st Sem</label>  
-        <input id="COE" type="file" name="COE" value="" required><br><br>
-          </div>
-          
-          <div class="">
-        <label style="color:#780000; font-family:Poppins; font-size:15px; ">2nd Sem</label>  
-        <input id="COE" type="file" name="COE" value="" required><br><br>
-          </div>
-          </div>
-          
-           <div style="display:flex; justify-content:space-between; padding:2rem; ">
-                <h5 style="margin-top:5px; font-family:Poppins; font-weight:900; fon">4th Year</h5>
-          <div class="">
-        <label style="color:#780000; font-family:Poppins; font-size:15px; margin-right:10px;">1st Sem</label>  
-        <input id="COE" type="file" name="COE" value="" required><br><br>
-          </div>
-          
-          <div class="">
-        <label style="color:#780000; font-family:Poppins; font-size:15px; ">2nd Sem</label>  
-        <input id="COE" type="file" name="COE" value="" required><br><br>
-          </div>
-          </div>
           <button class="btn btn-primary" id="upload" type="submit" name="submit" style="background-color:#780000; font-family:Poppins;">Submit</button>
         <?php
-        include 'dbconfig.php';
+        
+        //include 'dbconfig.php';
 
-        if (isset($_POST['submit'])) {
+/**        if (isset($_POST['submit'])) {
           $COE=$_FILES['COE']['name'];
           $COE_type=$_FILES['COE']['type'];
           $COE_size=$_FILES['COE']['size'];
@@ -77,7 +92,7 @@
         }
 
 
-
+**/
          ?>
 
       </form>

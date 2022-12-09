@@ -6,6 +6,8 @@
                 <form action="controller.php?action=add" class="form-horizontal  span9" method="post" autocomplete="off"> 
 
  
+                    <input name="coeId" type="hidden" value="">
+                    
         <div class="row"> 
         <div class="col-md-4">
           <div class="form-group">

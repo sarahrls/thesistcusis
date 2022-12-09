@@ -19,37 +19,40 @@
 				  <tbody>
 				  	<?php
                       
-				  	//$studentAES = new StudentEncryption();
 				  	  	$mydb->setQuery("SELECT  `IDNO` ,UPPER(CONCAT(  `LNAME` ,  ', ',  `FNAME` ,  ' ',  `MNAME` )) AS  'Name',
 				  						  `SEX` ,`AGE`, `BDAY` ,  `STATUS` ,  `EMAIL`
 				  						  FROM  `tblstudent`");
-                      
-                      //$studentAES = new StudentEncryption();
-                            //$decrypted_IDNO             =   $studentAES->decryptData($row->IDNO);
 				  	  	loadresult();
 
-				  	
 				  		function loadresult(){
-                            //require_once ("../../../encryption.php");
+                            require_once ("../../../encryption.php");
                             
 				  			global $mydb;
 					  		$cur = $mydb->loadResultList();
 							foreach ($cur as $student) {
-                             
-                                
-                            //$studentAES = new StudentEncryption();
+                            
+                            $studentAES = new StudentEncryption();    
+                       
+                            //$decrypted_IDNO = $studentAES->decryptData($row[$student->IDNO]);
+                    
+                           
                             //$decrypted_IDNO = $studentAES->decryptData($student->IDNO);
                             //$decrypted_Name = $studentAES->decryptData($student->Name);
                             //$decrypted_SEX = $studentAES->decryptData($student->SEX);
+                            //$decrypted_AGE = $studentAES->decryptData($student->AGE);
+                            //$decrypted_EMAIL = $studentAES->decryptData($student->EMAIL);
+                                
+                                
+                            //print("Decrypted Data: $decrypted_IDNO "); 
                                 
 					  		echo '<tr>';
 					  		echo '<td width="5%" align="center"></td>';
-					  		echo '<td width="10%" style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;"><input type="checkbox" name="selector[]" id="selector[]" value="' .$student->IDNO. '"/>' .$student->IDNO.'</td>';
+					  		echo '<td width="10%" style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;"><input type="checkbox" name="selector[]" id="selector[]" value="IDNO"/>' .$student->IDNO.'</td>';
 					  		echo '<td  style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'.$student->Name.'</td>';
 					  		echo '<td align="center" style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $student->SEX.'</td>';
 					  		echo '<td  align="center" style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $student->AGE.'</td>';
-					  	
-					  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $student->EMAIL.'</td>';
+					  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'.$student->EMAIL.'</td>';
+                                
 					  		echo '<td style="font-size:14px; font-family:Poppins; font-weight:500;"><a href="index.php?view=edit&id='.$student->IDNO.'" style="color:#780000; font-size:15px; font-family:Poppins; font-weight:500;"><span class="glyphicon glyphicon-list-alt"> </span>  Edit</a>';
                             echo '<a href = "index.php?view=view&studentId='.$student->IDNO.'" style="color:#780000; font-size:15px; font-family:Poppins; font-weight:500;"><span class="glyphicon glyphicon-list-alt"> </span>  View</a>';
                             echo '<a href = "index.php?view=upload&studentId='.$student->IDNO.'" style="color:#780000; font-size:15px; font-family:Poppins; font-weight:500;"><span class="glyphicon glyphicon-list-alt"> </span>  Upload</a></td>';

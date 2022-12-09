@@ -173,6 +173,14 @@ table {
                    </a>
                       <span class="tooltip">Class</span>
                  </li>   
+            
+                <li  class="<?php echo (currentpage_admin() == 'class') ? "active" : false;?>">
+                    <a href="<?php echo WEB_ROOT; ?>admin/modules/chatbot/index.php">
+                     <i class='bx bxs-buildings'></i>
+                      <p style="font-family:Poppins; font-weight:500; font-size:15px;">Chatbot</p>   
+                   </a>
+                      <span class="tooltip">Chatbot</span>
+                 </li>  
 
                 
                <?php

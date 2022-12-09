@@ -15,7 +15,7 @@ class StudentEncryption {
     public function encryptData($data = "") {
         $encrypted_data = openssl_encrypt($data, $this->cipher, $this->encryption_key, 0, $this->iv); 
         
-        // echo "Encrypted Text: " . $encrypted_data; 
+         //echo "Encrypted Text: " . $encrypted_data; 
         
         return $encrypted_data;
     }
@@ -23,7 +23,7 @@ class StudentEncryption {
     public function decryptData($encrypted_data = "") {
         $decrypted_data = openssl_decrypt($encrypted_data, $this->cipher, $this->encryption_key, 0, $this->iv); 
 
-        // echo "Decrypted Text: " . $decrypted_data; 
+         //echo "Decrypted Text: " . $decrypted_data; 
         
         return $decrypted_data;
     }
