@@ -69,7 +69,7 @@ body {
     margin-left: 142px;
     background-size: cover;
     background-repeat: no-repeat;
- 
+    
     min-height: calc(100vh - 90px;)
 }
 
@@ -84,13 +84,14 @@ label {
     cursor: pointer;
 }
 
-.panel-header{
-    position: fixed
+    .panel-header{
     top:0;
     left: 0;
-    z-index: 9999;
-    width: 100%;
-    height: 2vh;
+    z-index: 10000;
+    float: right;
+    align-items: right;
+    width: 92.8%;
+    height: 0%;
     
 }
 
@@ -104,7 +105,7 @@ label {
     left: 0;
     width: 16%;
     height: 100%;
-    overflow-y: hidden;
+    overflow-y: scroll;
     z-index: 9999;
 }
 .sample-container{

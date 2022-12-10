@@ -112,9 +112,13 @@
                                 
 
 					  	
-
 					  		echo '<tr role="row">';
+
                                 
+
+
+					  		
+
 
 					  		echo '<td role="cell" width="5%" align="center"></td>';
 					  		echo '<td role="cell" width="10%" style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;"><input type="checkbox" name="selector[]" id="selector[]" value="' .$student->IDNO. '"/>' .$student->IDNO.'</td>';

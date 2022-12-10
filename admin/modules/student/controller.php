@@ -665,7 +665,7 @@ function doUploadCOE(){
 	
     //message('Student infomation updated successfully!', "info");
 	//redirect('index.php');
-}
+
 
 	function doDelsubj(){
 		$studentId=$_GET['studentId'];
