@@ -222,7 +222,7 @@ $studdetails->IDNO 				    =	$IDNO;
 
     
 		 		$upload = New Upload();
-        $coeId		= $_POST['coeId'];
+                $COE_ID		= $_POST['COE_ID'];
 				$upload->COE_ID				=	'null';
 				$upload->IDNO				=	$IDNO;
 				$upload->COE           	  	=	'NONE';
@@ -522,20 +522,20 @@ function doDelete(){
 
 	}
 
-function doUploadCOE(){
-    $coeId = $_GET['coeId'];
-    if (isset($_POST['submit'])){
+//function doUploadCOE(){
+    //$COE_ID = $_GET['id'];
+    //if (isset($_POST['submit'])){
 
         //echo encrypt($_POST['savegrades']);
 
         
-        $COE=$_FILES['COE']['name'];
-        $COE_type=$_FILES['COE']['type'];
-        $COE_size=$_FILES['COE']['size'];
-        $COE_tem_loc=$_FILES['COE']['tmp_name'];
-        $COE_store="COE/".$COE;
+        //$COE=$_FILES['COE']['name'];
+        //$COE_type=$_FILES['COE']['type'];
+        //$COE_size=$_FILES['COE']['size'];
+        //$COE_tem_loc=$_FILES['COE']['tmp_name'];
+        //$COE_store="COE/".$COE;
         
-        move_uploaded_file($COE_tem_loc,$COE_store);
+        //move_uploaded_file($COE_tem_loc,$COE_store);
         /**
         $COE2=$_FILES['COE2']['name'];
         $COE2_type=$_FILES['COE2']['type'];
@@ -603,12 +603,12 @@ function doUploadCOE(){
         //move_uploaded_file($COE10_tem_loc,$COE10_store);
         
         **/
-		$upload = new Upload();
-        $coeId		= $_POST['coeId'];
+		//$upload = new Upload();
+        //$COE_ID		= $_POST['COE_ID'];
         
-		$upload->COE_ID 	= $coeId;
-		$upload->IDNO 	    = $cur->IDNO;
-		$upload->COE		= $COE;
+		//$upload->COE_ID 	= $COE_ID;
+		//$upload->IDNO 	    = $IDNO;
+		//$upload->COE		= $COE;
 		//$upload->COE2		= $COE2;
 		//$upload->COE3		= $COE3;
 		//$upload->COE4		= $COE4;
@@ -619,13 +619,13 @@ function doUploadCOE(){
 		//$upload->COE9		= $COE9;
 		//$upload->COE10		= $COE10;
 
-		$upload->update($coeId);		 
- 		message("Grade successfully updated!");
-		redirect("index.php?view=class&studentId=");
+		//$upload->update($COE_ID);		 
+ 		//message("Grade successfully updated!");
+		//redirect("index.php?view=class&studentId=");
 	
-}
-}
-/**function doUploadCOE(){
+//}
+//}
+function doUploadCOE(){
 
         global $mydb;
 		$studentId = $_GET['studentId'];
@@ -646,17 +646,17 @@ function doUploadCOE(){
 
             }
             
-            if (isset($_POST['submit'])) {
-          $COE2=$_FILES['COE2']['name'];
-          $COE2_type=$_FILES['COE2']['type'];
-          $COE2_size=$_FILES['COE2']['size'];
-          $COE2_tem_loc=$_FILES['COE2']['tmp_name'];
-          $COE2_store="COE2/".$COE2;  
+           // if (isset($_POST['submit'])) {
+          //$COE2=$_FILES['COE2']['name'];
+          //$COE2_type=$_FILES['COE2']['type'];
+          //$COE2_size=$_FILES['COE2']['size'];
+          //$COE2_tem_loc=$_FILES['COE2']['tmp_name'];
+          //$COE2_store="COE2/".$COE2;  
             
           //move_uploaded_file($COE_tem_loc,$COE_store);
 
-          $sql="INSERT INTO tblstudcoe(IDNO, COE2) values('$idno','$COE2')";
-          $query=mysqli_query($conn,$sql);
+         // $sql="INSERT INTO tblstudcoe (IDNO, COE2) values('$idno','$COE2')";
+          //$query=mysqli_query($conn,$sql);
 
             }
     //$student->update($_GET['studentId']); 
@@ -665,7 +665,7 @@ function doUploadCOE(){
 	
     //message('Student infomation updated successfully!', "info");
 	//redirect('index.php');
-}**/
+}
 
 	function doDelsubj(){
 		$studentId=$_GET['studentId'];

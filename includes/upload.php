@@ -18,7 +18,7 @@ class Upload{
 			return $row_count;
 	}
 
-	function listOfgrades(){
+	function listOfupload(){
 			global $mydb;
 			$mydb->setQuery("SELECT * 
 							FROM  ".self::$tbl_name);
@@ -115,16 +115,16 @@ class Upload{
 	}
     public function update($id=0) {
 	  global $mydb;
-		//$attributes = $this->sanitized_attributes();
-		//$attribute_pairs = array();
-		//foreach($attributes as $key => $value) {
-		  //$attribute_pairs[] = "{$key}='{$value}'";
-		//}
-		//$sql = "UPDATE ".self::$tbl_name." SET ";
-		//$sql .= join(", ", $attribute_pairs);
-		//$sql .= " WHERE COE_ID=". $id;
+		$attributes = $this->sanitized_attributes();
+		$attribute_pairs = array();
+		foreach($attributes as $key => $value) {
+		  $attribute_pairs[] = "{$key}='{$value}'";
+		}
+		$sql = "UPDATE ".self::$tbl_name." SET ";
+		$sql .= join(", ", $attribute_pairs);
+		$sql .= " WHERE COE_ID=". $id;
         
-        $sql="UPDATE tblstudcoe SET ('COE') WHERE ('$COE')";
+       
 	  $mydb->setQuery($sql);
 	 	if(!$mydb->executeQuery()) return false; 	
 		

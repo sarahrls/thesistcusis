@@ -56,7 +56,7 @@
 		td:nth-of-type(1):before { content: "No."; }
 		td:nth-of-type(2):before { content: "Subject"; }
 		td:nth-of-type(3):before { content: "Description"; }
-		td:nth-of-type(4):before { content: "Grade Level"; }
+		td:nth-of-type(4):before { content: "Year and Sem"; }
 		td:nth-of-type(5):before { content: "Room"; }
 		td:nth-of-type(6):before { content: "Days and Time"; }
 		td:nth-of-type(7):before { content: "Students"; }
@@ -119,7 +119,7 @@
 				  		<th class="bottom" style="font-size:16px; font-family:Poppins; font-weight:900;">Description</th>
 				  		<!--<th class="bottom">Semester</th>
 				 		<th class="bottom">Course</th>-->
-				 		<th class="bottom" style="font-size:16px; font-family:Poppins; font-weight:900;">Grade Level</th>
+				 		<th class="bottom" style="font-size:16px; font-family:Poppins; font-weight:900;">Year and Sem</th>
 				 	<!--	<th class="bottom">Pre-requisite</th>
 				 		<th align="center" class="bottom">Unit</th>  -->
 				 		<th class="bottom" style="font-size:16px; font-family:Poppins; font-weight:900;">Room</th>
@@ -176,7 +176,7 @@
 			</table>			
 				<div class="btn-group" style="background-color:#780000; border-radius:5px;">
 				  <a href="index.php" class="btn btn-default" style="background-color:#780000;">Back</a>
-				   <a href="index.php?view=assign&instructorId=<?php  echo (isset($_GET['instructorId'])) ? $_GET['instructorId']: 'ID' ; ?>" class="btn btn-default" style="background-color:#780000;"><span class="glyphicon glyphicon-plus-sign" ></span>  Assign Subjects</a>
+				   
 				   <button type="submit" class="btn btn-default" name="delete" style="background-color:#780000;"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>
 				</div>
 		</form>

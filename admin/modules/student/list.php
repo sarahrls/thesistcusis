@@ -110,9 +110,13 @@
                                 
                             //print("Decrypted Data: $decrypted_IDNO "); 
                                 
+
 					  	
 
 					  		echo '<tr role="row">';
+
+					  		echo '<tr>';
+
 					  		echo '<td role="cell" width="5%" align="center"></td>';
 					  		echo '<td role="cell" width="10%" style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;"><input type="checkbox" name="selector[]" id="selector[]" value="' .$student->IDNO. '"/>' .$student->IDNO.'</td>';
 					  		echo '<td role="cell" style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'.$student->Name.'</td>';
