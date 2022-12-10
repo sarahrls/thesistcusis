@@ -27,7 +27,7 @@
 </head>   
 
 <style type="text/css">
-      /* Google Font Link */
+        /* Google Font Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
         
 table { 
@@ -69,8 +69,8 @@ body {
     height: 100vh;
     margin-left: 142px;
     background-size: cover;
-    overflow-y: hidden;
     background-repeat: no-repeat;
+ 
     min-height: calc(100vh - 90px;)
 }
 
@@ -212,7 +212,6 @@ label {
    background: #A24857;
     padding-left: 20px;
     text-decoration: none;
-    border-radius: 15px;
 }
 
 .side-menu span {
@@ -422,6 +421,7 @@ nav .menu-bar {
 #menu:checked~.side-menu {
     left: 0;
 }
+    
 
 </style>
   <?php
@@ -434,7 +434,7 @@ nav .menu-bar {
     <input type="checkbox" id="menu">
  
   <nav>
-    <div class="side-menu" style="overflow-y:scroll;">
+    <div class="side-menu" >
        
         <ul class="nav-list" >
             <label class="logo" style="font-family:poppins; font-size:25px; font-weight:700; text-decoration:none; color:#fff;">

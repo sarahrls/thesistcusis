@@ -110,15 +110,7 @@
                                 
                             //print("Decrypted Data: $decrypted_IDNO "); 
                                 
-					  		echo '<tr>';
-					  		echo '<td width="5%" align="center"></td>';
-					  		echo '<td width="10%" style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;"><input type="checkbox" name="selector[]" id="selector[]" value="IDNO"/>' .$student->IDNO.'</td>';
-					  		echo '<td  style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'.$student->Name.'</td>';
-					  		echo '<td align="center" style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $student->SEX.'</td>';
-					  		echo '<td  align="center" style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $student->AGE.'</td>';
-					  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'.$student->EMAIL.'</td>';
-                                
-					  		echo '<td style="font-size:14px; font-family:Poppins; font-weight:500;"><a href="index.php?view=edit&id='.$student->IDNO.'" style="color:#780000; font-size:15px; font-family:Poppins; font-weight:500;"><span class="glyphicon glyphicon-list-alt"> </span>  Edit</a>';
+					  	
 
 					  		echo '<tr role="row">';
 					  		echo '<td role="cell" width="5%" align="center"></td>';

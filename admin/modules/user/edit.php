@@ -14,12 +14,12 @@ $object = $singlesubject->single_user($userid);
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "name" style="color:#780000; font-family:Poppins; font-size:14px;">Name:</label>
+                      "name" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Name:</label>
 
                       <div class="col-md-8">
                         <input name="deptid" type="hidden" value="">
                          <input class="form-control input-sm" id="name" name="name" placeholder=
-                            "Account Name" type="text" value="<?php echo $object->ACCOUNT_NAME;?>">
+                            "Account Name" type="text" value="<?php echo $object->ACCOUNT_NAME;?>" style="font-size:15px;">
                       </div>
                     </div>
                   </div>
@@ -27,12 +27,12 @@ $object = $singlesubject->single_user($userid);
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "username" style="color:#780000; font-family:Poppins; font-size:14px;">Username:</label>
+                      "username" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Username:</label>
 
                       <div class="col-md-8">
                         <input name="deptid" type="hidden" value="">
                          <input class="form-control input-sm" id="username" name="username" placeholder=
-                            "Email Address" type="text" value="<?php echo $object->ACCOUNT_USERNAME;?>">
+                            "Email Address" type="text" value="<?php echo $object->ACCOUNT_USERNAME;?>" style="font-size:15px;">
                       </div>
                     </div>
                   </div>
@@ -40,22 +40,22 @@ $object = $singlesubject->single_user($userid);
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "pass" style="color:#780000; font-family:Poppins; font-size:14px;">Password:</label>
+                      "pass" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Password:</label>
 
                       <div class="col-md-8">
                         <input name="deptid" type="hidden" value="">
                          <input class="form-control input-sm" id="pass" name="pass" placeholder=
-                            "Account Password" type="Password" value="">
+                            "Account Password" type="Password" value="" style="font-size:15px;">
                       </div>
                     </div>
                   </div>
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "type" style="color:#780000; font-family:Poppins; font-size:14px;">Type:</label>
+                      "type" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Type:</label>
 
                       <div class="col-md-8">
-                       <select class="form-control input-sm" name="type" id="type">
+                       <select class="form-control input-sm" name="type" id="type" style="font-size:15px;">
                           <option value="Administrator">Administrator</option>
                           <option value="Registrar">Registrar</option>
                           <option value="Course In-charge">Course In-charge</option>

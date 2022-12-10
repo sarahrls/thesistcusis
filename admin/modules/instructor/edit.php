@@ -13,12 +13,12 @@
               <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "name" style="color:#780000; font-family:Poppins; font-size:14px;">Fullname:</label>
+                      "name" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Fullname:</label>
 
                       <div class="col-md-8">
                         <input name="deptid" type="hidden" value="">
                          <input class="form-control input-sm" id="name" name="name" placeholder=
-                            "Account Name" type="text" value="<?php echo $object->INST_FULLNAME;?>">
+                            "Account Name" type="text" value="<?php echo $object->INST_FULLNAME;?>" style="font-size:15px;">
                       </div>
                     </div>
                   </div>
@@ -26,12 +26,12 @@
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "address" style="color:#780000; font-family:Poppins; font-size:14px;">Current Address:</label>
+                      "address" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Current Address:</label>
 
                       <div class="col-md-8">
                         <input name="deptid" type="hidden" value="">
                          <input class="form-control input-sm" id="address" name="address" placeholder=
-                            "Current Address" type="text" value="<?php echo $object->INST_ADDRESS;?>">
+                            "Current Address" type="text" value="<?php echo $object->INST_ADDRESS;?>" style="font-size:15px;">
                       </div>
                     </div>
                   </div>
@@ -42,7 +42,7 @@
                       "Gender" style="color:#780000; font-family:Poppins; font-size:14px;">Gender:</label>
 
                       <div class="col-md-8">
-                       <select class="form-control input-sm" name="Gender" id="Gender">
+                       <select class="form-control input-sm" name="Gender" id="Gender" style="font-size:15px;">
                           <option value="M">Male</option>
                           <option value="F">Female</option>
                           
@@ -54,10 +54,10 @@
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "civilstats" style="color:#780000; font-family:Poppins; font-size:14px;">Civil Status:</label>
+                      "civilstats" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Civil Status:</label>
 
                       <div class="col-md-8">
-                       <select class="form-control input-sm" name="civilstats" id="civilstats">
+                       <select class="form-control input-sm" name="civilstats" id="civilstats" style="font-size:15px;">
                           <option value="Single">Single</option>
                           <option value="Married">Married</option>
                           
@@ -69,12 +69,12 @@
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "specialization" style="color:#780000; font-family:Poppins; font-size:14px;">Specialization:</label>
+                      "specialization" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Specialization:</label>
 
                       <div class="col-md-8">
                         <input name="deptid" type="hidden" value="">
                          <input class="form-control input-sm" id="specialization" name="specialization" placeholder=
-                            "Specialization" type="text" value="<?php echo $object->SPECIALIZATION;?>">
+                            "Specialization" type="text" value="<?php echo $object->SPECIALIZATION;?>" style="font-size:15px;">
                       </div>
                     </div>
                   </div>
@@ -82,12 +82,12 @@
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "empStats" style="color:#780000; font-family:Poppins; font-size:14px;">Employment Status:</label>
+                      "empStats" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Employment Status:</label>
 
                       <div class="col-md-8">
                         <input name="deptid" type="hidden" value="">
                          <input class="form-control input-sm" id="empStats" name="empStats" placeholder=
-                            "Employment Status" type="text" value="<?php echo $object->EMPLOYMENT_STATUS;?>">
+                            "Employment Status" type="text" value="<?php echo $object->EMPLOYMENT_STATUS;?>" style="font-size:15px;">
                       </div>
                     </div>
                   </div>
@@ -120,6 +120,7 @@
                       "idno"></label>
 
                       <div class="col-md-8" >
+                           <a href="index.php" name="back" class="btn btn-default" style="background-color:#780000; font-family:Poppins; border-radius:5px;"></span>Back</a>
                         <button class="btn btn-default" name="savefaculty" type="submit" style="background-color:#780000;"><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
                       </div>
                     </div>

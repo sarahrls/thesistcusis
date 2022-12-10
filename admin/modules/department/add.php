@@ -7,12 +7,12 @@
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "deptname" style="color:#780000; font-family:Poppins; font-size:14px;">Department Name</label>
+                      "deptname" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Department Name</label>
 
                       <div class="col-md-8">
                         <input name="deptid" type="hidden" value="">
                          <input class="form-control input-sm" id="deptname" name="deptname" placeholder=
-                            "Department Name" type="text" value="">
+                            "Department Name" type="text" value="" style="font-size:15px;">
                       </div>
                     </div>
                   </div>
@@ -20,11 +20,11 @@
              <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "deptdesc" style="color:#780000; font-family:Poppins; font-size:14px;">Department Description</label>
+                      "deptdesc" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Department Description</label>
 
                       <div class="col-md-8">
                            <input class="form-control input-sm" id="deptdesc" name="deptdesc" placeholder=
-                            "Department Description" type="text" value="">
+                            "Department Description" type="text" value="" style="font-size:15px;">
                       </div>
                     </div>
                   </div>

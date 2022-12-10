@@ -8,11 +8,11 @@
           <div class="form-group">
                 <div class="col-md-8">
                   <label class="col-md-4 control-label" for=
-                  "coursename">Grade</label>
+                  "coursename" style="color:#780000; font-size:17px; font-weight:500;">Grade</label>
 
                   <div class="col-md-8">
                      <input class="form-control input-sm" id="coursename" name="coursename" placeholder=
-                        "Course Code" type="text" value="">
+                        "Course Code" type="text" value="" style="font-size:15px;">
                   </div>
                 </div>
               </div>
@@ -54,11 +54,11 @@
               <div class="form-group">
                 <div class="col-md-8">
                   <label class="col-md-4 control-label" for=
-                  "coursedesc">Description</label>
+                  "coursedesc" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Description</label>
 
                   <div class="col-md-8">
                      <input class="form-control input-sm" id="coursedesc" name="coursedesc" placeholder=
-                        "Course Description" type="text" value="">
+                        "Course Description" type="text" value="" style="font-size:15px;">
                   </div>
                 </div>
               </div>

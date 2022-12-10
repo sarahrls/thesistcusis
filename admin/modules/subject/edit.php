@@ -14,11 +14,11 @@ $object = $singlesubject->single_subject($subjid);
 		<div class="form-group">
         <div class="col-md-8">
           <label class="col-md-4 control-label" for=
-          "subjcode" style="color:#780000; font-family:Poppins; font-size:14px;">Subject Code</label>
+          "subjcode" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Subject Code</label>
 
           <div class="col-md-8">
              <input class="form-control input-sm" id="subjcode" name="subjcode" placeholder=
-								  "Subject Code" type="text" value="<?php echo $object->SUBJ_CODE;?>">
+								  "Subject Code" type="text" value="<?php echo $object->SUBJ_CODE;?>" style="font-size:15px;">
           </div>
         </div>
       </div>
@@ -26,11 +26,11 @@ $object = $singlesubject->single_subject($subjid);
       <div class="form-group">
         <div class="col-md-8">
           <label class="col-md-4 control-label" for=
-          "subjdesc" style="color:#780000; font-family:Poppins; font-size:14px;">Subject Description</label>
+          "subjdesc" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Subject Description</label>
 
           <div class="col-md-8">
              <input class="form-control input-sm" id="subjdesc" name="subjdesc" placeholder=
-								  "Subject Description" type="text" value="<?php echo $object->SUBJ_DESCRIPTION;?>">
+								  "Subject Description" type="text" value="<?php echo $object->SUBJ_DESCRIPTION;?>" style="font-size:15px;">
           </div>
         </div>
       </div>
@@ -38,11 +38,11 @@ $object = $singlesubject->single_subject($subjid);
        <div class="form-group">
         <div class="col-md-8">
           <label class="col-md-4 control-label" for=
-          "unit" style="color:#780000; font-family:Poppins; font-size:14px;">No of units</label>
+          "unit" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">No of units</label>
 
           <div class="col-md-8">
              <input class="form-control input-sm" id="unit" name="unit" placeholder=
-								  "No of units" type="number" value="<?php echo $object->UNIT;?>">
+								  "No of units" type="number" value="<?php echo $object->UNIT;?>" style="font-size:15px;">
           </div>
         </div>
       </div>
@@ -60,10 +60,10 @@ $object = $singlesubject->single_subject($subjid);
        <div class="form-group">
         <div class="col-md-8">
           <label class="col-md-4 control-label" for=
-          "course" style="color:#780000; font-family:Poppins; font-size:14px;">Year level</label>
+          "course" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Year level</label>
 
           <div class="col-md-8">
-           <select class="form-control input-sm" name="course" id="course">
+           <select class="form-control input-sm" name="course" id="course" style="font-size:15px;">
               	<?php
               	$course = new Course();
               	$cur = $course->listOfcourse();	
@@ -80,10 +80,10 @@ $object = $singlesubject->single_subject($subjid);
        <div class="form-group">
         <div class="col-md-8">
           <label class="col-md-4 control-label" for=
-          "ay" style="color:#780000; font-family:Poppins; font-size:14px;">Academic Year</label>
+          "ay" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Academic Year</label>
 
           <div class="col-md-8">
-            <select class="form-control input-sm" name="ay" id="ay">
+            <select class="form-control input-sm" name="ay" id="ay" style="font-size:15px;">
 				<option value="2017-2018">2017-2018</option>
 				<option value="2018-2019">2018-2019</option>
 				<option value="2019-2020">2019-2020</option>	

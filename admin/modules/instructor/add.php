@@ -9,12 +9,12 @@
               <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "name" style="color:#780000; font-family:Poppins; font-size:14px;">Fullname:</label>
+                      "name" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Fullname:</label>
 
                       <div class="col-md-8">
                         <input name="deptid" type="hidden" value="">
                          <input class="form-control input-sm" id="name" name="name" placeholder=
-                            "Account Name" type="text" value="">
+                            "Account Name" type="text" value="" style="font-size:15px;">
                       </div>
                     </div>
                   </div>
@@ -22,12 +22,12 @@
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "address" style="color:#780000; font-family:Poppins; font-size:14px;">Current Address:</label>
+                      "address" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Current Address:</label>
 
                       <div class="col-md-8">
                         <input name="deptid" type="hidden" value="">
                          <input class="form-control input-sm" id="address" name="address" placeholder=
-                            "Current Address" type="text" value="">
+                            "Current Address" type="text" value="" style="font-size:15px;">
                       </div>
                     </div>
                   </div>
@@ -35,10 +35,10 @@
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "Gender" style="color:#780000; font-family:Poppins; font-size:14px;">Gender:</label>
+                      "Gender" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Gender:</label>
 
                       <div class="col-md-8">
-                       <select class="form-control input-sm" name="Gender" id="Gender">
+                       <select class="form-control input-sm" name="Gender" id="Gender" style="font-size:15px;">
                           <option value="M">Male</option>
                           <option value="F">Female</option>
                           
@@ -50,10 +50,10 @@
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "civilstats" style="color:#780000; font-family:Poppins; font-size:14px;">Civil Status:</label>
+                      "civilstats" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Civil Status:</label>
 
                       <div class="col-md-8">
-                       <select class="form-control input-sm" name="civilstats" id="civilstats">
+                       <select class="form-control input-sm" name="civilstats" id="civilstats" style="font-size:15px;">
                           <option value="Single">Single</option>
                           <option value="Married">Married</option>
                           
@@ -65,12 +65,12 @@
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "specialization" style="color:#780000; font-family:Poppins; font-size:14px;">Specialization:</label>
+                      "specialization" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Specialization:</label>
 
                       <div class="col-md-8">
                         <input name="deptid" type="hidden" value="">
                          <input class="form-control input-sm" id="specialization" name="specialization" placeholder=
-                            "Specialization" type="text" value="">
+                            "Specialization" type="text" value="" style="font-size:15px;">
                       </div>
                     </div>
                   </div>
@@ -78,12 +78,12 @@
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "empStats" style="color:#780000; font-family:Poppins; font-size:14px;">Employment Status:</label>
+                      "empStats" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Employment Status:</label>
 
                       <div class="col-md-8">
                         <input name="deptid" type="hidden" value="">
                          <input class="form-control input-sm" id="empStats" name="empStats" placeholder=
-                            "Employment Status" type="text" value="">
+                            "Employment Status" type="text" value="" style="font-size:15px;">
                       </div>
                     </div>
                   </div>
@@ -93,12 +93,12 @@
             <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "email" style="color:#780000; font-family:Poppins; font-size:14px;">Email Address:</label>
+                      "email" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Email Address:</label>
 
                       <div class="col-md-8">
                         <input name="deptid" type="hidden" value="">
                          <input class="form-control input-sm" id="email" name="email" placeholder=
-                            "Email Address" type="email" value="">
+                            "Email Address" type="email" value="" style="font-size:15px;">
                       </div>
                     </div>
                   </div>
@@ -106,12 +106,12 @@
                   <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "pass" style="color:#780000; font-family:Poppins; font-size:14px;">Password:</label>
+                      "pass" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Password:</label>
 
                       <div class="col-md-8">
                         <input name="deptid" type="hidden" value="">
                          <input class="form-control input-sm" id="pass" name="pass" placeholder=
-                            "Account Password" type="Password" value="">
+                            "Account Password" type="Password" value="" style="font-size:15px;">
                       </div>
                     </div>
                   </div>

@@ -7,11 +7,11 @@
         <div class="form-group">
               <div class="col-md-8">
                 <label class="col-md-4 control-label" for=
-                "subjcode" style="color:#780000; font-family:Poppins; font-size:14px;">Subject Code</label>
+                "subjcode" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Subject Code</label>
 
                 <div class="col-md-8">
                    <input class="form-control input-sm" id="subjcode" name="subjcode" placeholder=
-                      "Subject Code" type="text" value="">
+                      "Subject Code" type="text" value="" style="font-size:15px;">
                 </div>
               </div>
             </div>
@@ -19,11 +19,11 @@
             <div class="form-group">
               <div class="col-md-8">
                 <label class="col-md-4 control-label" for=
-                "subjdesc" style="color:#780000; font-family:Poppins; font-size:14px;">Subject Description</label>
+                "subjdesc" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Subject Description</label>
 
                 <div class="col-md-8">
                    <input class="form-control input-sm" id="subjdesc" name="subjdesc" placeholder=
-                      "Subject Description" type="text" value="">
+                      "Subject Description" type="text" value="" style="font-size:15px;">
                 </div>
               </div>
             </div>
@@ -31,11 +31,11 @@
              <div class="form-group">
               <div class="col-md-8">
                 <label class="col-md-4 control-label" for=
-                "unit" style="color:#780000; font-family:Poppins; font-size:14px;">No of units</label>
+                "unit" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">No of units</label>
 
                 <div class="col-md-8">
                    <input class="form-control input-sm" id="unit" name="unit" placeholder=
-                      "No of units" type="text" value="">
+                      "No of units" type="text" value="" style="font-size:15px;">
                 </div>
               </div>
             </div>
@@ -46,17 +46,17 @@
 
                 <div class="col-md-8">-->
                    <input class="form-control input-sm" id="pre" name="pre" placeholder=
-                      "Prerequisite" type="hidden" value="">
+                      "Prerequisite" type="hidden" value="" style="font-size:15px;">
             <!--    </div>
               </div>
             </div>-->
              <div class="form-group">
               <div class="col-md-8">
                 <label class="col-md-4 control-label" for=
-                "course" style="color:#780000; font-family:Poppins; font-size:14px;">Year level</label>
+                "course" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Year level</label>
 
                 <div class="col-md-8">
-                 <select class="form-control input-sm" name="course" id="course">
+                 <select class="form-control input-sm" name="course" id="course" style="font-size:15px;">
                       <?php
                       $course = new Course();
                       $cur = $course->listOfDistinctcourse(); 
@@ -74,10 +74,10 @@
             <div class="form-group">
               <div class="col-md-8">
                 <label class="col-md-4 control-label" for=
-                "ay" style="color:#780000; font-family:Poppins; font-size:14px;">Academic Year</label>
+                "ay" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Academic Year</label>
 
                 <div class="col-md-8">
-                  <select class="form-control input-sm" name="ay" id="ay">
+                  <select class="form-control input-sm" name="ay" id="ay" style="font-size:15px;">
             <option value="2013-2014">2013-2014</option>
             <option value="2014-2015">2014-2015</option>
             <option value="2015-2016">2015-2016</option>
@@ -113,8 +113,9 @@
                 "idno"></label>
 
                 <div class="col-md-8">
+                    <a href="index.php" name="back" class="btn btn-default" style="background-color:#780000; font-family:Poppins; border-radius:5px;">Back</a>
                   <button class="btn btn-default" name="savecourse" type="submit" style="background-color:#780000; font-family:Poppins;"><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
-                 <button class="btn btn-default" name="saveandnewcourse" type="submit" style="background-color:#780000; font-family:Poppins;"><span class="glyphicon glyphicon-floppy-save"></span> Save and Add new</button>
+                 <button class="btn btn-default" name="saveandnewcourse" type="submit" style="background-color:#780000; font-family:Poppins;"><span class="glyphicon glyphicon-floppy-save"></span> Save and Add New</button>
                 </div>
               </div>
             </div>
