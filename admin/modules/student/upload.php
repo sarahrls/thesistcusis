@@ -3,18 +3,22 @@
 <div class="container">
 <div class="well">
 
-    <div>
-
-      <form action="controller.php?action=uploadcoe&id=<?php echo $object->IDNO ?>" method="POST" enctype="multipart/form-data">
+    <div><?php
+                $student = new Student();
+				$cur = $student->single_student($_GET['studentId']);
+        ?>
+      <form action="controller.php?action=uploadcoe&id=<?php echo $cur->IDNO ?>" method="POST" enctype="multipart/form-data">
           
 
           <h3 for="" style="margin-top:5px; font-family:Poppins; font-weight:900; ">Choose PDF File</h3>
         
       
-             
     <div class="">
-        
-              <input name="idno" type="hidden" value="<?php echo $object->COE_ID;?>">
+        <?php
+                $student = new Student();
+				$cur = $student->single_student($_GET['studentId']);
+        ?>
+              <input name="idno" type="hidden" value="<?php echo $cur->IDNO;?>">
         <h5 style="margin-top:5px; font-family:Poppins; font-weight:900; fon">1st Year</h5>
             <label style="color:#780000; font-family:Poppins; font-size:15px; margin-right:20px;">1st Sem</label> 
             <input id="COE" type="file" name="COE" value="" ><br>
@@ -51,7 +55,7 @@
             <input id="COE8" type="file" name="COE8" value="" ><br><br>
     </div>
           
-          <button class="btn btn-primary" id="upload" type="submit" name="submit" style="background-color:#780000; font-family:Poppins;">Submit</button>
+          <button class="btn btn-primary" id="submit" type="submit" name="submit" style="background-color:#780000; font-family:Poppins;">Submit</button>
         <?php
         
         //include 'dbconfig.php';

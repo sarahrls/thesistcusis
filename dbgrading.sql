@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2022 at 03:27 PM
+-- Generation Time: Dec 11, 2022 at 12:05 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.24
 
@@ -30,6 +30,28 @@ CREATE TABLE `ay` (
   `AY_ID` int(11) NOT NULL,
   `ACADYR` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chatbot`
+--
+
+CREATE TABLE `chatbot` (
+  `CHATBOT_ID` int(255) NOT NULL,
+  `QUERIES` longtext NOT NULL,
+  `ANSWERS` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `chatbot`
+--
+
+INSERT INTO `chatbot` (`CHATBOT_ID`, `QUERIES`, `ANSWERS`) VALUES
+(2, 'hi', 'hi'),
+(3, 'hello', 'hell'),
+(4, 'shift course to another course?', 'You can go to registrar office so they can assist you about shifting your course.'),
+(5, 'best time to go to the registrar office , registrar open hours ,  oras bukas ng registrar', 'Taguig City University Registrar is open from Monday to Friday 8am to 5pm. ');
 
 -- --------------------------------------------------------
 
@@ -145,7 +167,7 @@ INSERT INTO `grades` (`GRADE_ID`, `IDNO`, `SUBJ_ID`, `INST_ID`, `SYID`, `FIRST`,
 (49, 1900679, 482, 0, 13, '0', '0', 0, 0, '0', 'NONE', '00:00:00', '', 'NONE', ''),
 (50, 1900742, 482, 0, 15, '0', '0', 0, 0, '0', 'NONE', '00:00:00', '', 'NONE', ''),
 (51, 1900742, 483, 8, 19, '1.75', '1.00', 0, 0, '1.00', 'NONE', '00:00:00', '', 'Passed', ''),
-(52, 1900742, 484, 8, 19, '2.50', '2.50', 0, 0, '2.50', 'NONE', '00:00:00', '', 'Passed', ''),
+(52, 1900742, 484, 8, 19, '1.00', '1.00', 0, 0, '1.00', 'NONE', '00:00:00', '', 'Passed', ''),
 (53, 1900742, 485, 0, 19, '0', '0', 0, 0, '0', 'NONE', '00:00:00', '', 'NONE', ''),
 (54, 1900742, 486, 0, 19, '0', '0', 0, 0, '0', 'NONE', '00:00:00', '', 'NONE', ''),
 (55, 1900742, 487, 0, 19, '0', '0', 0, 0, '0', 'NONE', '00:00:00', '', 'NONE', ''),
@@ -201,7 +223,8 @@ INSERT INTO `grades` (`GRADE_ID`, `IDNO`, `SUBJ_ID`, `INST_ID`, `SYID`, `FIRST`,
 (105, 1900742, 536, 0, 34, '', '', 0, 0, '', 'NONE', '00:00:00', '', 'NONE', ''),
 (106, 1900742, 537, 0, 34, '', '', 0, 0, '', 'NONE', '00:00:00', '', 'NONE', ''),
 (107, 1900742, 538, 0, 34, '', '', 0, 0, '', 'NONE', '00:00:00', '', 'NONE', ''),
-(108, 1900742, 539, 0, 34, '', '', 0, 0, '', 'NONE', '00:00:00', '', 'NONE', '');
+(108, 1900742, 539, 0, 34, '', '', 0, 0, '', 'NONE', '00:00:00', '', 'NONE', ''),
+(109, 0, 0, 0, 0, '', '', 0, 0, '', '', '00:00:00', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -461,14 +484,6 @@ CREATE TABLE `tblrequirements` (
   `IDNO` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tblrequirements`
---
-
-INSERT INTO `tblrequirements` (`REQ_ID`, `NSO`, `BAPTISMAL`, `ENTRANCE_TEST_RESULT`, `MARRIAGE_CONTRACT`, `CERTIFICATE_OF_TRANSFER`, `IDNO`) VALUES
-(1, 'No', 'No', 'No', 'No', 'No', 19),
-(2, 'No', 'No', 'No', 'No', 'No', 12);
-
 -- --------------------------------------------------------
 
 --
@@ -478,15 +493,32 @@ INSERT INTO `tblrequirements` (`REQ_ID`, `NSO`, `BAPTISMAL`, `ENTRANCE_TEST_RESU
 CREATE TABLE `tblstudcoe` (
   `COE_ID` int(255) NOT NULL,
   `IDNO` int(255) NOT NULL,
-  `COE` varchar(300) NOT NULL
+  `COE` varchar(300) NOT NULL,
+  `COE2` varchar(300) NOT NULL,
+  `COE3` varchar(300) NOT NULL,
+  `COE4` varchar(300) NOT NULL,
+  `COE5` varchar(300) NOT NULL,
+  `COE6` varchar(300) NOT NULL,
+  `COE7` varchar(300) NOT NULL,
+  `COE8` varchar(300) NOT NULL,
+  `COE9` varchar(300) NOT NULL,
+  `COE10` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tblstudcoe`
 --
 
-INSERT INTO `tblstudcoe` (`COE_ID`, `IDNO`, `COE`) VALUES
-(1, 0, 'Interview Request.pdf');
+INSERT INTO `tblstudcoe` (`COE_ID`, `IDNO`, `COE`, `COE2`, `COE3`, `COE4`, `COE5`, `COE6`, `COE7`, `COE8`, `COE9`, `COE10`) VALUES
+(14, 1900742, 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE'),
+(15, 123, 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE'),
+(16, 223, 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE'),
+(17, 21, 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE'),
+(18, 1900664, 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE', 'NONE'),
+(19, 0, 'Interview Request.pdf', '', '', '', '', '', '', '', '', ''),
+(20, 0, 'Interview Request.pdf', '', '', '', '', '', '', '', '', ''),
+(21, 0, 'Interview Request.pdf', '', '', '', '', '', '', '', '', ''),
+(22, 0, 'Interview Request.pdf', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -515,21 +547,29 @@ CREATE TABLE `tblstuddetails` (
 --
 
 INSERT INTO `tblstuddetails` (`DETAIL_ID`, `FATHER`, `FATHER_OCCU`, `MOTHER`, `MOTHER_OCCU`, `BOARDING`, `WITH_FAMILY`, `GUARDIAN`, `GUARDIAN_ADDRESS`, `OTHER_PERSON_SUPPORT`, `ADDRESS`, `COE`, `IDNO`) VALUES
-(48, 'BENIGNO B. CORTEZ', 'FARMER', 'TERESITA P. CORTEZ', 'HOUSE WIFE', 'Yes', 'No', 'BENIGNO B. CORTEZ', 'TABUGON,kABANKALAN CITY', 'NONE', 'NONE', '', 20001550),
-(60, 'Abraham I. Sison', 'Retired', 'Rosita Lim', 'House Wife', '', '', 'Abraham I. Sison', '120P MLQ St. New Lower Bicutan, Taguig City', 'Rosita Lim', '120P MLQ St. New Lower Bicutan, Taguig City', '', 1900742),
-(61, '', '', '', '', '', '', '', '', '', '', '', 19),
-(62, '', '', '', '', '', '', 'nkn', 'knkjnk', 'kjnkn', 'knkj', '', 12),
-(63, '', '', '', '', 'no', 'yes', 'kvbh', 'vhj', 'mbbb', 'jjhbb', '', 123),
-(64, '', '', '', '', 'no', 'yes', 'kvbh', 'vhj', 'mbbb', 'jjhbb', '', 123),
-(65, '', '', '', '', 'no', 'yes', 'kkj', 'knk', 'nnkn', 'nknk', '', 3232),
-(66, '', '', '', '', 'no', 'yes', 'Eric Mendiola', 'Ibayo Tipas, Taguig', 'Christel Mendiola', 'Ibayo Tipas, Taguig', '', 1900664),
-(67, '', '', '', '', 'no', 'yes', 'Marcela Macabante', 'Lower Bicutan, Taguig City', 'Bruno Macabante', 'Lower Bicutan, Taguig City', '', 1902245),
-(68, '', '', '', '', 'no', 'yes', ',mn,mn', 'jhgg', 'jbgjhbjh', 'hbjh', '', 123141),
 (69, '', '', '', '', 'no', 'yes', 'hvfvhgv', 'vgh', 'hb hb ', 'hbhbh', '', 12467),
 (70, '', '', '', '', 'no', 'yes', '', '', '', '', 'JeremiahS.pdf', 0),
 (71, '', '', '', '', 'no', 'yes', '', '', '', '', 'Interview Request.pdf', 0),
 (72, '', '', '', '', 'no', 'yes', '', '', '', '', 'Interview Request.pdf', 0),
-(73, '', '', '', '', 'no', 'yes', '', '', '', '', 'print.pdf', 0);
+(73, '', '', '', '', 'no', 'yes', '', '', '', '', 'print.pdf', 0),
+(74, '', '', '', '', 'no', 'yes', 'Elizabeth Andes', 'San Miguel, Taguig City', 'Eduardo Sr. Andes', 'San Miguel, Taguig City', '', 1900771),
+(75, '', '', '', '', 'no', 'yes', 'jhbjhb', 'jhbjhb', 'hb', 'hbjh', '', 1231),
+(76, '', '', '', '', 'no', 'yes', 'kbkbkj', 'bjbjhb', 'jhhjb', 'jhhbjh', '', 12345),
+(92, '', '', '', '', 'no', 'yes', 'csdcsd', 'cdscsd', 'cdscs', 'csdcds', '', 123221),
+(93, '', '', '', '', 'no', 'yes', 'uvjhjh', 'jhbjhb', 'hgvh', 'bbbbbbbbbbbj', '', 2323),
+(94, '', '', '', '', 'no', 'yes', 'vsdvsd', 'vsdvsdv', 'vsdvsd', 'dsvssdv', '', 1223),
+(95, '', '', '', '', 'no', 'yes', 'sdada', 'dasdas', 'dasdad', 'asdad', '', 123),
+(96, '', '', '', '', 'no', 'yes', 'vsdvsd', 'vsdvsdv', 'vdsvsd', 'vsdvds', '', 32),
+(97, '', '', '', '', 'no', 'yes', 'kbkhbjh', 'kjbkjbj', 'kjbjhbj', 'jbjhbj', '', 31232),
+(98, '', '', '', '', 'no', 'yes', 'asdfghjkl', 'asdfghjkl', 'asdfghjkl', 'asdfghjkl', '', 123),
+(99, '', '', '', '', 'no', 'yes', 'fsdfsd', 'dsfsd', 'fdsfsdf', 'sdfds', '', 31232),
+(100, '', '', '', '', 'no', 'yes', 'Abraham I. Sison', '120P MLQ St. New Lower Bicutan, Taguig City', 'Rosita Lim', '120P MLQ St. New Lower Bicutan, Taguig City', '', 1900742),
+(101, '', '', '', '', 'no', 'yes', 'dad', 'dasda', 'dasd', 'sdsa', '', 123),
+(104, '', '', '', '', 'no', 'yes', 'Eric Mendiola', 'Tipas, Taguig', 'Christel Mendiola', 'Tipas, Taguig', '', 1900664),
+(105, '', '', '', '', 'no', 'yes', 'dfsdfs', 'fsdfa', 'feaf', 'df', '', 1212),
+(106, '', '', '', '', 'no', 'yes', 'afsdf', 'dfdf', 'dfdf', 'dfsd', '', 1232),
+(107, '', '', '', '', 'no', 'yes', 'Marcela Macabante', 'Bicutan, Taguig', 'Marcelo Macabante', 'Bicutan, Taguig', '', 1902245),
+(108, '', '', '', '', 'no', 'yes', 'Evelyn Bayod', 'Wawa, Taguig', 'Mario Bayod', 'Wawa, Taguig', '', 1900930);
 
 -- --------------------------------------------------------
 
@@ -539,20 +579,20 @@ INSERT INTO `tblstuddetails` (`DETAIL_ID`, `FATHER`, `FATHER_OCCU`, `MOTHER`, `M
 
 CREATE TABLE `tblstudent` (
   `S_ID` int(11) NOT NULL,
-  `IDNO` varchar(20) NOT NULL,
-  `FNAME` varchar(40) NOT NULL,
-  `LNAME` varchar(40) NOT NULL,
-  `MNAME` varchar(40) NOT NULL,
-  `SEX` varchar(10) NOT NULL DEFAULT 'Male',
-  `BDAY` date NOT NULL,
-  `BPLACE` text NOT NULL,
-  `STATUS` varchar(30) NOT NULL,
-  `AGE` int(30) NOT NULL,
-  `NATIONALITY` varchar(40) NOT NULL,
-  `RELIGION` varchar(255) NOT NULL,
-  `CONTACT_NO` varchar(40) NOT NULL,
-  `HOME_ADD` text NOT NULL,
-  `EMAIL` varchar(255) NOT NULL
+  `IDNO` varchar(700) NOT NULL,
+  `FNAME` longtext NOT NULL,
+  `LNAME` longtext NOT NULL,
+  `MNAME` longtext NOT NULL,
+  `SEX` longtext NOT NULL,
+  `BDAY` longtext NOT NULL,
+  `BPLACE` longtext NOT NULL,
+  `STATUS` longtext NOT NULL,
+  `AGE` longtext NOT NULL,
+  `NATIONALITY` longtext NOT NULL,
+  `RELIGION` longtext NOT NULL,
+  `CONTACT_NO` varchar(1000) NOT NULL,
+  `HOME_ADD` longtext NOT NULL,
+  `EMAIL` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -560,9 +600,13 @@ CREATE TABLE `tblstudent` (
 --
 
 INSERT INTO `tblstudent` (`S_ID`, `IDNO`, `FNAME`, `LNAME`, `MNAME`, `SEX`, `BDAY`, `BPLACE`, `STATUS`, `AGE`, `NATIONALITY`, `RELIGION`, `CONTACT_NO`, `HOME_ADD`, `EMAIL`) VALUES
-(57, '1900742', 'Sarah Rose', 'Sison', 'Lim', 'F', '2001-01-20', 'Manila', 'Single', 21, 'Filipino', 'The Church of Jesus Christ of Latter Day Saints', '09761131191', '120P MLQ St. New Lower Bicutan, Taguig City', 'sarahroselimsison@gmail.com'),
-(58, '1900679', 'Mary Jane', 'Bayod', 'Buhatin', 'F', '0000-00-00', '', 'Single', 21, '', '', '', '', 'bayodmaryjane@gmail.com'),
-(63, '1900664', 'Ma. Antonette', 'Mendiola', 'Esguerra', 'F', '2001-05-20', 'Taguig', 'Single', 21, 'Filipino', 'Chirstian', '09563329334', 'Ibayo Tipas, Taguig', 'tonet@gmail.com');
+(90, '1900742', 'Sarah Rose', 'Sison', 'Lim', 'F', '2001-01-20', 'Manila', 'Single', '21', 'Filipino', 'Mormons', '09761131191', '120P MLQ St. New Lower Bicutan, Taguig City', 'sarahroselimsison@gmail.com'),
+(91, '123', 'sas', 'sa', 'sa', 'F', '2022-12-07', 'sa', 'Single', '23', 'sa', 'sa', '312', 'das', 'sa@sa'),
+(94, 'ryBj8rT088PpK/LaFTOAIw==', 'Ma. Antonette', 'Mendiola', 'Esguerra', 'F', '2001-05-20', 'Taguig', 'Single', '21', 'Filipino', 'Born Again Christian', '09563329334', 'Tipas, Taguig', 'mendiola@gmail.com'),
+(95, 'pdOpYUIN0sWTk60hZN3Nig==', 'vzdvzd', 'dadf', 'zdvzdfv', 'M', '2022-12-09', 'zvzvzv', 'Single', '12', 'fvzvz', 'zcvvvv', '1234', 'sfd', 'sara@gmail.com'),
+(96, 'VK8M1EMgpCxvd9ZSex8wTw==', 'dfadf', 'afdf', 'fasdf', 'M', '2022-12-07', 'adsff', 'Single', '23', 'sdf', 'dfas', '1231', 'dadfd', 'vdfadf@gmail.com'),
+(97, 'EWUDMx6FVo2pEW2ojZ/o0g==', 'pG7z/5D5d54poXNPgpSppg==', 'ntp7q6npq1XR5w/ByREQPA==', 'z5RatPVGwNksvJCCpCC5PA==', '+ZA06is9s7WgS8+8wBxYHw==', 'RakOUxAU2vU2bltLKb7Ufg==', '5TqHpojGiX65yGEmxetkHA==', 'ZOant/L/NucMeOSAUuLiDg==', 'ZRyL5SjD3peC/vRKjukIfQ==', 'voHCyhjVoRR0ntH/9D0fbw==', '1gGv2KqxQbEU648rCPUSsg==', 'BHZ40dgx0jkVwTqmtdgtrw==', 'b605zSCcGxbp6KoXDJ9jUQ==', '2WUonKn1+mRwcVJy/n0xmA8SMcY16EBQToRNVJkqXJ4='),
+(98, 'z8DqhGetoRiba9EZpRkq4w==', 'w78QC8+JP1O1rIBPQD0g1Q==', 'MNAr3VHIRiuHIKNSTjRyKg==', 'CDZUJUqnbFGkTAFAjHwFjg==', 'patETJBr/DjL1DcxhIMIhA==', 'XCy6oD4QxGyG/rdt2uuHFA==', '5TqHpojGiX65yGEmxetkHA==', 'ZOant/L/NucMeOSAUuLiDg==', 'pktvRjSSUuojEiZsWeQq1Q==', 'voHCyhjVoRR0ntH/9D0fbw==', '1gGv2KqxQbEU648rCPUSsg==', 'WDXtH9pi5I7kCSRjHM5u6w==', 'ZQeC5Z2imFCOM0OZTEEBQw==', '3e8zd6JWoDznb+oMtcGLpZ4V6fijwEHe/vKO/WSxcKk=');
 
 -- --------------------------------------------------------
 
@@ -597,6 +641,12 @@ INSERT INTO `useraccounts` (`ACCOUNT_ID`, `ACCOUNT_NAME`, `ACCOUNT_USERNAME`, `A
 ALTER TABLE `ay`
   ADD PRIMARY KEY (`AY_ID`),
   ADD UNIQUE KEY `acadyr` (`ACADYR`);
+
+--
+-- Indexes for table `chatbot`
+--
+ALTER TABLE `chatbot`
+  ADD PRIMARY KEY (`CHATBOT_ID`);
 
 --
 -- Indexes for table `class`
@@ -719,6 +769,11 @@ ALTER TABLE `useraccounts`
 ALTER TABLE `ay`
   MODIFY `AY_ID` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `chatbot`
+--
+ALTER TABLE `chatbot`
+  MODIFY `CHATBOT_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
 -- AUTO_INCREMENT for table `class`
 --
 ALTER TABLE `class`
@@ -737,7 +792,7 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT for table `grades`
 --
 ALTER TABLE `grades`
-  MODIFY `GRADE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
+  MODIFY `GRADE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
 --
 -- AUTO_INCREMENT for table `instructor`
 --
@@ -787,22 +842,22 @@ ALTER TABLE `subject`
 -- AUTO_INCREMENT for table `tblrequirements`
 --
 ALTER TABLE `tblrequirements`
-  MODIFY `REQ_ID` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `REQ_ID` int(30) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `tblstudcoe`
 --
 ALTER TABLE `tblstudcoe`
-  MODIFY `COE_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `COE_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `tblstuddetails`
 --
 ALTER TABLE `tblstuddetails`
-  MODIFY `DETAIL_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `DETAIL_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 --
 -- AUTO_INCREMENT for table `tblstudent`
 --
 ALTER TABLE `tblstudent`
-  MODIFY `S_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `S_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 --
 -- AUTO_INCREMENT for table `useraccounts`
 --
