@@ -179,12 +179,19 @@
 .typing-field .input-data button:hover{
     background: #780000;
 }
-        
-        
-        
-        
-        
 	</style>
+
+<?php 
+
+				$student = new Student();
+				$cur = $student->single_student($_SESSION['IDNO']);
+            
+                require_once ("includes/encryption.php");
+                $aes = new AdvanceEncryptionStandard('WR7rLKlVvJdEAIzHUMpt4dcEKsXPinIU2KiWzm++bhg=','AES-256-CBC','NJ0oI9P1fytagUfPny3qTA==');
+            
+                $decrypted_LNAME = $aes->decryptData($cur->LNAME);
+                $decrypted_FNAME = $aes->decryptData($cur->FNAME);
+?>
     
     <div class="site-section">
       <div class="container">
@@ -196,8 +203,8 @@
             <div class="quick-contact-form bg-white" style="margin-top:-620px;">
                 <h2 style="font-size: 18px; color: #780000;">Login Information</h2>
                 <hr/>
-               <span class="fa fa-user"> </span> <label><?Php echo $_SESSION['FNAME'];?></label><br/>
-               <span class="fa fa-cog"> </span> <label><?Php echo $_SESSION['LNAME'];?></label><br/>
+               <label style="font-size:20px; color:#780000; font-weight:500;"><?Php echo $decrypted_FNAME;?></label> 
+               <label style="font-size:20px; color:#780000; font-weight:500;"><?Php echo $decrypted_LNAME;?></label><br/>
                <hr/>
                   <div class="form-group">
                 <a href="logout.php" class="btn btn-primary px-5"  style="margin-left:150px; background-color:#780000; border: solid 1px #780000;">Logout <span class="fa fa-log-out"></span></a>
