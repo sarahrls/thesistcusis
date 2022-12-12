@@ -97,6 +97,13 @@
 
 					$student = new Student();
 					$cur = $student->single_student($_GET['studentId']);
+                    require_once ("includes/encryption.php");
+                                $aes = new AdvanceEncryptionStandard('WR7rLKlVvJdEAIzHUMpt4dcEKsXPinIU2KiWzm++bhg=','AES-256-CBC','NJ0oI9P1fytagUfPny3qTA==');
+                       
+                            //$decrypted_IDNO = $aes->decryptData($student->IDNO);
+                            $decrypted_LNAME = $aes->decryptData($cur->LNAME);
+                            $decrypted_FNAME = $aes->decryptData($cur->FNAME);
+                            //$decrypted_MNAME = $aes->decryptData($cur->MNAME);
 
 				}
 			}
@@ -123,7 +130,7 @@
 						     		
 						     		<td>
 						     			<p><b>ID Number : </b><?php echo (isset($cur)) ? $cur->IDNO : 'ID' ;?><br/>
-						     		<b>Name :</b><?php echo (isset($cur)) ? $cur->LNAME.', '.$cur->FNAME : 'Fullname' ;?><br/>
+						     		<b>Name : </b><?php echo (isset($cur)) ? $decrypted_LNAME.', '.$decrypted_FNAME : 'Fullname' ;?><br/>
 						     		<b>Status : </b><?php echo (isset($sy)) ? $sy->STATUS : 'STATUS' ;?><br/>
 						     		<b>AY : </b><?php echo (isset($sy)) ? $sy->AY : 'STATUS' ;?><br/>
 						     	<!--	<td> <?php //echo (isset($sy)) ? $sy->SEMESTER : 'COURSE' ;?></td>-->
@@ -170,16 +177,24 @@
 									
 								  			$cur = $mydb->loadResultlist();
 											foreach ($cur as $result) {
+                                                
+                                $aes = new AdvanceEncryptionStandard('WR7rLKlVvJdEAIzHUMpt4dcEKsXPinIU2KiWzm++bhg=','AES-256-CBC','NJ0oI9P1fytagUfPny3qTA==');
+                       
+                                
+                            $decrypted_FIRST = $aes->decryptData($result->FIRST);
+                            $decrypted_SECOND = $aes->decryptData($result->SECOND);
+                            $decrypted_AVE = $aes->decryptData($result->AVE);
+                            $decrypted_REMARKS = $aes->decryptData($result->REMARKS);
 										  		echo '<tr>';
 
 										  		echo '<td width="15%">'. $result->SUBJ_CODE .'</td>';
 										  		echo '<td width="30%">'. $result->SUBJ_DESCRIPTION.'</td>';
-									  			echo '<td>'.$result->FIRST.'</td>';
-										  		echo '<td>'. $result->SECOND.'</td>';
+									  			echo '<td>'.$decrypted_FIRST.'</td>';
+										  		echo '<td>'. $decrypted_SECOND.'</td>';
 										  		//echo '<td>'. $result->THIRD.'</td>';
 										  		//echo '<td>'. $result->FOURTH.'</td>';
-										  		echo '<td>'. $result->AVE.'</td>';  
-										  		echo '<td>'. $result->REMARKS.'</td>';  	
+										  		echo '<td>'. $decrypted_AVE.'</td>';  
+										  		echo '<td>'. $decrypted_REMARKS.'</td>';  	
 										  	//	echo '<td>'. $result->SEMESTER.'</td>';
 										  	//	echo '<td>'. $result->COURSE_NAME.'</td>';
 										  		//echo '<td>'. $result->COURSE_LEVEL.'</td>';

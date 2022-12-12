@@ -16,13 +16,26 @@ $cur = $grade->single_grades($gradeId);
         <?php 
         	$stud = new Student();
         	$cur=$stud->single_student($studentId);
+            
+            
+            
+            
+            require_once ("../../../includes/encryption.php");
+                                $aes = new AdvanceEncryptionStandard('WR7rLKlVvJdEAIzHUMpt4dcEKsXPinIU2KiWzm++bhg=','AES-256-CBC','NJ0oI9P1fytagUfPny3qTA==');
+                       
+                            //$decrypted_IDNO = $aes->decryptData($student->IDNO);
+                            $decrypted_LNAME = $aes->decryptData($cur->LNAME);
+                            $decrypted_FNAME = $aes->decryptData($cur->FNAME);
+
+            
+            
         ?>
           <label class="col-md-4 control-label" for=
           "subjdesc">Name</label>
 
           <div class="col-md-8">
              <input class="form-control input-sm" id="studname" name="studname" readonly placeholder=
-								  "Subject Description" type="text" value="<?php echo (isset($cur)) ? $cur->LNAME . ' , '.$cur->FNAME: 'Name' ;?>">
+								  "Subject Description" type="text" value="<?php echo (isset($cur)) ? $decrypted_LNAME . ' , '.$decrypted_FNAME: 'Name' ;?>">
           </div>
         </div>
           </div>								

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2022 at 12:05 PM
+-- Generation Time: Dec 12, 2022 at 04:14 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.24
 
@@ -51,7 +51,37 @@ INSERT INTO `chatbot` (`CHATBOT_ID`, `QUERIES`, `ANSWERS`) VALUES
 (2, 'hi', 'hi'),
 (3, 'hello', 'hell'),
 (4, 'shift course to another course?', 'You can go to registrar office so they can assist you about shifting your course.'),
-(5, 'best time to go to the registrar office , registrar open hours ,  oras bukas ng registrar', 'Taguig City University Registrar is open from Monday to Friday 8am to 5pm. ');
+(5, 'best time to go to the registrar office , registrar open hours ,  oras bukas ng registrar', 'Taguig City University Registrar is open from Monday to Friday 8am to 5pm. '),
+(6, 'Is there any chance we could access my information online?', 'Yes, through our Student Information System.'),
+(7, 'Does the registrarâ€™s Office have another social media platform? ', 'Facebook page: https://www.facebook.com/officialtcuregistrar '),
+(8, 'Who are the course evaluators in the registrar office?', ': Emily Carpio â€“ Marketing : Vilma Merjan â€“ English/Science Major'),
+(9, 'Who are the course evaluators ', ': Emily Carpio â€“ Marketing : Vilma Merjan â€“ English/Science Major'),
+(10, 'Can I interview the registrar staff?', 'You have to file a permission letter to the registrarâ€™s office.'),
+(11, 'Can I interview the registrar office?', 'You have to file a permission letter to the registrarâ€™s office.'),
+(12, 'Can I get my old records in the registrar office?', 'You have to file a request form to the Registrarâ€™s Office.'),
+(13, 'Can you give me the contact number of the registrarâ€™s office?', '09234567890'),
+(14, 'Contact number of registrar office', '09234567890'),
+(15, 'Are there dress codes to be followed in entering the registrar office? ', 'Dress code: Pants, Sleeved Shirts, 3 inches above the knee skirts, closed shoes, No revealing clothes '),
+(16, 'Are you accepting transfer students? ', 'Unfortunately, No at this moment. '),
+(17, 'When is the admission for the next school year?', 'There is no available date at the moment. '),
+(18, 'What are the requirements for admission? ', 'Birth certificate, Grade 12 Card, Good moral Certificate, Voterâ€™s Certificate'),
+(19, 'What are the basic requirements for admission? ', 'Birth certificate, Grade 12 Card, Good moral Certificate, Voterâ€™s Certificate'),
+(20, 'When is the enrollment for graduate studies?', 'There is no available date at the moment. The graduate studies are still ongoing for this school year. '),
+(21, ' Is there a tuition fee at Taguig City University?', 'No.'),
+(22, 'How many units do the students allow to take? ', '27 units.'),
+(23, 'Does the Taguig City University Accept balik-aral students?', 'Yes.'),
+(24, 'Does the Senior High School Student belong to the system?', 'Sorry, but 1st year to 4th year only.'),
+(25, 'Where can I see my grades?', 'Log in to your account and go to the grades button.'),
+(26, 'Can I still see my past grades?', 'Yes, you can still see your past grades.'),
+(27, 'Can I still see my past subject?', 'Yes, you can still see your past subject.'),
+(28, 'Pwede bang kunin yung dating records?', 'Oo, maari kang pumunta sa registrar office para mag request sa pagkuha ng lumang records.  '),
+(29, 'Kailan pwedeng pumunta sa registrar office?', 'Maari kang pumunta sa registrar of Lunes hanggang Biyernes, 8am â€“ 5pm'),
+(30, 'Pwede bang magpasurvey sa registrar staff?', ' Kailangan mo ng permission letter para makapagpa survey sa registrar'),
+(31, 'Kailan pwede mag enroll sa taguig city university?', 'Sa ngayon wala pang araw kung kailan pwedeng mag enroll.'),
+(32, 'Ano ang requirement na ipapa pag nag enroll?', ' Birth certificate, Grade 12 Card, Good moral Certificate, Voterâ€™s Certificate'),
+(33, 'Tumataggap ba ang taguig city university ng transfer students?', 'Sa ngayon ay hindi muna tumataggap.'),
+(34, 'tumataggap ba kayo ng transfer students?', 'Sa ngayon ay hindi muna tumataggap.'),
+(35, 'pwede bang mag log in ang mga senior high school?', 'sa ngayon ay 1st year hanggang 4th year lamang ang pwede ');
 
 -- --------------------------------------------------------
 
@@ -79,7 +109,12 @@ CREATE TABLE `class` (
 
 INSERT INTO `class` (`CLASS_ID`, `CLASS_CODE`, `SUBJ_ID`, `INST_ID`, `SYID`, `AY`, `DAY`, `C_TIME`, `IDNO`, `ROOM`, `SECTION`) VALUES
 (18, 'CC 101', 483, 8, 0, '2019-2020', 'MWF', '7:30-8:30', 0, '401', 'E2019'),
-(19, 'CC 102', 484, 8, 0, '2019-2020', 'NONE', 'NONE', 0, 'NONE', 'NONE');
+(19, 'CC 102', 484, 8, 0, '2019-2020', 'NONE', 'NONE', 0, 'NONE', 'NONE'),
+(20, 'AL 101', 486, 9, 0, '2019-2020', 'TTH', '7:30-8:30', 0, '401', 'E2019'),
+(21, 'GE 1', 487, 9, 0, '2019-2020', 'NONE', 'NONE', 0, 'NONE', 'NONE'),
+(22, 'GE 2', 488, 9, 0, '2019-2020', 'NONE', 'NONE', 0, 'NONE', 'NONE'),
+(23, 'GE 10', 489, 9, 0, '2019-2020', 'NONE', 'NONE', 0, 'NONE', 'NONE'),
+(24, 'PE 1', 490, 9, 0, '2017-2018', 'NONE', 'NONE', 0, 'NONE', 'NONE');
 
 -- --------------------------------------------------------
 
@@ -148,14 +183,14 @@ CREATE TABLE `grades` (
   `INST_ID` int(11) NOT NULL,
   `SYID` int(30) NOT NULL,
   `FIRST` longtext NOT NULL,
-  `SECOND` varchar(11) NOT NULL,
+  `SECOND` longtext NOT NULL,
   `THIRD` int(11) NOT NULL,
   `FOURTH` int(11) NOT NULL,
-  `AVE` varchar(100) NOT NULL,
+  `AVE` longtext NOT NULL,
   `DAY` varchar(30) NOT NULL,
   `G_TIME` time NOT NULL,
   `ROOM` varchar(30) NOT NULL,
-  `REMARKS` text NOT NULL,
+  `REMARKS` longtext NOT NULL,
   `COMMENT` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -166,7 +201,7 @@ CREATE TABLE `grades` (
 INSERT INTO `grades` (`GRADE_ID`, `IDNO`, `SUBJ_ID`, `INST_ID`, `SYID`, `FIRST`, `SECOND`, `THIRD`, `FOURTH`, `AVE`, `DAY`, `G_TIME`, `ROOM`, `REMARKS`, `COMMENT`) VALUES
 (49, 1900679, 482, 0, 13, '0', '0', 0, 0, '0', 'NONE', '00:00:00', '', 'NONE', ''),
 (50, 1900742, 482, 0, 15, '0', '0', 0, 0, '0', 'NONE', '00:00:00', '', 'NONE', ''),
-(51, 1900742, 483, 8, 19, '1.75', '1.00', 0, 0, '1.00', 'NONE', '00:00:00', '', 'Passed', ''),
+(51, 1900742, 483, 8, 19, 'g6scQ1cfgMDuNuOYw906Fw==', 'g6scQ1cfgMDuNuOYw906Fw==', 0, 0, 'g6scQ1cfgMDuNuOYw906Fw==', 'NONE', '00:00:00', '', 'zS0INBLNDrUsS9rf5J/5jA==', ''),
 (52, 1900742, 484, 8, 19, '1.00', '1.00', 0, 0, '1.00', 'NONE', '00:00:00', '', 'Passed', ''),
 (53, 1900742, 485, 0, 19, '0', '0', 0, 0, '0', 'NONE', '00:00:00', '', 'NONE', ''),
 (54, 1900742, 486, 0, 19, '0', '0', 0, 0, '0', 'NONE', '00:00:00', '', 'NONE', ''),
@@ -518,7 +553,16 @@ INSERT INTO `tblstudcoe` (`COE_ID`, `IDNO`, `COE`, `COE2`, `COE3`, `COE4`, `COE5
 (19, 0, 'Interview Request.pdf', '', '', '', '', '', '', '', '', ''),
 (20, 0, 'Interview Request.pdf', '', '', '', '', '', '', '', '', ''),
 (21, 0, 'Interview Request.pdf', '', '', '', '', '', '', '', '', ''),
-(22, 0, 'Interview Request.pdf', '', '', '', '', '', '', '', '', '');
+(22, 0, 'Interview Request.pdf', '', '', '', '', '', '', '', '', ''),
+(23, 0, 'Interview Request.pdf', '', '', '', '', '', '', '', '', ''),
+(24, 0, 'Interview Request.pdf', '', '', '', '', '', '', '', '', ''),
+(25, 0, 'Interview Request.pdf', '', '', '', '', '', '', '', '', ''),
+(26, 1900742, 'Interview Request.pdf', '', '', '', '', '', '', '', '', ''),
+(27, 1900742, 'Interview Request.pdf', '', '', '', '', '', '', '', '', ''),
+(28, 1900742, 'Interview Request.pdf', '', '', '', '', '', '', '', '', ''),
+(29, 1900742, 'Interview Request.pdf', '', '', '', '', '', '', '', '', ''),
+(30, 1900742, '', '', '', '', '', '', '', '', '', ''),
+(31, 1900742, 'Interview Request.pdf', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -528,17 +572,11 @@ INSERT INTO `tblstudcoe` (`COE_ID`, `IDNO`, `COE`, `COE2`, `COE3`, `COE4`, `COE5
 
 CREATE TABLE `tblstuddetails` (
   `DETAIL_ID` int(11) NOT NULL,
-  `FATHER` varchar(255) NOT NULL,
-  `FATHER_OCCU` varchar(255) NOT NULL,
-  `MOTHER` varchar(255) NOT NULL,
-  `MOTHER_OCCU` varchar(255) NOT NULL,
-  `BOARDING` varchar(5) NOT NULL DEFAULT 'no',
-  `WITH_FAMILY` varchar(5) NOT NULL DEFAULT 'yes',
-  `GUARDIAN` varchar(255) NOT NULL,
-  `GUARDIAN_ADDRESS` varchar(255) NOT NULL,
-  `OTHER_PERSON_SUPPORT` varchar(255) NOT NULL,
-  `ADDRESS` text NOT NULL,
-  `COE` varchar(300) NOT NULL,
+  `GUARDIAN` longtext NOT NULL,
+  `GUARDIAN_ADDRESS` longtext NOT NULL,
+  `OTHER_PERSON_SUPPORT` longtext NOT NULL,
+  `ADDRESS` longtext NOT NULL,
+  `COE` longtext NOT NULL,
   `IDNO` int(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -546,30 +584,33 @@ CREATE TABLE `tblstuddetails` (
 -- Dumping data for table `tblstuddetails`
 --
 
-INSERT INTO `tblstuddetails` (`DETAIL_ID`, `FATHER`, `FATHER_OCCU`, `MOTHER`, `MOTHER_OCCU`, `BOARDING`, `WITH_FAMILY`, `GUARDIAN`, `GUARDIAN_ADDRESS`, `OTHER_PERSON_SUPPORT`, `ADDRESS`, `COE`, `IDNO`) VALUES
-(69, '', '', '', '', 'no', 'yes', 'hvfvhgv', 'vgh', 'hb hb ', 'hbhbh', '', 12467),
-(70, '', '', '', '', 'no', 'yes', '', '', '', '', 'JeremiahS.pdf', 0),
-(71, '', '', '', '', 'no', 'yes', '', '', '', '', 'Interview Request.pdf', 0),
-(72, '', '', '', '', 'no', 'yes', '', '', '', '', 'Interview Request.pdf', 0),
-(73, '', '', '', '', 'no', 'yes', '', '', '', '', 'print.pdf', 0),
-(74, '', '', '', '', 'no', 'yes', 'Elizabeth Andes', 'San Miguel, Taguig City', 'Eduardo Sr. Andes', 'San Miguel, Taguig City', '', 1900771),
-(75, '', '', '', '', 'no', 'yes', 'jhbjhb', 'jhbjhb', 'hb', 'hbjh', '', 1231),
-(76, '', '', '', '', 'no', 'yes', 'kbkbkj', 'bjbjhb', 'jhhjb', 'jhhbjh', '', 12345),
-(92, '', '', '', '', 'no', 'yes', 'csdcsd', 'cdscsd', 'cdscs', 'csdcds', '', 123221),
-(93, '', '', '', '', 'no', 'yes', 'uvjhjh', 'jhbjhb', 'hgvh', 'bbbbbbbbbbbj', '', 2323),
-(94, '', '', '', '', 'no', 'yes', 'vsdvsd', 'vsdvsdv', 'vsdvsd', 'dsvssdv', '', 1223),
-(95, '', '', '', '', 'no', 'yes', 'sdada', 'dasdas', 'dasdad', 'asdad', '', 123),
-(96, '', '', '', '', 'no', 'yes', 'vsdvsd', 'vsdvsdv', 'vdsvsd', 'vsdvds', '', 32),
-(97, '', '', '', '', 'no', 'yes', 'kbkhbjh', 'kjbkjbj', 'kjbjhbj', 'jbjhbj', '', 31232),
-(98, '', '', '', '', 'no', 'yes', 'asdfghjkl', 'asdfghjkl', 'asdfghjkl', 'asdfghjkl', '', 123),
-(99, '', '', '', '', 'no', 'yes', 'fsdfsd', 'dsfsd', 'fdsfsdf', 'sdfds', '', 31232),
-(100, '', '', '', '', 'no', 'yes', 'Abraham I. Sison', '120P MLQ St. New Lower Bicutan, Taguig City', 'Rosita Lim', '120P MLQ St. New Lower Bicutan, Taguig City', '', 1900742),
-(101, '', '', '', '', 'no', 'yes', 'dad', 'dasda', 'dasd', 'sdsa', '', 123),
-(104, '', '', '', '', 'no', 'yes', 'Eric Mendiola', 'Tipas, Taguig', 'Christel Mendiola', 'Tipas, Taguig', '', 1900664),
-(105, '', '', '', '', 'no', 'yes', 'dfsdfs', 'fsdfa', 'feaf', 'df', '', 1212),
-(106, '', '', '', '', 'no', 'yes', 'afsdf', 'dfdf', 'dfdf', 'dfsd', '', 1232),
-(107, '', '', '', '', 'no', 'yes', 'Marcela Macabante', 'Bicutan, Taguig', 'Marcelo Macabante', 'Bicutan, Taguig', '', 1902245),
-(108, '', '', '', '', 'no', 'yes', 'Evelyn Bayod', 'Wawa, Taguig', 'Mario Bayod', 'Wawa, Taguig', '', 1900930);
+INSERT INTO `tblstuddetails` (`DETAIL_ID`, `GUARDIAN`, `GUARDIAN_ADDRESS`, `OTHER_PERSON_SUPPORT`, `ADDRESS`, `COE`, `IDNO`) VALUES
+(69, 'hvfvhgv', 'vgh', 'hb hb ', 'hbhbh', '', 12467),
+(70, '', '', '', '', 'JeremiahS.pdf', 0),
+(71, '', '', '', '', 'Interview Request.pdf', 0),
+(72, '', '', '', '', 'Interview Request.pdf', 0),
+(73, '', '', '', '', 'print.pdf', 0),
+(74, 'Elizabeth Andes', 'San Miguel, Taguig City', 'Eduardo Sr. Andes', 'San Miguel, Taguig City', '', 1900771),
+(75, 'jhbjhb', 'jhbjhb', 'hb', 'hbjh', '', 1231),
+(76, 'kbkbkj', 'bjbjhb', 'jhhjb', 'jhhbjh', '', 12345),
+(92, 'csdcsd', 'cdscsd', 'cdscs', 'csdcds', '', 123221),
+(93, 'uvjhjh', 'jhbjhb', 'hgvh', 'bbbbbbbbbbbj', '', 2323),
+(94, 'vsdvsd', 'vsdvsdv', 'vsdvsd', 'dsvssdv', '', 1223),
+(95, 'sdada', 'dasdas', 'dasdad', 'asdad', '', 123),
+(96, 'vsdvsd', 'vsdvsdv', 'vdsvsd', 'vsdvds', '', 32),
+(97, 'kbkhbjh', 'kjbkjbj', 'kjbjhbj', 'jbjhbj', '', 31232),
+(98, 'asdfghjkl', 'asdfghjkl', 'asdfghjkl', 'asdfghjkl', '', 123),
+(99, 'fsdfsd', 'dsfsd', 'fdsfsdf', 'sdfds', '', 31232),
+(100, 'W0bYcN25wH7aXf69jTSnHQ==', 'bO8PXnfCe2nSHwUzkkkHKommTbGfQp/Lcvmj1JekAyY=', 'hKZD1m90E2aFTtfFh4OJrA==', 'bO8PXnfCe2nSHwUzkkkHKommTbGfQp/Lcvmj1JekAyY=', '', 1900742),
+(101, 'dad', 'dasda', 'dasd', 'sdsa', '', 123),
+(104, 'gp0ZW/TnIGRBRph3tO/CpA==', 'Gh1MoNltfWxHIflv3ZFLTBnntt4/M81didYr9ocVHhI=', 'bRThxAAgp3rsuUqctdszebkn9JGv0Xa5iHZFqJ7I/Sk=', 'Gh1MoNltfWxHIflv3ZFLTBnntt4/M81didYr9ocVHhI=', '', 1900664),
+(108, 'uoWFHS7B9oVOKlwaWqPeiQ==', 'ZQeC5Z2imFCOM0OZTEEBQw==', '3SdDU1dvd3f1VE98E4+obw==', 'ZQeC5Z2imFCOM0OZTEEBQw==', '', 1900930),
+(109, 'W0bYcN25wH7aXf69jTSnHQ==', 'bO8PXnfCe2nSHwUzkkkHKommTbGfQp/Lcvmj1JekAyY=', 'hKZD1m90E2aFTtfFh4OJrA==', 'bO8PXnfCe2nSHwUzkkkHKommTbGfQp/Lcvmj1JekAyY=', '', 1900742),
+(110, 'gp0ZW/TnIGRBRph3tO/CpA==', 'Gh1MoNltfWxHIflv3ZFLTBnntt4/M81didYr9ocVHhI=', 'bRThxAAgp3rsuUqctdszebkn9JGv0Xa5iHZFqJ7I/Sk=', 'Gh1MoNltfWxHIflv3ZFLTBnntt4/M81didYr9ocVHhI=', '', 19),
+(111, 'uoWFHS7B9oVOKlwaWqPeiQ==', 'ZQeC5Z2imFCOM0OZTEEBQw==', '3SdDU1dvd3f1VE98E4+obw==', 'ZQeC5Z2imFCOM0OZTEEBQw==', '', 1900930),
+(112, '/GaM3BerxQtT9uv028P6tQ==', 'SioF/7st0aqCNx+dsFxSUC7A/o0MYhz/lRKJHKhIed4=', '/GaM3BerxQtT9uv028P6tQ==', 'SioF/7st0aqCNx+dsFxSUC7A/o0MYhz/lRKJHKhIed4=', '', 1900914),
+(113, 'KiVT3YNyBZJIoj3QT3EbqP1JJuk97uPxrqdsJ07JsUc=', 'Kv9sErX3OC/W2PHhjNHTcSegua64zAikfGU7TIBO3xMmR4OIg0UC0AH+ouh9Mdwj', 'V6j2dgwsDYf0SMArHq+WOQ==', 'Kv9sErX3OC/W2PHhjNHTcSegua64zAikfGU7TIBO3xMmR4OIg0UC0AH+ouh9Mdwj', '', 1902245),
+(114, '682QPRw1x65X4/haf8XHxfwrd24X9kRKwmzkuf2zEQ8=', 'diiyWoAUL6N7pbl17VcPTv8whnx/5YmoW5fJg9vYBxiQQDIh8PI4VGEQxVwN6vjj', '6cdMgI6jT3plKcNi98g9Ow==', 'diiyWoAUL6N7pbl17VcPTv8whnx/5YmoW5fJg9vYBxiQQDIh8PI4VGEQxVwN6vjj', '', 1903886);
 
 -- --------------------------------------------------------
 
@@ -590,7 +631,7 @@ CREATE TABLE `tblstudent` (
   `AGE` longtext NOT NULL,
   `NATIONALITY` longtext NOT NULL,
   `RELIGION` longtext NOT NULL,
-  `CONTACT_NO` varchar(1000) NOT NULL,
+  `CONTACT_NO` longtext NOT NULL,
   `HOME_ADD` longtext NOT NULL,
   `EMAIL` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -600,13 +641,12 @@ CREATE TABLE `tblstudent` (
 --
 
 INSERT INTO `tblstudent` (`S_ID`, `IDNO`, `FNAME`, `LNAME`, `MNAME`, `SEX`, `BDAY`, `BPLACE`, `STATUS`, `AGE`, `NATIONALITY`, `RELIGION`, `CONTACT_NO`, `HOME_ADD`, `EMAIL`) VALUES
-(90, '1900742', 'Sarah Rose', 'Sison', 'Lim', 'F', '2001-01-20', 'Manila', 'Single', '21', 'Filipino', 'Mormons', '09761131191', '120P MLQ St. New Lower Bicutan, Taguig City', 'sarahroselimsison@gmail.com'),
-(91, '123', 'sas', 'sa', 'sa', 'F', '2022-12-07', 'sa', 'Single', '23', 'sa', 'sa', '312', 'das', 'sa@sa'),
-(94, 'ryBj8rT088PpK/LaFTOAIw==', 'Ma. Antonette', 'Mendiola', 'Esguerra', 'F', '2001-05-20', 'Taguig', 'Single', '21', 'Filipino', 'Born Again Christian', '09563329334', 'Tipas, Taguig', 'mendiola@gmail.com'),
-(95, 'pdOpYUIN0sWTk60hZN3Nig==', 'vzdvzd', 'dadf', 'zdvzdfv', 'M', '2022-12-09', 'zvzvzv', 'Single', '12', 'fvzvz', 'zcvvvv', '1234', 'sfd', 'sara@gmail.com'),
-(96, 'VK8M1EMgpCxvd9ZSex8wTw==', 'dfadf', 'afdf', 'fasdf', 'M', '2022-12-07', 'adsff', 'Single', '23', 'sdf', 'dfas', '1231', 'dadfd', 'vdfadf@gmail.com'),
-(97, 'EWUDMx6FVo2pEW2ojZ/o0g==', 'pG7z/5D5d54poXNPgpSppg==', 'ntp7q6npq1XR5w/ByREQPA==', 'z5RatPVGwNksvJCCpCC5PA==', '+ZA06is9s7WgS8+8wBxYHw==', 'RakOUxAU2vU2bltLKb7Ufg==', '5TqHpojGiX65yGEmxetkHA==', 'ZOant/L/NucMeOSAUuLiDg==', 'ZRyL5SjD3peC/vRKjukIfQ==', 'voHCyhjVoRR0ntH/9D0fbw==', '1gGv2KqxQbEU648rCPUSsg==', 'BHZ40dgx0jkVwTqmtdgtrw==', 'b605zSCcGxbp6KoXDJ9jUQ==', '2WUonKn1+mRwcVJy/n0xmA8SMcY16EBQToRNVJkqXJ4='),
-(98, 'z8DqhGetoRiba9EZpRkq4w==', 'w78QC8+JP1O1rIBPQD0g1Q==', 'MNAr3VHIRiuHIKNSTjRyKg==', 'CDZUJUqnbFGkTAFAjHwFjg==', 'patETJBr/DjL1DcxhIMIhA==', 'XCy6oD4QxGyG/rdt2uuHFA==', '5TqHpojGiX65yGEmxetkHA==', 'ZOant/L/NucMeOSAUuLiDg==', 'pktvRjSSUuojEiZsWeQq1Q==', 'voHCyhjVoRR0ntH/9D0fbw==', '1gGv2KqxQbEU648rCPUSsg==', 'WDXtH9pi5I7kCSRjHM5u6w==', 'ZQeC5Z2imFCOM0OZTEEBQw==', '3e8zd6JWoDznb+oMtcGLpZ4V6fijwEHe/vKO/WSxcKk=');
+(99, '1900742', 'nqFrlBli2EcmHJg9hx8PVg==', 'I9SJEMQEYDfbdz6lddClog==', 'RQwl6ppB6dVUiPHQUru1wg==', 'patETJBr/DjL1DcxhIMIhA==', 'jyf06DrFWD2jbu4Ghnlteg==', 'J09xzdCRzhOZAjQNOMWg+g==', 'ZOant/L/NucMeOSAUuLiDg==', 'pktvRjSSUuojEiZsWeQq1Q==', 'voHCyhjVoRR0ntH/9D0fbw==', '46Us49VCSAUFBFjKIZv/8DTkXwToV2r/CDGEaPa0cw7OsJ6Vbwa/6MnBT/k+Xa4/', '2psvT4mLogvs4aAOl6tZtg==', 'bO8PXnfCe2nSHwUzkkkHKommTbGfQp/Lcvmj1JekAyY=', 'Ql+rqCmOcAbT+P4MDHIGMpZkE6jBd0kNvW6b7xf6Vis='),
+(100, '1900664', 'eJHg0AUtEniBsP/8vRpTdw==', 'IutpAKHc1/oaJb5hAaM8XQ==', 'VDmppmLi+70iCbxw8esILg==', 'patETJBr/DjL1DcxhIMIhA==', 'B3oEiabCTP2KnXNameMCfQ==', 'Ugs/HU1jFqZZhtCt3v2+wQ==', 'ZOant/L/NucMeOSAUuLiDg==', 'pktvRjSSUuojEiZsWeQq1Q==', 'voHCyhjVoRR0ntH/9D0fbw==', '6VblBvLlHFfnZUKwziNJ143QHcEZaPZwePvDrTwdZGk=', 'u2QduL3mJAfl/a9/jReDfQ==', 'Gh1MoNltfWxHIflv3ZFLTBnntt4/M81didYr9ocVHhI=', 'V1prdYKgosp9k4ev2UU/TGZ+qLKbOzd48Bmor8NGsdU='),
+(101, '1900930', 'w78QC8+JP1O1rIBPQD0g1Q==', 'MNAr3VHIRiuHIKNSTjRyKg==', 'CDZUJUqnbFGkTAFAjHwFjg==', 'patETJBr/DjL1DcxhIMIhA==', 'XCy6oD4QxGyG/rdt2uuHFA==', '5TqHpojGiX65yGEmxetkHA==', 'ZOant/L/NucMeOSAUuLiDg==', 'pktvRjSSUuojEiZsWeQq1Q==', 'voHCyhjVoRR0ntH/9D0fbw==', '1gGv2KqxQbEU648rCPUSsg==', 'BHZ40dgx0jkVwTqmtdgtrw==', 'ZQeC5Z2imFCOM0OZTEEBQw==', '6kMUbqeDDF5bQoSLwti0tH0Yd59Vf1b/Gl0VjrHFzXs='),
+(102, '1900914', 'i0nqBlAgHZsRzRY8QB69Tw==', 'bd1pyBdGw4tjUSEaC2qTEw==', 'EUftZqf1ie5zsSVemurXNw==', '+ZA06is9s7WgS8+8wBxYHw==', 'YORCabzyXE5Nb0vFvprupQ==', '5TqHpojGiX65yGEmxetkHA==', 'ZOant/L/NucMeOSAUuLiDg==', 'pktvRjSSUuojEiZsWeQq1Q==', 'voHCyhjVoRR0ntH/9D0fbw==', '1gGv2KqxQbEU648rCPUSsg==', 'BHZ40dgx0jkVwTqmtdgtrw==', 'SioF/7st0aqCNx+dsFxSUC7A/o0MYhz/lRKJHKhIed4=', 'wHinfYoW5qEfK/ep0xN+jhFAaekeELiS9a7O1ofhZiw='),
+(103, '1902245', 'NTfMEmOkiDCSFLRzj/ylXg==', 'ntp7q6npq1XR5w/ByREQPA==', 'z5RatPVGwNksvJCCpCC5PA==', '+ZA06is9s7WgS8+8wBxYHw==', 'RakOUxAU2vU2bltLKb7Ufg==', 'Ugs/HU1jFqZZhtCt3v2+wQ==', 'ZOant/L/NucMeOSAUuLiDg==', 'ZRyL5SjD3peC/vRKjukIfQ==', 'voHCyhjVoRR0ntH/9D0fbw==', '1gGv2KqxQbEU648rCPUSsg==', 'zsfAHH9rHdK9xGkjMKtf0Q==', 'Kv9sErX3OC/W2PHhjNHTcSegua64zAikfGU7TIBO3xMmR4OIg0UC0AH+ouh9Mdwj', 'g2vesamAQL0jCRmq9tizdAJnS2DYlhbdYUMv0AZzWJmgxkKngcLB02nyPkNGZNIg'),
+(104, '1903886', 'sBcnwXT7jwqlV+Q8/Y9+Eg==', 'GKOS3Tzi++HfE+8C74HCHg==', 't+AowI0PYegN+i+1ltYFZQ==', '+ZA06is9s7WgS8+8wBxYHw==', 'jgjcbPDD4y8926E5ao/DVQ==', '5TqHpojGiX65yGEmxetkHA==', 'ZOant/L/NucMeOSAUuLiDg==', '4abu7nm+AHTGMmgm7Hv2ww==', 'voHCyhjVoRR0ntH/9D0fbw==', '1gGv2KqxQbEU648rCPUSsg==', 'fs9AwakmqoH8Show2B0dwg==', 'diiyWoAUL6N7pbl17VcPTv8whnx/5YmoW5fJg9vYBxiQQDIh8PI4VGEQxVwN6vjj', 'kmoqrL5HAnQPCJCODjCtPqwdNJG3WsMUOIrrbnhkzGU=');
 
 -- --------------------------------------------------------
 
@@ -772,12 +812,12 @@ ALTER TABLE `ay`
 -- AUTO_INCREMENT for table `chatbot`
 --
 ALTER TABLE `chatbot`
-  MODIFY `CHATBOT_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `CHATBOT_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 --
 -- AUTO_INCREMENT for table `class`
 --
 ALTER TABLE `class`
-  MODIFY `CLASS_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `CLASS_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `course`
 --
@@ -847,17 +887,17 @@ ALTER TABLE `tblrequirements`
 -- AUTO_INCREMENT for table `tblstudcoe`
 --
 ALTER TABLE `tblstudcoe`
-  MODIFY `COE_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `COE_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT for table `tblstuddetails`
 --
 ALTER TABLE `tblstuddetails`
-  MODIFY `DETAIL_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
+  MODIFY `DETAIL_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
 --
 -- AUTO_INCREMENT for table `tblstudent`
 --
 ALTER TABLE `tblstudent`
-  MODIFY `S_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+  MODIFY `S_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
 --
 -- AUTO_INCREMENT for table `useraccounts`
 --

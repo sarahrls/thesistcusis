@@ -90,15 +90,16 @@
 
 				  		function loadresult(){
                             //require_once ("../../../encryption.php");
-                            require_once ("../../../includes/encryption.php");
+                            
 				  			global $mydb;
 					  		$cur = $mydb->loadResultList();
 							foreach ($cur as $student) {
                             
                             //$studentAES = new StudentEncryption();  
+                                require_once ("../../../includes/encryption.php");
                                 $aes = new AdvanceEncryptionStandard('WR7rLKlVvJdEAIzHUMpt4dcEKsXPinIU2KiWzm++bhg=','AES-256-CBC','NJ0oI9P1fytagUfPny3qTA==');
                        
-                            $decrypted_IDNO = $aes->decryptData($student->IDNO);
+                            //$decrypted_IDNO = $aes->decryptData($student->IDNO);
                             $decrypted_LNAME = $aes->decryptData($student->LNAME);
                             $decrypted_FNAME = $aes->decryptData($student->FNAME);
                             $decrypted_MNAME = $aes->decryptData($student->MNAME);
@@ -113,21 +114,21 @@
                             //$decrypted_EMAIL = $studentAES->decryptData($student->EMAIL);
                                 
                                 
-                            print("Decrypted Data: $decrypted_IDNO "); 
+                            //print("Decrypted Data: $decrypted_IDNO "); 
                                 
 
 					  	
 					  		echo '<tr role="row">';
 					  		echo '<td role="cell" width="5%" align="center"></td>';
-					  		echo '<td role="cell" width="10%" style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;"><input type="checkbox" name="selector[]" id="selector[]" value="' .$decrypted_IDNO. '"/>' .$decrypted_IDNO.'</td>';
+					  		echo '<td role="cell" width="10%" style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;"><input type="checkbox" name="selector[]" id="selector[]" value="' .$student->IDNO. '"/>' .$student->IDNO.'</td>';
 					  		echo '<td role="cell" style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'.$decrypted_LNAME.', '. $decrypted_FNAME.' '.$decrypted_MNAME.'</td>';
 					  		echo '<td role="cell" align="center" style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'.$decrypted_SEX.'</td>';
 					  		echo '<td role="cell"  align="center" style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'.$decrypted_AGE.'</td>';
 					  	
 					  		echo '<td role="cell" style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'.$decrypted_EMAIL.'</td>';
-					  		echo '<td role="cell" style="font-size:14px; font-family:Poppins; font-weight:500;"><a href="index.php?view=edit&id='.$decrypted_IDNO.'" style="color:#780000; font-size:15px; font-family:Poppins; font-weight:500;"><span class="glyphicon glyphicon-list-alt"> </span>  Edit</a>';
-                            echo '<a href = "index.php?view=view&studentId='.$decrypted_IDNO.'" style="color:#780000; font-size:15px; font-family:Poppins; font-weight:500;"><span class="glyphicon glyphicon-list-alt"> </span>  View</a>';
-                            echo '<a href = "index.php?view=upload&studentId='.$decrypted_IDNO.'" style="color:#780000; font-size:15px; font-family:Poppins; font-weight:500;"><span class="glyphicon glyphicon-list-alt"> </span>  Upload</a></td>';
+					  		echo '<td role="cell" style="font-size:14px; font-family:Poppins; font-weight:500;"><a href="index.php?view=edit&id='.$student->IDNO.'" style="color:#780000; font-size:15px; font-family:Poppins; font-weight:500;"><span class="glyphicon glyphicon-list-alt"> </span>  Edit</a>';
+                            echo '<a href = "index.php?view=view&studentId='.$student->IDNO.'" style="color:#780000; font-size:15px; font-family:Poppins; font-weight:500;"><span class="glyphicon glyphicon-list-alt"> </span>  View</a>';
+                            echo '<a href = "index.php?view=upload&studentId='.$student->IDNO.'" style="color:#780000; font-size:15px; font-family:Poppins; font-weight:500;"><span class="glyphicon glyphicon-list-alt"> </span>  Upload</a></td>';
 					  		echo '</tr>';
 					  		}
 

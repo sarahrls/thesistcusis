@@ -146,20 +146,36 @@
 				  			global $mydb;
 					  		$cur = $mydb->loadResultList();
 							foreach ($cur as $student) {
+                                
+                                
+                                require_once ("../../../includes/encryption.php");
+                                $aes = new AdvanceEncryptionStandard('WR7rLKlVvJdEAIzHUMpt4dcEKsXPinIU2KiWzm++bhg=','AES-256-CBC','NJ0oI9P1fytagUfPny3qTA==');
+                                
+                                 $decrypted_LNAME = $aes->decryptData($student->LNAME);
+                                 $decrypted_FNAME = $aes->decryptData($student->FNAME);
+                                 $decrypted_MNAME = $aes->decryptData($student->MNAME);
+                                 $decrypted_SEX = $aes->decryptData($student->SEX);
+                       
+                                
+                            $decrypted_FIRST = $aes->decryptData($student->FIRST);
+                            $decrypted_SECOND = $aes->decryptData($student->SECOND);
+                            $decrypted_AVE = $aes->decryptData($student->AVE);
+                            $decrypted_REMARKS = $aes->decryptData($student->REMARKS);
+                                
 					  		echo '<tr>';
 					  		echo '<td width="5%" align="center" style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;"></td>';
 					  		// echo '<td><input type="checkbox" name="selector[]" id="selector[]" value="'.$student->IDNO. '"/>
 					  		// 		<a href="edit_studentinfo.php?id='.$student->IDNO.'">' . $student->IDNO.'</a></td>';
 					  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">' . $student->IDNO.'</td>';
-					  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $student->LNAME. ',' .$student->FNAME.' '.$student->MNAME.'</td>';
-					  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $student->SEX.'</td>';
+					  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $decrypted_LNAME. ',' .$decrypted_FNAME.' '.$decrypted_MNAME.'</td>';
+					  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $decrypted_SEX.'</td>';
 					  		/*echo '<td>'. $student->AGE.'</td>';
 					  		echo '<td>'. $student->BDAY.'</td>';
 					  		echo '<td>'. $student->STATUS.'</td>';*/
-					  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'.$student->FIRST.'</td>';
-					  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $student->SECOND.'</td>';
-					  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $student->AVE.'</td>';  
-					  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $student->REMARKS.'</td>';  
+					  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'.$decrypted_FIRST.'</td>';
+					  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $decrypted_SECOND.'</td>';
+					  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $decrypted_AVE.'</td>';  
+					  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $decrypted_REMARKS.'</td>';  
 					  		echo '</tr>';
 					  		}
 

@@ -3,6 +3,9 @@
 
   <div class="col-12 col-sm-12 col-lg-12">
 	<?php
+      require_once ("../../../includes/encryption.php");
+                                $aes = new AdvanceEncryptionStandard('WR7rLKlVvJdEAIzHUMpt4dcEKsXPinIU2KiWzm++bhg=','AES-256-CBC','NJ0oI9P1fytagUfPny3qTA==');
+      
 		  	 if (isset($_GET['studentId'])){
 				if ($_GET['studentId']==""){
 					message("ID Number is required!","error");
@@ -32,6 +35,9 @@
 
 					$student = new Student();
 					$cur = $student->single_student($_GET['studentId']);
+                    
+                            $decrypted_LNAME = $aes->decryptData($cur->LNAME);
+                            $decrypted_FNAME = $aes->decryptData($cur->FNAME);
 
 				}
 			}
@@ -55,7 +61,7 @@
 						     		
 						     		<td>
 						     			<p style="font-size:16px; font-family:Poppins; font-weight:500; margin-left:10px;"><b>ID Number : </b><?php echo (isset($cur)) ? $cur->IDNO : 'ID' ;?><br/>
-						     		<b>Name :</b><?php echo (isset($cur)) ? $cur->LNAME.', '.$cur->FNAME : 'Fullname' ;?><br/>
+						     		<b>Name : </b><?php echo (isset($cur)) ? $decrypted_LNAME.', '.$decrypted_FNAME : 'Fullname' ;?><br/>
 						     		<b>Status : </b><?php echo (isset($sy)) ? $sy->STATUS : 'STATUS' ;?><br/>
 						     		<b>AY : </b><?php echo (isset($sy)) ? $sy->AY : 'STATUS' ;?><br/>
 						     	<!--	<td> <?php //echo (isset($sy)) ? $sy->SEMESTER : 'COURSE' ;?></td>-->
@@ -106,6 +112,20 @@
 									
 								  			$cur = $mydb->loadResultlist();
 											foreach ($cur as $result) {
+                                                
+                                                
+                                                require_once ("../../../includes/encryption.php");
+                                $aes = new AdvanceEncryptionStandard('WR7rLKlVvJdEAIzHUMpt4dcEKsXPinIU2KiWzm++bhg=','AES-256-CBC','NJ0oI9P1fytagUfPny3qTA==');
+                       
+                            //$decrypted_IDNO = $aes->decryptData($student->IDNO);
+
+                                
+                            $decrypted_FIRST = $aes->decryptData($result->FIRST);
+                            $decrypted_SECOND = $aes->decryptData($result->SECOND);
+                            $decrypted_AVE = $aes->decryptData($result->AVE);
+                            $decrypted_REMARKS = $aes->decryptData($result->REMARKS);
+                                                
+                                                
 										  		echo '<tr>';
 
 										  		echo '<td width="15%" style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">';
@@ -114,10 +134,10 @@
 										  		echo '<input type="checkbox" name="selector[]" id="selector[]" value="'.$result->GRADE_ID. '"/>';
 										  		}  echo $result->SUBJ_CODE .'</td>';
 										  		echo '<td width="30%" style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $result->SUBJ_DESCRIPTION.'</td>';
-									  			echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'.$result->FIRST.'</td>';
-										  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $result->SECOND.'</td>';
-										  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $result->AVE.'</td>';  
-										  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $result->REMARKS.'</td>';  	
+									  			echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'.$decrypted_FIRST.'</td>';
+										  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $decrypted_SECOND.'</td>';
+										  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $decrypted_AVE.'</td>';  
+										  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $decrypted_REMARKS.'</td>';  	
 										  	//	echo '<td>'. $result->SEMESTER.'</td>';
 										  	//	echo '<td>'. $result->COURSE_NAME.'</td>';
 										  		//echo '<td>'. $result->COURSE_LEVEL.'</td>';

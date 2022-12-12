@@ -16,13 +16,23 @@ $cur = $grade->single_grades($gradeId);
         <?php 
         	$stud = new Student();
         	$cur=$stud->single_student($studentId);
+            
+            require_once ("../../../includes/encryption.php");
+                                $aes = new AdvanceEncryptionStandard('WR7rLKlVvJdEAIzHUMpt4dcEKsXPinIU2KiWzm++bhg=','AES-256-CBC','NJ0oI9P1fytagUfPny3qTA==');
+                       
+                            //$decrypted_IDNO = $aes->decryptData($student->IDNO);
+                            $decrypted_LNAME = $aes->decryptData($cur->LNAME);
+                            $decrypted_FNAME = $aes->decryptData($cur->FNAME);
+            
+            
+            
         ?>
           <label class="col-md-4 control-label" for=
           "subjdesc" style="color:#780000; font-family:Poppins; font-size:14px;">Name</label>
 
           <div class="col-md-8">
              <input class="form-control input-sm" id="studname" name="studname" readonly placeholder=
-								  "Subject Description" type="text" value="<?php echo (isset($cur)) ? $cur->LNAME . ' , '.$cur->FNAME: 'Name' ;?>">
+								  "Subject Description" type="text" value="<?php echo (isset($cur)) ? $decrypted_LNAME . ' , '.$decrypted_FNAME: 'Name' ;?>">
           </div>
         </div>
           </div>								
@@ -56,6 +66,16 @@ $cur = $grade->single_grades($gradeId);
 		<?php
           $grade = new Grades();
 		  $cur = $grade->single_grades($gradeId); 
+        
+        require_once ("../../../includes/encryption.php");
+                                $aes = new AdvanceEncryptionStandard('WR7rLKlVvJdEAIzHUMpt4dcEKsXPinIU2KiWzm++bhg=','AES-256-CBC','NJ0oI9P1fytagUfPny3qTA==');
+                       
+                            //$decrypted_IDNO = $aes->decryptData($student->IDNO);
+                            $decrypted_FIRST = $aes->decryptData($cur->FIRST);
+                            //$decrypted_FNAME = $aes->decryptData($student->FNAME);
+                            //$decrypted_MNAME = $aes->decryptData($student->MNAME);
+                            //$decrypted_SEX = $aes->decryptData($student->SEX);
+        
 		 ?>
            <div class="form-group">
             <div class="col-md-8">
@@ -63,7 +83,7 @@ $cur = $grade->single_grades($gradeId);
               "first" style="color:#780000; font-family:Poppins; font-size:14px;">Midterm</label>
 
                <div class="col-md-8">
-                          <select class="form-control input-sm" id="first" name="first" value="<?php echo (isset($cur)) ? $cur->FIRST  : 'FIRST' ;?>">
+                          <select class="form-control input-sm" id="first" name="first" value="<?php echo $decrypted_FIRST;?>">
                           <option value="1.00">1.00</option>
                           <option value="1.25">1.25</option>
                           <option value="1.50">1.50</option>

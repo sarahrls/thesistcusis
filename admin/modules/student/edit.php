@@ -1,8 +1,27 @@
 
 <?php 
-
+require_once ("../../../includes/encryption.php");
 				$student = new Student();
 				$cur = $student->single_student($_GET['id']);
+
+
+                $aes = new AdvanceEncryptionStandard('WR7rLKlVvJdEAIzHUMpt4dcEKsXPinIU2KiWzm++bhg=','AES-256-CBC','NJ0oI9P1fytagUfPny3qTA==');
+    
+                            //$decrypted_IDNO = $aes->decryptData($cur->IDNO);
+                            $decrypted_LNAME = $aes->decryptData($cur->LNAME);
+                            $decrypted_FNAME = $aes->decryptData($cur->FNAME);
+                            $decrypted_MNAME = $aes->decryptData($cur->MNAME);
+                            $decrypted_SEX = $aes->decryptData($cur->SEX);
+                            $decrypted_AGE = $aes->decryptData($cur->AGE);
+                            $decrypted_EMAIL = $aes->decryptData($cur->EMAIL);
+                            $decrypted_BDAY = $aes->decryptData($cur->BDAY);
+                            $decrypted_BPLACE = $aes->decryptData($cur->BPLACE);
+                            $decrypted_STATUS = $aes->decryptData($cur->STATUS);
+                            $decrypted_NATIONALITY = $aes->decryptData($cur->NATIONALITY);
+                            $decrypted_RELIGION = $aes->decryptData($cur->RELIGION);
+                            $decrypted_CONTACT_NO = $aes->decryptData($cur->CONTACT_NO);
+                            $decrypted_HOME_ADD = $aes->decryptData($cur->HOME_ADD);
+
 			?>
 		        <form class="form-horizontal well span9" action="controller.php?action=edit&id=<?php echo $cur->IDNO; ?>" method="POST">
 
@@ -24,7 +43,7 @@
 			                <label for=
 			                "lName" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">LastName:*</label> 
 			                  <input class="form-control input-sm" id="lName" name="lName" type=
-			                  "text" placeholder="Last Name" value="<?php echo $cur->LNAME; ?>" style="font-size:15px;">
+			                  "text" placeholder="Last Name" value="<?php echo $decrypted_LNAME; ?>" style="font-size:15px;">
 			                </div>
 			              </div>
 
@@ -33,7 +52,7 @@
 			                <label for=
 			                "fName" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Firstname:*</label> 
 			                  <input class="form-control input-sm" id="fName" name="fName" type=
-			                  "text" placeholder="First Name" value="<?php echo $cur->FNAME; ?>" style="font-size:15px;">
+			                  "text" placeholder="First Name" value="<?php echo $decrypted_FNAME; ?>" style="font-size:15px;">
 			                </div>
 			              </div>
 
@@ -42,7 +61,7 @@
 			                <label for=
 			                "mName" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Middlename:*</label> 
 			                  <input class="form-control input-sm" id="mName" name="mName" type=
-			                  "text" placeholder="Middle Name" value="<?php echo $cur->MNAME; ?>" style="font-size:15px;">
+			                  "text" placeholder="Middle Name" value="<?php echo $decrypted_MNAME; ?>" style="font-size:15px;">
 			                </div>
 			              </div>
 			            </div> 
@@ -54,7 +73,7 @@
 			                <label for=
 			                "gender" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Gender </label> 
 				                <select class="form-control input-sm" name="gender" id="gender" style="font-size:15px;">
-				                	<option value="<?php echo $cur->SEX; ?>" ><?php echo $cur->SEX; ?></option>
+				                	<option value="<?php echo $decrypted_SEX; ?>" ><?php echo $decrypted_SEX; ?></option>
 									<option value="M">Male</option>
 									<option value="F">Female</option>	
 								</select>	
@@ -66,7 +85,7 @@
 			                <label for=
 			                "bday" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Birth Date</label> 
 			                    <div class="input-group date form_curdate col-md-15" data-date="" data-date-format="yyyy-mm-dd" data-link-field="any" data-link-format="yyyy-mm-dd">
-			                    <input class="form-control" size="11" type="text" value="<?php echo $cur->BDAY; ?>" readonly name="bday" id="bday" style="font-size:15px;">
+			                    <input class="form-control" size="11" type="text" value="<?php echo $decrypted_BDAY; ?>" readonly name="bday" id="bday" style="font-size:15px;">
 			                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
 								<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
 			                </div>
@@ -78,7 +97,7 @@
 			                <label for=
 			                "bplace" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Birth place</label> 
 			                  <input class="form-control input-sm" id="bplace" name="bplace" type=
-			                  "text" placeholder="Birth Place" value="<?php echo $cur->BPLACE; ?>" style="font-size:15px;">
+			                  "text" placeholder="Birth Place" value="<?php echo $decrypted_BPLACE; ?>" style="font-size:15px;">
 			                </div>
 			              </div>
 			            </div>
@@ -90,7 +109,7 @@
 			                <label for=
 			                "status" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Civil Status </label> 
 				                <select class="form-control input-sm" name="status" id="status" style="font-size:15px;">
-				                	<option value="<?php echo $cur->STATUS; ?>"><?php echo $cur->STATUS; ?></option>
+				                	<option value="<?php echo $decrypted_STATUS; ?>" ><?php echo $decrypted_STATUS; ?></option>
 									<option value="Single">Single</option>
 									<option value="Married">Married</option>	
 								</select>	
@@ -101,7 +120,7 @@
       						<div class="form-group">
 			                <label for=
 			                "age" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Age</label> 
-			                  <input class="form-control input-sm" id="age" name="age" type="number" placeholder="age" value="<?php echo $cur->AGE; ?>" style="font-size:15px;">
+			                  <input class="form-control input-sm" id="age" name="age" type="number" placeholder="age" value="<?php echo $decrypted_AGE; ?>" style="font-size:15px;">
 			                </div>
 			              </div>
 
@@ -110,7 +129,7 @@
 			                <label for=
 			                "nationality" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Nationality</label> 
 			                  <input class="form-control input-sm" id="nationality" name="nationality" type=
-			                  "text" placeholder="Nationality" value="<?php echo $cur->NATIONALITY; ?>" style="font-size:15px;">
+			                  "text" placeholder="Nationality" value="<?php echo $decrypted_NATIONALITY; ?>" style="font-size:15px;">
 			                </div>
 			              </div>
 			            </div> 
@@ -121,7 +140,7 @@
 			                <label for=
 			                "religion" style="color:#780000; font-family:Poppins; font-size:14px;">Religion </label> 
 				                 <input class="form-control input-sm" id="religion" name="religion" type=
-			                  "text" placeholder="Religion" value="<?php echo $cur->RELIGION; ?>" style="font-size:15px;">
+			                  "text" placeholder="Religion" value="<?php echo $decrypted_RELIGION; ?>" style="font-size:15px;">
 			                </div>
 			              </div>
 
@@ -129,7 +148,7 @@
       						<div class="form-group">
 			                <label for=
 			                "contact" style="color:#780000; font-family:Poppins;font-size:17px; font-weight:500;">Contact </label> 
-			                  <input class="form-control input-sm" id="contact" name="contact" type="text" placeholder="Contact Number" value="<?php echo $cur->CONTACT_NO; ?>" style="font-size:15px;">
+			                  <input class="form-control input-sm" id="contact" name="contact" type="text" placeholder="Contact Number" value="<?php echo $decrypted_CONTACT_NO; ?>" style="font-size:15px;">
 			                </div>
 			              </div>
 			               <div class="col-md-4">
@@ -137,7 +156,7 @@
 			                <label for=
 			                "email" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Email*</label> 
 			                  <input class="form-control input-sm" id="email" name="email" type=
-			                  "email" placeholder="Email address" value="<?php echo $cur->EMAIL; ?>" style="font-size:15px;">
+			                  "email" placeholder="Email address" value="<?php echo $decrypted_EMAIL; ?>" style="font-size:15px;">
 			                </div>
 			              </div>
 			          </div> 
@@ -147,7 +166,7 @@
       						<div class="form-group">
 			                <label style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Home   </label> 
 			                  <input class="form-control input-sm" id="home" name="home" type=
-			                  "text" placeholder="Home Address" value="<?php echo $cur->HOME_ADD; ?>" style="font-size:15px;">
+			                  "text" placeholder="Home Address" value="<?php echo $decrypted_HOME_ADD; ?>" style="font-size:15px;">
 			                </div>
 			              </div>
 
@@ -159,6 +178,15 @@
 				<?php
 				$details = new Student_details();
 				$det = $details->secondary_details($_GET['id']);
+                    
+                    $aes = new AdvanceEncryptionStandard('WR7rLKlVvJdEAIzHUMpt4dcEKsXPinIU2KiWzm++bhg=','AES-256-CBC','NJ0oI9P1fytagUfPny3qTA==');
+    
+                            //$decrypted_IDNO = $aes->decryptData($cur->IDNO);
+                            $decrypted_GUARDIAN = $aes->decryptData($det->GUARDIAN);
+                            $decrypted_GUARDIAN_ADDRESS = $aes->decryptData($det->GUARDIAN_ADDRESS);
+                            $decrypted_OTHER_PERSON_SUPPORT = $aes->decryptData($det->OTHER_PERSON_SUPPORT);
+                            $decrypted_ADDRESS = $aes->decryptData($det->ADDRESS);
+                       
 				?>
 				<fieldset>
 				<legend style="margin-top:5px; font-family:Poppins; font-weight:900; ">Secondary Details</legend>
@@ -172,7 +200,7 @@
 		                <label for=
 		                "guardian" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Guardian </label> 
 			                 <input class="form-control input-sm" id="guardian" name="guardian" type=
-		                  "text" placeholder="Guardian" value="<?php echo $det->GUARDIAN; ?>" style="font-size:15px;">
+		                  "text" placeholder="Guardian" value="<?php echo $decrypted_GUARDIAN; ?>" style="font-size:15px;">
 		                </div>
 		              </div>
 
@@ -180,7 +208,7 @@
       					<div class="form-group">
 		                <label for=
 		                "guardianAdd" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Address </label> 
-		                  <input class="form-control input-sm" id="guardianAdd" name="guardianAdd" type="text" placeholder="Guardian Address" value="<?php echo $det->GUARDIAN_ADDRESS; ?>" style="font-size:15px;">
+		                  <input class="form-control input-sm" id="guardianAdd" name="guardianAdd" type="text" placeholder="Guardian Address" value="<?php echo $decrypted_GUARDIAN_ADDRESS; ?>" style="font-size:15px;">
 		                </div>
 		              </div>
 		              
@@ -195,7 +223,7 @@
 		                <label  for=
 		                "otherperson" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Other person Supporting </label> 
 			                 <input class="form-control input-sm" id="otherperson" name="otherperson" type=
-		                  "text" placeholder="Other Person Supporting" value="<?php echo $det->OTHER_PERSON_SUPPORT; ?>" style="font-size:15px;">
+		                  "text" placeholder="Other Person Supporting" value="<?php echo $decrypted_OTHER_PERSON_SUPPORT; ?>" style="font-size:15px;">
 		                </div>
 		              </div>
 
@@ -203,7 +231,7 @@
       					<div class="form-group">
 		                <label for=
 		                "otherAddress" style="color:#780000; font-family:Poppins; font-size:17px; font-weight:500;">Address </label> 
-		                  <input class="form-control input-sm" id="otherAddress" name="otherAddress" type="text" placeholder="Address" value="<?php echo $det->ADDRESS; ?>" style="font-size:15px;">
+		                  <input class="form-control input-sm" id="otherAddress" name="otherAddress" type="text" placeholder="Address" value="<?php echo $decrypted_ADDRESS; ?>" style="font-size:15px;">
 		                </div>
 		              </div>
 		              

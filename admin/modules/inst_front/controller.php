@@ -1,5 +1,6 @@
 <?php 
 require_once ("../../../includes/initialize.php");
+ require_once ("../../../includes/encryption.php");
 $action = (isset($_GET['action']) && $_GET['action'] != '') ? $_GET['action'] : '';
 
 switch ($action) {
@@ -43,14 +44,17 @@ function savegrade(){
 
 			$instClass = New InstructorClasses();
 			$cur = $instClass->single_class($_GET['classId']);
+            $aes = new AdvanceEncryptionStandard('WR7rLKlVvJdEAIzHUMpt4dcEKsXPinIU2KiWzm++bhg=','AES-256-CBC','NJ0oI9P1fytagUfPny3qTA==');
+                       
 
+                            
 
 		$grade = new Grades();
 		$grade->INST_ID 	= $cur->INST_ID;
-		$grade->FIRST 		= $_POST['first'];
-		$grade->SECOND 		= $_POST['second'];
-		$grade->AVE	  	= $_POST['finalave'];
-		$grade->REMARKS 	= $remarks;
+		$grade->FIRST 		= $aes->encryptData($_POST['first']);
+		$grade->SECOND 		= $aes->encryptData($_POST['second']);
+		$grade->AVE	  	= $aes->encryptData($_POST['finalave']);
+		$grade->REMARKS 	= $aes->encryptData($remarks);
 		$grade->update($_GET['gradeId']);		 
  		message("Grade successfully updated!");
 		redirect("index.php?view=class&id=".$_GET['classId']."&instructorId=".$_GET['instructorId']."");

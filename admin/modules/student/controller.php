@@ -118,7 +118,7 @@ $EMAIL   = $_POST['email'];
     
 $student = new Student();
 $student->S_ID				=    "null";
-$student->IDNO 				=	$aes->encryptData($IDNO);
+$student->IDNO 				=	$IDNO;
 $student->LNAME				=	$aes->encryptData($LNAME);
 $student->FNAME				=	$aes->encryptData($FNAME);
 $student->MNAME				=	$aes->encryptData($MNAME);
@@ -188,10 +188,10 @@ $studdetails = new Student_details();
 //$studdetails->MOTHER_OCCU			=	$MOTHER_OCCU;
 //$studdetails->BOARDING			    =	$BOARDING;
 //$studdetails->WITH_FAMILY			=	$WITH_FAMILY;
-$studdetails->GUARDIAN			    =	$GUARDIAN;
-$studdetails->GUARDIAN_ADDRESS		=	$GUARDIAN_ADDRESS;
-$studdetails->OTHER_PERSON_SUPPORT	=	$OTHER_PERSON_SUPPORT;
-$studdetails->ADDRESS				=	$ADDRESS;
+$studdetails->GUARDIAN			    =	$aes->encryptData($GUARDIAN);
+$studdetails->GUARDIAN_ADDRESS		=	$aes->encryptData($GUARDIAN_ADDRESS);
+$studdetails->OTHER_PERSON_SUPPORT	=	$aes->encryptData($OTHER_PERSON_SUPPORT);
+$studdetails->ADDRESS				=	$aes->encryptData($ADDRESS);
 $studdetails->IDNO 				    =	$IDNO;
 
 //  
@@ -223,31 +223,6 @@ $studdetails->IDNO 				    =	$IDNO;
 } 
 */
 
-    
-		 		//$upload = New Upload();
-                //$COE_ID		= $_POST['COE_ID'];
-				//$upload->COE_ID				=	'null';
-				//$upload->IDNO				=	$IDNO;
-				//$upload->COE           	  	=	'NONE';
-				//$upload->COE2				=	'NONE';
-				//$upload->COE3				=	'NONE';
-				//$upload->COE4				=	'NONE';
-				//$upload->COE5   			=	'NONE';
-				//$upload->COE6				=	'NONE';
-				//$upload->COE7				=	'NONE';
-				//$upload->COE8   			=	'NONE';
-				//$upload->COE8   			=	'NONE';
-				//$upload->COE9   			=	'NONE';
-				//$upload->COE10   			=	'NONE';
-				
-			
-    
-        
-    
-    
-    
-    
-    
     
     
 
@@ -341,21 +316,23 @@ $EMAIL   = $_POST['email'];
 
 
 $student = new Student();
+        $aes = new AdvanceEncryptionStandard('WR7rLKlVvJdEAIzHUMpt4dcEKsXPinIU2KiWzm++bhg=','AES-256-CBC','NJ0oI9P1fytagUfPny3qTA==');
 //$student->S_ID				= "null";
+        
 $student->IDNO 				=	$IDNO;
-$student->LNAME				=	$LNAME;
-$student->FNAME				=	$FNAME;
-$student->MNAME				=	$MNAME;
-$student->SEX				=	$SEX;
-$student->BDAY				=	$BDAY;
-$student->BPLACE			=	$BPLACE;
-$student->STATUS			=	$STATUS;
-$student->AGE				=	$AGE;
-$student->NATIONALITY		=	$NATIONALITY;
-$student->RELIGION			=	$RELIGION;
-$student->CONTACT_NO		=	$CONTACT_NO;
-$student->HOME_ADD			=	$HOME_ADD;
-$student->EMAIL 			=	$EMAIL;
+$student->LNAME				=	$aes->encryptData($LNAME);
+$student->FNAME				=	$aes->encryptData($FNAME);
+$student->MNAME				=	$aes->encryptData($MNAME);
+$student->SEX				=	$aes->encryptData($SEX);
+$student->BDAY				=	$aes->encryptData($BDAY);
+$student->BPLACE			=	$aes->encryptData($BPLACE);
+$student->STATUS			=	$aes->encryptData($STATUS);
+$student->AGE				=	$aes->encryptData($AGE);
+$student->NATIONALITY		=	$aes->encryptData($NATIONALITY);
+$student->RELIGION			=	$aes->encryptData($RELIGION);
+$student->CONTACT_NO		=	$aes->encryptData($CONTACT_NO);
+$student->HOME_ADD			=	$aes->encryptData($HOME_ADD);
+$student->EMAIL 			=	$aes->encryptData($EMAIL);
 
 //course infor
 /*$course	= $_POST['course'];
@@ -380,11 +357,12 @@ $OTHER_PERSON_SUPPORT = $_POST['otherperson'];
 $ADDRESS 			=  $_POST['otherAddress'];
 
 $studdetails = new Student_details();
+        $aes = new AdvanceEncryptionStandard('WR7rLKlVvJdEAIzHUMpt4dcEKsXPinIU2KiWzm++bhg=','AES-256-CBC','NJ0oI9P1fytagUfPny3qTA==');
 
-$studdetails->GUARDIAN			    =	$GUARDIAN;
-$studdetails->GUARDIAN_ADDRESS		=	$GUARDIAN_ADDRESS;
-$studdetails->OTHER_PERSON_SUPPORT	=	$OTHER_PERSON_SUPPORT;
-$studdetails->ADDRESS				=	$ADDRESS;
+$studdetails->GUARDIAN			    =	$aes->encryptData($GUARDIAN);
+$studdetails->GUARDIAN_ADDRESS		=	$aes->encryptData($GUARDIAN_ADDRESS);
+$studdetails->OTHER_PERSON_SUPPORT	=	$aes->encryptData($OTHER_PERSON_SUPPORT);
+$studdetails->ADDRESS				=	$aes->encryptData($ADDRESS);
 $studdetails->IDNO 				    =	$IDNO;
         
         
@@ -525,29 +503,29 @@ function doDelete(){
 
 	}
 
-function doUploadCOE(){
+//function doUploadCOE(){
     //$COE_ID = $_GET['id'];
-    if (isset($_POST['submit'])){
+//    if (isset($_POST['submit'])){
 
         //echo encrypt($_POST['savegrades']);
 
         
-        $COE=$_FILES['COE']['name'];
-        $COE_type=$_FILES['COE']['type'];
-        $COE_size=$_FILES['COE']['size'];
-        $COE_tem_loc=$_FILES['COE']['tmp_name'];
-        $COE_store="COE/".$COE;
+//        $COE=$_FILES['COE']['name'];
+//        $COE_type=$_FILES['COE']['type'];
+//        $COE_size=$_FILES['COE']['size'];
+//        $COE_tem_loc=$_FILES['COE']['tmp_name'];
+//        $COE_store="COE/".$COE;
         
-        move_uploaded_file($COE_tem_loc,$COE_store);
+//        move_uploaded_file($COE_tem_loc,$COE_store);
 
 		//$upload = new Upload();
         //$COE_ID		= $_POST['COE_ID'];
         
 		//$upload->COE_ID 	= $COE_ID;
-        $student = new Student();
-		$upload->IDNO 	    = $IDNO;
-        $upload = new Upload();
-		$upload->COE		= $COE;
+//        $student = new Student();
+//		$upload->IDNO 	    = $IDNO;
+//        $upload = new Upload();
+//		$upload->COE		= $COE;
 		//$upload->COE2		= $COE2;
 		//$upload->COE3		= $COE3;
 		//$upload->COE4		= $COE4;
@@ -558,20 +536,29 @@ function doUploadCOE(){
 		//$upload->COE9		= $COE9;
 		//$upload->COE10		= $COE10;
 
-		$upload->create();		 
+//		$upload->create();		 
  		//message("Grade successfully updated!");
-		redirect("index.php");
+//		redirect("index.php");
 	
-}
-}
-//function doUploadCOE(){
+//}
+//}
+function doUploadCOE(){
 
-       // global $mydb;
+        global $mydb;
 		//$studentId = $_GET['studentId'];
 
-       // $idno  =  $_POST['idno'];
-        // include 'db.php';
-           // if (isset($_POST['submit'])) {
+        $idno  =  $_POST['idno'];
+        include 'dbconfig.php';
+            if (isset($_POST['submit'])) {
+                
+                $COE = $_FILES['COE']['name'];
+   $COE = filter_var($COE, FILTER_SANITIZE_STRING);
+   $COE_size = $_FILES['COE']['size'];
+   $COE_tmp_name = $_FILES['COE']['tmp_name'];
+   $COE_folder = '../COE/'.$COE;
+                
+                move_uploaded_file($COE_tmp_name, $COE_folder);
+                
           //$COE=$_FILES['COE']['name'];
           //$COE_type=$_FILES['COE']['type'];
           //$COE_size=$_FILES['COE']['size'];
@@ -580,8 +567,8 @@ function doUploadCOE(){
             
           //move_uploaded_file($COE_tem_loc,$COE_store);
 
-          //$sql="UPDATE tblstudcoe COE=$COE WHERE IDNO=$idno";
-          //$query=mysqli_query($conn,$sql);
+          $sql="INSERT INTO tblstudcoe (IDNO, COE) values('$idno','$COE')";
+          $query=mysqli_query($conn,$sql);
           //          redirect("index.php?view=class&studentId=")
             //}
             
@@ -604,7 +591,7 @@ function doUploadCOE(){
 	
     //message('Student infomation updated successfully!', "info");
 	//redirect('index.php');
-
+            }}
 
 	function doDelsubj(){
 		$studentId=$_GET['studentId'];

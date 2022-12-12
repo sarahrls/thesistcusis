@@ -83,20 +83,32 @@
 				  			global $mydb;
 					  		$cur = $mydb->loadResultList();
 							foreach ($cur as $student) {
+                                
+                                
+                                require_once ("../../../includes/encryption.php");
+                                $aes = new AdvanceEncryptionStandard('WR7rLKlVvJdEAIzHUMpt4dcEKsXPinIU2KiWzm++bhg=','AES-256-CBC','NJ0oI9P1fytagUfPny3qTA==');
+                       
+                            //$decrypted_IDNO = $aes->decryptData($student->IDNO);
+                            $decrypted_LNAME = $aes->decryptData($student->LNAME);
+                            $decrypted_FNAME = $aes->decryptData($student->FNAME);
+                            $decrypted_MNAME = $aes->decryptData($student->MNAME);
+                            $decrypted_SEX = $aes->decryptData($student->SEX);
+                            
+                                
 					  		echo '<tr>';
 					  		echo '<td width="5%" align="center"></td>';
 					  		// echo '<td><input type="checkbox" name="selector[]" id="selector[]" value="'.$student->IDNO. '"/>
 					  		// 		<a href="edit_studentinfo.php?id='.$student->IDNO.'">' . $student->IDNO.'</a></td>';
 					  		echo '<td>' . $student->IDNO.'</td>';
-					  		echo '<td><a href="index.php?view=grade&classId='.$_GET['id'].'&gradeId='.$student->GRADE_ID.'&instructorId='.$_GET['instructorId'].'">'. $student->LNAME. ',' .$student->FNAME.' '.$student->MNAME.'</a></td>';
-					  		echo '<td>'. $student->SEX.'</td>';
+					  		echo '<td><a href="index.php?view=grade&classId='.$_GET['id'].'&gradeId='.$student->GRADE_ID.'&instructorId='.$_GET['instructorId'].'">'. $decrypted_LNAME. ',' .$decrypted_FNAME.' '.$decrypted_MNAME.'</a></td>';
+					  		echo '<td>'. $decrypted_SEX.'</td>';
 					  		/*echo '<td>'. $student->AGE.'</td>';
 					  		echo '<td>'. $student->BDAY.'</td>';
 					  		echo '<td>'. $student->STATUS.'</td>';*/
 					  		echo '<td>'. $student->FIRST.'</td>';
 					  		echo '<td>'. $student->SECOND.'</td>';
-					  		echo '<td>'. $student->THIRD.'</td>';
-					  		echo '<td>'. $student->FOURTH.'</td>';
+					  		//echo '<td>'. $student->THIRD.'</td>';
+					  		//echo '<td>'. $student->FOURTH.'</td>';
 					  		echo '<td>'. $student->AVE.'</td>';  
 					  		echo '<td>'. $student->REMARKS.'</td>';  
 					  		echo '</tr>';

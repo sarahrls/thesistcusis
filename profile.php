@@ -13,7 +13,7 @@
                 require_once ("includes/encryption.php");
                 $aes = new AdvanceEncryptionStandard('WR7rLKlVvJdEAIzHUMpt4dcEKsXPinIU2KiWzm++bhg=','AES-256-CBC','NJ0oI9P1fytagUfPny3qTA==');
             
-                $decrypted_IDNO = $aes->decryptData($cur->IDNO);
+                //$decrypted_IDNO = $aes->decryptData($cur->IDNO);
                 $decrypted_LNAME = $aes->decryptData($cur->LNAME);
                 $decrypted_FNAME = $aes->decryptData($cur->FNAME);
                 $decrypted_MNAME = $aes->decryptData($cur->MNAME);
@@ -33,7 +33,7 @@
 						<legend  style="margin-top:10px; color:#780000; font-size:35px;  font-family:Poppins; font-weight:1000px;">Student Information</legend>
 					<table class="table table-bordered" cellspacing="0">
 						<tr>
-                            <td style="font-family:Poppins; font-weight:800; letter-spacing:1px;">ID Number :</td><td width="80%"><?php echo $decrypted_IDNO; ?></td></tr>	
+                            <td style="font-family:Poppins; font-weight:800; letter-spacing:1px;">ID Number :</td><td width="80%"><?php echo $cur->IDNO; ?></td></tr>	
 							<td style="font-family:Poppins; font-weight:800; letter-spacing:1px;">Fullname :</td><td><?php echo $decrypted_LNAME .', '. $decrypted_FNAME.', '. $decrypted_FNAME; ?></td>	</tr></tr>
 							<td style="font-family:Poppins; font-weight:800; letter-spacing:1px;">Gender :</td><td><?php 
 								if($decrypted_SEX== 'F'){

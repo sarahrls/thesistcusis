@@ -17,8 +17,10 @@
         <?php
                 $student = new Student();
 				$cur = $student->single_student($_GET['studentId']);
+            
         ?>
-              <input name="idno" type="hidden" value="<?php echo $cur->IDNO;?>">
+              <input class="form-control input-sm" id="idno" name="idno" placeholder=
+												  "ID Number" type="number" value="<?php echo $cur->IDNO; ?>" readonly style="font-size:15px;">
         <h5 style="margin-top:5px; font-family:Poppins; font-weight:900; fon">1st Year</h5>
             <label style="color:#780000; font-family:Poppins; font-size:15px; margin-right:20px;">1st Sem</label> 
             <input id="COE" type="file" name="COE" value="" ><br>
