@@ -281,6 +281,7 @@
     </button>
     <div class="dropdown-content">
       <a href="<?php echo WEB_ROOT; ?>index.php?page=2">Account Info</a>
+    <a href="<?php echo WEB_ROOT; ?>about.php">About</a>
       <a href="<?php echo WEB_ROOT; ?>logout.php">Logout</a>
       
     </div>

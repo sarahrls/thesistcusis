@@ -93,10 +93,13 @@ if (isset($_POST['btnlogin'])) {
 		color: #780000;
 		}
 		
-		form{
-			
-			
-		}
+		
+          @media screen and (max-width:480px){
+              .col-md-6{
+                  width:30%;
+                  
+              }
+          }
 		
   </style>
 
@@ -146,9 +149,7 @@ if (isset($_POST['btnlogin'])) {
        <div class="ftco-cover-1 overlay" style="background-image: url('images/tcu.png'); ">
         <div class="container">
           <div class="row align-items-center">
-            <div class="col-lg-5">
-              <h1 class="line-bottom">TCUSIS</h1>
-            </div>
+           
             <div class="col-lg-5 ml-auto">
               
             </div>
@@ -164,21 +165,23 @@ if (isset($_POST['btnlogin'])) {
           <div class="col-md-5 pr-md-5 mr-auto">
           
           </div>
-          <div class="col-md-6">
-            <div class="quick-contact-form bg-white" style="margin-top:-800px; width: 600px ; height: 690px; margin-left: 120px; ">
-                <h2 style="text-transform:none; margin-top: 150px;">Sign In</h2>
+          <div class="col-md-6" style="align-item:center; margin-top:50px; margin-right:90px; display:flex;">
+            <div class="quick-contact-form bg-white" style="margin-top:-800px; width: 500px ; height:330px;  ">
+                <h2 style="text-transform:none; margin-top: 20px;">Sign In</h2>
                 <form action="login.php" method="POST" style="position:relative; top:-5px;">
                   <div class="form-group">
-                    <input type="number" class="form-control" name="uname" placeholder="Student Id Number" style="width:400px; margin-left: 25px;">
+                    <input type="number" class="form-control" name="uname" placeholder="Student Id Number" style="width:400px; margin-left: px;">
                   </div>
-                  <div class="form-group" style="margin-left: 25px;">
+                  <div class="form-group" style="margin-left: px;">
                     <input type="password" class="form-control" name="pass" placeholder="Password" style="width:400px; display:center; ">
                   </div> 
                   <div class="form-group">
-                    <input type="submit" value="Login" name="btnlogin" class="btn btn-primary px-5" style="margin-left:150px; background-color:#780000;">
+                    <input type="submit" value="Login" name="btnlogin" class="btn btn-primary px-5" style="margin-left:110px; background-color:#780000;">
                   </div>
                 </form>
               </div>
+              
+              
           </div>
         </div>
       </div>

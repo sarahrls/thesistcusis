@@ -1,4 +1,22 @@
-<div class="container" style="margin-top: 110px"> 
+<head>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</head>
+
+<style type="text/css">
+   
+    body{
+background-image:url('images/tcu.png');
+background-repeat:no-repeat;
+background-attachment:fixed;
+background-size: 100% 100%;
+background-color: rgba(0,0,0,. 5);
+        }
+</style>
+
+<div class="container" style="margin-top: 110px" >
+
 <div class="container" style="margin-top: 90px; border: 2px solid black; border-radius: 10px; background-color:white;">
 	<?php
 		check_message();
@@ -30,7 +48,7 @@
 			?>
 			  				
 				 <fieldset>
-						<legend  style="margin-top:10px; color:#780000; font-size:35px;  font-family:Poppins; font-weight:1000px;">Student Information</legend>
+						<legend  style="margin-top:20px; color:#780000; font-size:35px;  font-family:Poppins; font-weight:1000px;"><span class="glyphicon glyphicon-user" ></span><a href="index.php" style="color:#780000;"><ion-icon name="arrow-back-outline"></ion-icon></a>Student Information</legend>
 					<table class="table table-bordered" cellspacing="0">
 						<tr>
                             <td style="font-family:Poppins; font-weight:800; letter-spacing:1px;">ID Number :</td><td width="80%"><?php echo $cur->IDNO; ?></td></tr>	
