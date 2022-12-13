@@ -10,7 +10,7 @@ $cur = $grade->single_grades($gradeId);
 <form class="form-horizontal well span4" action="controller.php?action=grade&classId=<?php echo $_GET['classId'];?>&gradeId=<?php echo $_GET['gradeId'];?>&instructorId=<?php echo $_GET['instructorId'];?>" method="POST">
 
 	<fieldset>
-		<legend style="margin-top:5px; font-family:Poppins; font-weight:900; ">Add Grades</legend>
+		<legend style="margin-top:5px; font-family:Poppins; font-weight:900; "><span class="glyphicon glyphicon-user" ></span><a href="index.php" style="color:#780000;"><ion-icon name="arrow-back-outline"></ion-icon></a>Add Grades</legend>
 		 <div class="form-group">
         <div class="col-md-8">
         <?php 
@@ -157,7 +157,7 @@ $cur = $grade->single_grades($gradeId);
               <label class="col-md-4 control-label" for=
               "idno"></label>
               <div class="col-md-8">
-                <a href="index.php?view=class&id=<?php echo $_GET['classId']; ?>&instructorId=<?php echo $_GET['instructorId'];?>" class="btn btn-primary" name="savecourse" type="submit" style="background-color:#780000; font-family:Poppins;">Back</a>
+               
                <button class="btn btn-primary" name="savegrades" type="submit" style="background-color:#780000; font-family:Poppins;">Save</button>
               </div>
             </div>

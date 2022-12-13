@@ -25,7 +25,7 @@
       
     tr:nth-child(odd) {
       background: #ccc;
-        margin: 5rem;
+        margin: 2rem;
     }
     
 		td {
@@ -33,7 +33,7 @@
 			border: none;
 			border-bottom: 1px solid #eee;
 			position: relative;
-			padding-left: 50px;
+			padding-left: 10px;
             margin-bottom: 10px;
           
 		}
@@ -48,6 +48,17 @@
 			padding-right: 5px;
 			white-space: nowrap;
 		}
+        
+        @media screen and (max-width:480px){
+        .well{
+            
+            overflow-x: scroll;
+        }
+         .navigation{
+            display: flex;
+            overflow-y: scroll;
+        }
+    }
 
 		/*
 		Label the data
@@ -60,14 +71,17 @@
 		td:nth-of-type(5):before { content: "Specialization"; }
 		td:nth-of-type(6):before { content: "Email Address"; }
 		td:nth-of-type(7):before { content: "Actions"; }
-	} 
+	}
+    
+      
 
 </style>
 
 
 
-<div class="well">
+<div class="well" >
 	<h3 align="left" style="margin-top:5px; font-family:Poppins; font-weight:900; ">List of Faculty</h3>
+        <a href="index.php?view=add" class="btn btn-default" style="background-color:#780000; font-family:Poppins; margin-top:-30px; margin-bottom:20px;"><span class="glyphicon glyphicon-plus-sign"></span> New</a>
 			    <form action="controller.php?action=delete" Method="POST">  					
 				<table id="example" class="table table-striped" cellspacing="0">
 				
@@ -112,7 +126,10 @@
 						  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500;">'. $result->SPECIALIZATION.'</td>';
 						  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500;">'. $result->INST_EMAIL.'</td>';
 					 			echo '<td style="font-size:16px; font-family:Poppins; font-weight:500;"><a href="index.php?view=instSubj&instructorId='.$result->INST_ID.'" style="color:#780000;">List of Loads</a>';
-                                echo '<a href="index.php?view=edit&id='.$result->INST_ID.'" style="font-size:16px; font-family:Poppins; font-weight:500; color:#780000;"> Edit</a></td>';
+                                echo '<a href="index.php?view=edit&id='.$result->INST_ID.'" style="font-size:16px; font-family:Poppins; font-weight:500; color:#780000;"> Edit</a>';
+                                
+                                echo '<a href = "#" style="color:#780000; font-size:15px; font-family:Poppins; font-weight:500;"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                </td>';
 						  		
 						  		
 						  		echo '</tr>';
@@ -125,10 +142,7 @@
 				<?php
 				if($_SESSION['ACCOUNT_TYPE']=='Administrator'){
 						echo '
-				<div class="btn-group" style="background-color:#780000; border-radius:5px;">
-				  <a href="index.php?view=add" class="btn btn-default" style="background-color:#780000; "><span class="glyphicon glyphicon-plus-sign"></span> New</a>
-				  <button type="submit" class="btn btn-default" name="delete" style="background-color:#780000; "><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>
-				</div>';
+				';
 			}
 				?>
 				</form>

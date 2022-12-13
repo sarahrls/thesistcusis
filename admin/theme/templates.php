@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
+
  <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,607 +24,411 @@
   <link href="<?php echo WEB_ROOT; ?>css/dataTables.bootstrap.css" rel="stylesheet" media="screen">
   <link rel="stylesheet" type="text/css" href="<?php echo WEB_ROOT; ?>css/jquery.dataTables.css">
   <link rel="icon" href="/tculogo.png" type="image/x-icon">
-</head>   
-
-<style type="text/css">
-        /* Google Font Link */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-        
-table { 
-  font-size: 9px;
-}
-  table tr td{
-    font-size: 12px;
-  }
-        
-*{
-
-  box-sizing: border-box;
-  font-family: "Poppins" , sans-serif;
-  text-decoration: none;
-
-  box-sizing: border-box;
-}
-
-body {  
-    font-family: 'Poppins', sans-serif;
-} 
+</head>
     
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+<style>
+/* =========== Google Fonts ============ */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
 
+/* =============== Globals ============== */
 * {
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+:root {
+  --blue: #2a2185;
+  --white: #fff;
+  --gray: #f5f5f5;
+  --black1: #222;
+  --black2: #999;
+--maroon: #780000;
+}
+
 
 body {
-    font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-.data {
-    background: url(undefined);
-    height: 100vh;
-    margin-left: 142px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    
-    min-height: calc(100vh - 90px;)
-}
-
-
-label {
-    line-height: 55px;
-    font-size: 30px;
-    color: white;
-    font-weight: 200;
-    margin-left: 30px;
-    margin-top: 5px;
-    cursor: pointer;
-}
-
-    .panel-header{
-    top:0;
-    left: 0;
-    z-index: 10000;
-    float: right;
-    align-items: right;
-    width: 92.8%;
-    height: 0%;
-    
-}
-
-
-
-
-.side-menu {
-    position: fixed;
-    background: #780000;
-    top: 0;
-    left: 0;
-    width: 16%;
-    height: 100%;
-    overflow-y: scroll;
-    z-index: 9999;
-}
-.sample-container{
-	width: 750px;
-	height: 750px;
-	background-color: yellow;
-	float:right;
-
+.con {
+  position: relative;
+  width: 100%;
 }
     
+/* =============== Navigation ================ */
+.navigation {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background: var(--maroon);
+  border-left: 10px solid var(--maroon);
+  transition: 0.5s;
+  overflow: hidden;
+}
+.navigation.active {
+  width: 80px;
+}
+
+.navigation ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navigation ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.navigation ul li:hover,
+.navigation ul li.hovered {
+  background-color: var(--white);
+}
+
+.navigation ul li:nth-child(1) {
+  margin-bottom: 40px;
+  pointer-events: none;
+}
+
+.navigation ul li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: var(--white);
+}
+.navigation ul li:hover a,
+.navigation ul li.hovered a {
+  color: var(--blue);
+}
+
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 60px;
+  height: 60px;
+  line-height: 75px;
+  text-align: center;
+}
+.navigation ul li a .icon ion-icon {
+  font-size: 1.60rem;
+}
+
+.navigation ul li a .title {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
+}
+
+/* --------- curve outside ---------- */
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px 35px 0 10px var(--white);
+  pointer-events: none;
+}
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px -35px 0 10px var(--white);
+  pointer-events: none;
+}
+
+/* ===================== Main ===================== */
+.main {
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  background: var(--white);
+  transition: 0.5s;
+}
+.main.active {
+  width: calc(100% - 80px);
+  left: 80px;
+}
+
+.topbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.search {
+  position: relative;
+  width: 400px;
+  margin: 0 10px;
+}
+
+.search label {
+  position: relative;
+  width: 100%;
+}
+
+.search label input {
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  padding: 5px 20px;
+  padding-left: 35px;
+  font-size: 18px;
+  outline: none;
+  border: 1px solid var(--black2);
+}
+
+   
 
     
-
-  
-/* Responsive Menu Bar */    
-.checkbtn{
-	font-size:30px; 
-	color:white;
-	float:left;
-	line-height:10px;
-	margin-right:40px;
-    cursor: pointer;
-    display: none;
-}
     
-#check{
-    display: none;
-        
-    }
-    
-    @media (max-width:952px){
-        label.logo{
-            font-size: :20px;
-            padding-left: 30px;
-        }
-        .side-menu ul li a{
-            font-size: 16px;
-        }
-    }
-    
-  @media (max-width:858px){
-      .checkbtn{
-          display: block;
-      }
-      ul{
-          position: fixed;
-          width: 100%;
-          height: 100vh;
-          background: #780000;
-          top:80px;
-          left: -100;
-          text-align: center;
-          transition: all .5s;
-      }
-      nav.side-menu ul li{
-          display: block;
-          margin: 50px 0;
-          line-height: 30px;
-      }
-      nav.side-menu ul li a{
-          font-size: 20px;
-      }
-      a:hover,a.active{
-          background: none;
-          color: #FFCCCB;
-      }
-      #check:checked ~ ul{
-          left: 0;
-      }
-    }
-/* End of Responsive Side Bar */   
-    
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-.side-menu::-webkit-scrollbar {
-    display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.side-menu{
-  -ms-overflow-style: none;  /* IE and Edge */
-}
-
-
-.side-menu center img {
-    height: 90px;
-    width: 120px;
-    border-radius: 50%;
-    margin-top: 30px;
-    border: 3px solid white;
-}
-
-.side-menu center h2 {
-    color: white;
-}
-
-.side-menu a {
-    display: block;
-    line-height: 60px;
-    transition: 0.5s;
-}
-
-.side-menu a:hover {
-   background: #A24857;
-    padding-left: 20px;
-    text-decoration: none;
-}
-
-.side-menu span {
-    width: 100%;
-    height: 2px;
-    font-size: 20px;
-    margin-left: 10px;
-    color: white;
-}
-
-.side-menu i {
-    font-size: 20px;
-    margin-left: 20px;
-    color: white;
-}
-
-.navbar-toggle {
-  color: #fff;
-  border: 0;
-  margin: 0;
-
-}
-    
-.navbar-toggle {
-    position: relative;
-    float: right;
-    padding: 9px 10px;
-    margin-right: 15px;
-    font-size: 25px;
-    background-color: transparent;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
-}
-    
-button{
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    @webkit-appearance: button;
-    cursor: pointer;
-    overflow: visible;
-}
-
-button, select {
-    text-transform: none;
-}
-
-.navbar-collapse {
-    padding-right: 15px;
-    padding-left: 15px;
-    overflow-x: visible;
-    @webkit-overflow-scrolling: touch;
-    border-top: 1px solid transparent;
-    @webkit-box-shadow: inset 0 1px 0 rgb(255 255 255 / 10%);
-    box-shadow: inset 0 1px 0 rgb(255 255 255 / 10%);
-}
-
-.collapse.in {
-    display: block;
-}
-
-.pull-left {
-    float: left;
-}
-.collapse {
-    display: none;
-}
-    
-nav .menu-bar {
-    position: absolute;
-    right: 60px;
-    top: -10px;
-    float: right;
-    margin-top: 20px;
-    display: none;
-    margin-right: 20px;
-}
-
-#menu {
-    display: none;
-}
-
-.side-menu .Logout {
-    display: none;
-}
-
-.total_div{
-	margin-top: 50px;
-}
-
-@media (max-width:850px) {
-    .side-menu a span {
-        display: none;
-    }
-
-    .side-menu center {
-        display: none;
-    }
-
-    .side-menu {
-        width: 100px;
-    }
-
-    .side-menu a i {
-        display: block;
-        line-height: 80px;
-        text-align: center;
-        margin-left: 0;
-        font-size: 35px;
-    }
-
-    .data {
-        margin-left: 0px;
-    }
-}
-
- 
-@media (max-width:991px) {
-    .menu-bar{
-        display: block;
-    }
-    
-    .side-menu{
-        display: none;
-    }
-   html{
-      font-size: 55%;
-   }
-
-    .navbar-collapse.pull-left {
-    float: none !important;
-}
-    
-    
-@media screen and (max-width:768px) {
-    .col-md-12{
-      
-      display: block;
-    }
-  
-    label {
-    display: inline;
-    white-space: nowrap;
-    line-height: 80px;
-    font-size: 30px;
-    color: white;
-    font-weight: 200;
-    margin-left: 15px;
-    margin-top: 5px;
-    cursor: pointer;
-}
-
-    nav ul {
-        display: none;
-    }
-
-    .side-menu {
-        width: 100%;
-        text-align: center;
-        left: 100%;
-        background-color:#990F02;
-        color: A24857;
-        transition: all 0.5s;
-    }
-    
-    .side-menu a:hover {
-        background: #A24857;
-        padding-left: 20px;
-        text-decoration: none;
-    }
-
-    .side-menu a i {
-        display: none;
-    }
-
-    .side-menu a span {
-        display: block;
-    }
-
-    .side-menu .Logout {
-        display: block;
-    }
-
-    nav .menu-bar {
-        display: block;
-    }
-    
-    
-    .cards{
-        font-size: 50%;
-        display: grid;
-        grid-template-columns: repeat(1fr);
-        grid-gap:1.5rem;
-        align-items: flex-start;
-    }
-}
-    
-    @media (min-width:450px) {
-         html{
-      font-size: 50%;
-             
-             
-   }
-    }
-
-#menu:checked~.side-menu {
-    left: 0;
-}
-    
-
 </style>
-  <?php
-  //login confirmation
- confirm_logged_in();
 
-  ?>
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="con">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="<?php echo (!empty($user['photo'])) ? '../images/'.$user['photo'] : '../images/tculogo.png'; ?>" style=" margin-top:10px; width:50px; font-family:Poppins;  height:50px;" >
+                        <label>
+                        <span class="title" style="margin-left:10px; font-size:20px;">TCUSIS</span>
+                            </label>
+                    </a>
+                </li>
 
-<body class="">
-    <input type="checkbox" id="menu">
- 
-  <nav>
-    <div class="side-menu" >
-       
-        <ul class="nav-list" >
-            <label class="logo" style="font-family:poppins; font-size:25px; font-weight:700; text-decoration:none; color:#fff;">
-         <img src="<?php echo (!empty($user['photo'])) ? '../images/'.$user['photo'] : '../images/tculogo.png'; ?>" style=" width:70px; font-family:Poppins;  height:70px;" ><br>TCUSIS 
-          <span href="<?php echo WEB_ROOT; ?>admin/index.php" class="simple-text logo-normal" ></span>
-           </label>
-            
-            
-           
-            
-         
-            
-         
-            <li>
-                <a class="active" href="<?php echo WEB_ROOT; ?>admin/index.php"> 
-             <i class='bx bx-home-alt' ></i>
-              <span class="links_name" style="font-family:Poppins; font-weight:500; font-size:15px;">Home</span>
-            </a>
-            </li>
-  
-              <?php if($_SESSION['ACCOUNT_TYPE']=='Administrator'){ 
+                <li style="margin-top:-30px;">
+                    <a href="<?php echo WEB_ROOT; ?>admin/index.php">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+
+                 
+                
+                <?php if($_SESSION['ACCOUNT_TYPE']=='Administrator'){ 
                 ?> 
-            
-              <li class="<?php echo (currentpage_admin() == 'student') ? "active" : false;?>">
-                <a href="<?php echo WEB_ROOT; ?>admin/modules/student/index.php">
-                    <i class='bx bx-user'></i>
-                    <span class="links_name" style="font-family:Poppins; font-weight:500; font-size:15px;">Students</span>
-                </a>
                 
-              </li>
-            
-              <li class="<?php echo (currentpage_admin() == 'subject') ? "active" : false;?>">
-                <a href="<?php echo WEB_ROOT; ?>admin/modules/subject/index.php">
-                    <i class='bx bxs-book-bookmark'></i>
-                    <span class="links_name" class="links_name" style="font-family:Poppins; font-weight:500; font-size:15px;">Subjects</span> 
-                </a>
-                  
-              </li>
-            
-              <li class="<?php echo (currentpage_admin() == 'course') ? "active" : false;?>">
-                <a href="<?php echo WEB_ROOT; ?>admin/modules/course/index.php">
-                    <i class='bx bxs-objects-vertical-bottom'></i>
-                    <span class="links_name" style="font-family:Poppins; font-weight:500; font-size:15px;">Year/Sem</span>  
-                </a>
-                  
-              </li>
-            
-              <li class="<?php echo (currentpage_admin() == 'instructor') ? "active" : false;?>">
-                <a href="<?php echo WEB_ROOT; ?>admin/modules/instructor/index.php">
-                   <i class='bx bx-user-circle' ></i>
-                    <span class="links_name" style="font-family:Poppins; font-weight:500; font-size:15px;">Faculty</span>  
-                </a>
-                  
-              </li>
-            
-              <li class="<?php echo (currentpage_admin() == 'department') ? "active" : false;?>">
-                <a href="<?php echo WEB_ROOT; ?>admin/modules/department/index.php">
-                   <i class='bx bxs-building'></i>
-                    <span class="links_name" style="font-family:Poppins; font-weight:500; font-size:15px;">Department</span>  
-                </a>
-                  
-              </li>
-            
-              <li class="<?php echo (currentpage_admin() == 'room') ? "active" : false;?>">
-                <a href="<?php echo WEB_ROOT; ?>admin/modules/room/index.php">
-                   <i class='bx bx-store-alt'></i>
-                    <span class="links_name" style="font-family:Poppins; font-weight:500; font-size:15px;">Rooms</span>  
-                </a>
-                  
-              </li>
-              
-                 <li  class="<?php echo (currentpage_admin() == 'class') ? "active" : false;?>">
-                    <a href="<?php echo WEB_ROOT; ?>admin/modules/class/index.php">
-                     <i class='bx bxs-buildings'></i>
-                      <span class="links_name" style="font-family:Poppins; font-weight:500; font-size:15px;">Class</span>   
-                   </a>
-                     
-                 </li>   
-            
-                <li  class="<?php echo (currentpage_admin() == 'class') ? "active" : false;?>">
-                    <a href="<?php echo WEB_ROOT; ?>admin/modules/chatbot/index.php"> 
-                  <i class='bx bxs-chat'></i>
-                      <span class="links_name" style="font-family:Poppins; font-weight:500; font-size:15px;">Chatbot</span>
-                         </a>
-                 </li>  
+                <li class="<?php echo (currentpage_admin() == 'student') ? "active" : false;?>">
+                    <a href="<?php echo WEB_ROOT; ?>admin/modules/student/index.php">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">Students</span>
+                    </a>
+                </li>
 
+                <li class="<?php echo (currentpage_admin() == 'course') ? "active" : false;?>">
+                    <a href="<?php echo WEB_ROOT; ?>admin/modules/course/index.php">
+                        <span class="icon">
+                            <ion-icon name="calendar-outline"></ion-icon>
+                        </span>
+                        <span class="title">Year/Sem</span>
+                    </a>
+                </li>
+
+                <li class="<?php echo (currentpage_admin() == 'instructor') ? "active" : false;?>">
+                    <a href="<?php echo WEB_ROOT;?>admin/modules/instructor/index.php">
+                        <span class="icon">
+                           <ion-icon name="person-outline"></ion-icon>
+                        </span>
+                        <span class="title">Faculty</span>
+                    </a>
+                </li>
+
+                <li class="<?php echo (currentpage_admin() == 'department') ? "active" : false;?>">
+                    <a href="<?php echo WEB_ROOT;?>admin/modules/department/index.php">
+                        <span class="icon">
+                            <ion-icon name="business-outline"></ion-icon>
+                        </span>
+                        <span class="title">Department</span>
+                    </a>
+                </li>
+
+                <li class="<?php echo (currentpage_admin() == 'room') ? "active" : false;?>">
+                    <a href="<?php echo WEB_ROOT; ?>admin/modules/room/index.php">
+                        <span class="icon">
+                            <ion-icon name="storefront-outline"></ion-icon>
+                        </span>
+                        <span class="title">Rooms</span>
+                    </a>
+                </li>
+
+                <li class="<?php echo (currentpage_admin() == 'class') ? "active" : false;?>">
+                    <a href="<?php echo WEB_ROOT; ?>admin/modules/class/index.php">
+                        <span class="icon">
+                            <ion-icon name="bookmarks-outline"></ion-icon>
+                        </span>
+                        <span class="title">Class</span>
+                    </a>
+                </li>
                 
-               <?php
+                <li class="<?php echo (currentpage_admin() == 'class') ? "active" : false;?>">
+                    <a href="<?php echo WEB_ROOT; ?>admin/modules/chatbot/index.php">
+                        <span class="icon">
+                           <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                        </span>
+                        <span class="title">Chatbot</span>
+                    </a>
+                </li>
+                
+                 <?php
               }?> 
                    
               <?php if($_SESSION['ACCOUNT_TYPE']=='Teacher'){ 
                 ?> 
+                
                    <li class="<?php echo (currentpage_admin() == 'inst_front') ? "active" : false;?>">
                     <a href="<?php echo WEB_ROOT; ?>admin/modules/inst_front/index.php?view=record">
-                      <i class='bx bxs-user'></i>
-                      <span class="links_name" style="font-family:Poppins; font-weight:500; font-size:15px;">Record</span>    
+                        <span class="icon">
+                           <ion-icon name="book-outline"></ion-icon>
+                        </span>
+                        <span class="title">Record</span>
                     </a>
-                       
-                   </li>  
-              <?php
+                </li>
+                 <?php
               }?> 
-            
-            <?php if($_SESSION['ACCOUNT_TYPE']=='Teacher'){ 
-                ?>
-            <li  class="<?php echo (currentpage_admin() == 'logout') ? "active" : false;?>">
-                    <a href="<?php echo WEB_ROOT; ?>admin/logout.php">
-                      <i class='bx bx-log-out-circle'></i>
-                      <span class="links_name" style="font-family:Poppins; font-weight:500; font-size:15px;">Logout</span>   
-                   </a>
                 
-                 </li>
-            <?php
+                <?php if($_SESSION['ACCOUNT_TYPE']=='Teacher'){ 
+                ?>
+                
+                <li class="<?php echo (currentpage_admin() == 'logout') ? "active" : false;?>">
+                    <a href="<?php echo WEB_ROOT; ?>admin/logout.php">
+                        <span class="icon">
+                           <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Logout</span>
+                    </a>
+                </li>
+                 <?php
               }?> 
             
             
                  <?php if($_SESSION['ACCOUNT_TYPE']=='Administrator'){ 
                 ?>
+                
                 <li class="<?php echo (currentpage_admin() == 'user') ? "active" : false;?>">
-                  <a href="<?php echo WEB_ROOT; ?>admin/modules/user/index.php">
-                       <i class='bx bx-user'></i>
-                      <span class="links_name" style="font-family:Poppins; font-weight:500; font-size:15px;">Manage Users</span>     
-                  </a>
-                    
+                    <a href="<?php echo WEB_ROOT; ?>admin/modules/user/index.php">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">Manage Users</span>
+                    </a>
                 </li>
-            
-                <li  class="<?php echo (currentpage_admin() == 'logout') ? "active" : false;?>">
+                
+                <li class="<?php echo (currentpage_admin() == 'logout') ? "active" : false;?>">
                     <a href="<?php echo WEB_ROOT; ?>admin/logout.php">
-                     <i class='bx bx-log-out-circle'></i>
-                      <span class="links_name" style="font-family:Poppins; font-weight:500; font-size:15px;">Logout</span>   
-                   </a>
-                     <span class="tooltip">Logout</span>
-                 </li> 
-               
+                        <span class="icon">
+                          <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Logout</span>
+                    </a>
+                </li>
                  <?php
               }?> 
-                <!-- <li><a href="<?php echo WEB_ROOT; ?>admin/logout.php">Logout</a></li>  -->
+            </ul>
+        </div>
 
-          </ul> 
-      </div>
-    </nav>
-   
-    <div class="data" id="main-panel">
-      <!-- Navbar -->
-        
-        <header>
-             <div class="panel-header panel-header-sm" style="background:#780000;">
-             
-              <label for="nav-toggle" class="checkbtn">
-            <span><i class='bx bx-menu'></i></span> 
-            </label>
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+               
+
+                <div class="user">
+                    <img src="assets/imgs/customer01.jpg" alt="">
+                </div>
+            </div>
+
+            <!-- ======================= Content ================== -->
+      
             
-      </div>
-        
-        </header>
-       
-        
-        
-          <!-- Collect the nav links, forms, and other content for toggling -->
-         <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
-             <ul class="nav navbar-nav">
-                 <li>
-                     
-                 </li>
-             </ul>
-             
-        </div>
- <div class="data " >
-  <div class="row total_div">
-    <div class="col-md-12">
-      <div class="card">
-       <div class="container">
-        <?php check_message(); ?>
-        <?php require_once $content;?>
-         
+            <div class="container">
+            <?php check_message(); ?>
+            <?php require_once $content;?>
        </div>
+       
+   
+            
         </div>
     </div>
-  </div>
-</div> 
+    <script>
+    // add hovered class to selected list item
+let list = document.querySelectorAll(".navigation li");
 
-      <!-- End Navbar -->
-     
+function activeLink() {
+  list.forEach((item) => {
+    item.classList.remove("hovered");
+  });
+  this.classList.add("hovered");
+}
+
+list.forEach((item) => item.addEventListener("mouseover", activeLink));
+
+// Menu Toggle
+let toggle = document.querySelector(".toggle");
+let navigation = document.querySelector(".navigation");
+let main = document.querySelector(".main");
+
+toggle.onclick = function () {
+  navigation.classList.toggle("active");
+  main.classList.toggle("active");
+};
+    </script>
+
+    <!-- =========== Scripts =========  -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     
-    </div>
-		<!-- Sample Container -->
-	
-	
-
-  <!--   Core JS Files   -->
+    
+    <!--   Core JS Files   -->
   <script src="<?php echo WEB_ROOT; ?>plugins/assets/js/core/jquery.min.js"></script>
   <script src="<?php echo WEB_ROOT; ?>plugins/assets/js/core/popper.min.js"></script>
   <script src="<?php echo WEB_ROOT; ?>plugins/assets/js/core/bootstrap.min.js"></script>
@@ -643,7 +448,7 @@ nav .menu-bar {
      <script type="text/javascript" src="<?php echo WEB_ROOT; ?>js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
      <script type="text/javascript" src="<?php echo WEB_ROOT; ?>js/locales/bootstrap-datetimepicker.uk.js" charset="UTF-8"></script>
     
-    <script type="text/javascript">
+     <script type="text/javascript">
   $('.form_curdate').datetimepicker({
         language:  'en',
         weekStart: 1,
@@ -665,7 +470,8 @@ nav .menu-bar {
     forceParse: 0
     });
 </script>
-<script>
+    
+    <script>
   function checkall(selector)
   {
     if(document.getElementById('chkall').checked==true)
@@ -711,16 +517,16 @@ nav .menu-bar {
     document.getElementById('finalave').value = totalVal;
      document.getElementById('finalave').value = Math.round((parseInt(totalVal)/4));  
         }
-  </script>     
-  <script>
+  </script>    
+     <script>
     $(document).ready(function() {
       // Javascript method's body can be found in assets/js/demos.js
       demo.initDashboardPageCharts();
 
     });
   </script>
-
-  <script type="text/javascript" charset="utf-8">
+    
+      <script type="text/javascript" charset="utf-8">
 $(document).ready(function() {
     var t = $('#example').DataTable( {
         "columnDefs": [ {
@@ -777,7 +583,6 @@ $(document).ready(function() {
 } );
 */       
     </script>
-   
 </body>
 
 </html>

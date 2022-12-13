@@ -7,7 +7,7 @@
  <form class="form-horizontal well span4" action="controller.php?action=edit&id=<?php echo $instid;?>" method="POST">
 
           <fieldset>
-            <legend style="margin-top:5px; font-family:Poppins; font-weight:900; ">Edit Faculty</legend>
+            <legend style="margin-top:5px; font-family:Poppins; font-weight:900; "><span class="glyphicon glyphicon-user" ></span><a href="index.php" style="color:#780000;"><ion-icon name="arrow-back-outline"></ion-icon></a>Edit Faculty</legend>
                               
 
               <div class="form-group">
@@ -120,7 +120,7 @@
                       "idno"></label>
 
                       <div class="col-md-8" >
-                           <a href="index.php" name="back" class="btn btn-default" style="background-color:#780000; font-family:Poppins; border-radius:5px;"></span>Back</a>
+                           
                         <button class="btn btn-default" name="savefaculty" type="submit" style="background-color:#780000;"><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
                       </div>
                     </div>

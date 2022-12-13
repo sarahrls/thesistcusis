@@ -8,7 +8,7 @@
 <form class="form-horizontal well span6" action="controller.php?action=edit&id=<?php echo $courseid;?>" method="POST">
 
 	<fieldset>
-		<legend style="margin-top:5px; font-family:Poppins; font-weight:900; ">Modify Year/Sem </legend>
+		<legend style="margin-top:5px; font-family:Poppins; font-weight:900; "><span class="glyphicon glyphicon-user" ></span><a href="index.php" style="color:#780000;"><ion-icon name="arrow-back-outline"></ion-icon></a>Modify Year/Sem </legend>
 		<div class="form-group">
             <div class="col-md-8">
               <label class="col-md-4 control-label" for=
@@ -95,7 +95,7 @@
               "idno"></label>
 
               <div class="col-md-8">
-                 <a href="index.php" name="back" class="btn btn-default" style="background-color:#780000; font-family:Poppins; border-radius:5px;"></span>Back</a>
+                 
                 <button class="btn btn-primary" name="savecourse" type="submit" style="background-color:#780000; font-family:Poppins;">Save</button>
               </div>
             </div>

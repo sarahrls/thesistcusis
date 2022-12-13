@@ -48,6 +48,17 @@
 			padding-right: 5px;
 			white-space: nowrap;
 		}
+        
+           @media screen and (max-width:480px){
+        .well{
+            
+            overflow-x: scroll;
+        }
+         .navigation{
+            display: flex;
+            overflow-y: scroll;
+        }
+    }
 
 		/*
 		Label the data
@@ -78,7 +89,9 @@
 <form class="form-horizontal span4" action="controller.php?action=delsubj" method="POST">
 	<div class="panel panel-primary">
 	  <div class="panel-heading">
-	    <h3 class="panel-title" style="margin-top:5px; font-family:Poppins; font-weight:900; "><span class="glyphicon glyphicon-user"></span> Instructor's Subject </h3>
+	    <h3 class="panel-title" style="margin-top:5px; font-family:Poppins; font-weight:900; "><span class="glyphicon glyphicon-user"></span><a href="index.php" style="color:#780000;"><ion-icon name="arrow-back-outline"></ion-icon></a> Instructor's Subject </h3>
+          
+         
 	  </div>
 	  <div class="panel-body">
 	   <div class="row" >	   
@@ -108,7 +121,9 @@
 			</table>
 		</form>
 		<br>
+        
 		<h3 align="left" style="margin-top:5px; font-family:Poppins; font-weight:900; ">List of Subjects</h3>
+                <a style="background-color:#780000; font-family:Poppins; margin-top:-30px; margin-bottom:20px;" href="index.php?view=assign&instructorId=<?php  echo (isset($_GET['instructorId'])) ? $_GET['instructorId']: 'ID' ; ?>" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign" ></span>  Assign Subjects</a>
 			    <table id="example" class="display" cellspacing="0" width="100%">
 				
 				  <thead>
@@ -152,7 +167,10 @@
 						//	echo '<td align="center">'. $result->UNIT.'</td>';
 							echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $result->ROOM.'</td>';
 							echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $result->DAY.'/'. $result->C_TIME.'</td>';
-							echo '<td><a href="index.php?view=class&id='.$result->CLASS_ID.'&instructorId='.$result->INST_ID.'" style="color:#780000; font-size:15px; font-family:Poppins; font-weight:500;">View</a></td>';
+							echo '<td><a href="index.php?view=class&id='.$result->CLASS_ID.'&instructorId='.$result->INST_ID.'" style="color:#780000; font-size:15px; font-family:Poppins; font-weight:500;">View</a>';
+                            
+                            echo '<a href = "#" style="color:#780000; font-size:15px; font-family:Poppins; font-weight:500;"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                            </td>';
 						//	echo '<td><a href="#.php?id='.$result->CLASS_ID.'">'. $result->DAY.'/'. $result->C_TIME.'</a></td>';
 							echo  '<input type="hidden" name="INST_ID" id="INST_ID" value="'.$result->INST_ID.'"/>';
 					  		echo '</tr>';
@@ -174,11 +192,7 @@
 				<tr><td  colspan="7"></td></tr>				  	 
 				</tfoot>	-->	
 			</table>			
-				<div class="btn-group" style="background-color:#780000; border-radius:5px;">
-				  <a href="index.php" class="btn btn-default" style="background-color:#780000;">Back</a>
-				   <a style="background-color:#780000;" href="index.php?view=assign&instructorId=<?php  echo (isset($_GET['instructorId'])) ? $_GET['instructorId']: 'ID' ; ?>" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign" ></span>  Assign Subjects</a>
-				   <button type="submit" class="btn btn-default" name="delete" style="background-color:#780000; font-family:Poppins; "><span class="glyphicon glyphicon-trash" ></span> Delete Selected</button>
-				</div>
+				
 		</form>
 	 </div>      		         
    </div>

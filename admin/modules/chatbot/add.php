@@ -2,7 +2,7 @@
 
 
           <fieldset>
-            <legend style="margin-top:5px; font-family:Poppins; font-weight:900; ">New Queries</legend>
+            <legend style="margin-top:5px; font-family:Poppins; font-weight:900; "><span class="glyphicon glyphicon-user" ></span><a href="index.php" style="color:#780000;"><ion-icon name="arrow-back-outline"></ion-icon></a>New Queries</legend>
                               
                   <div class="form-group">
                     <div class="col-md-8">

@@ -17,7 +17,7 @@
 		        <form class="form-horizontal well span4" action="controller.php?action=updatetime&classId=<?php echo $_GET['classId'];?>" method="POST">
 
 					<fieldset>
-						<legend style="margin-top:5px; font-family:Poppins; font-weight:900; ">Update</legend>
+						<legend style="margin-top:5px; font-family:Poppins; font-weight:900; "><span class="glyphicon glyphicon-user" ></span><a href="index.php" style="color:#780000;"><ion-icon name="arrow-back-outline"></ion-icon></a>Update</legend>
 															
 
 							<div class="form-group">
@@ -175,7 +175,7 @@
 				              "idno"></label>
 
 				              <div class="col-md-8">
-                                <a href="index.php" class="btn btn-default" style="background-color:#780000;">Back</a>
+                              
 				                <button class="btn btn-primary" name="savecourse" type="submit" style="background-color:#780000; font-family:Poppins; ">Save</button>
 				              </div>
 				            </div>

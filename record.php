@@ -1,7 +1,7 @@
  
 
 <div class="container" style="margin-top: 90px; border: 2px solid black; border-radius: 10px; background-color:white;"> 
-	  <caption><h3 align="left" style="margin-top:10px; color:#780000; font-size:35px;  font-family:Poppins; font-weight:1000px;">Student Enrollment Records</h3></caption>
+	  <caption><h3 align="left" style="margin-top:10px; color:#780000; font-size:35px;  font-family:Poppins; font-weight:1000px;">Student Grade Records</h3></caption>
 			    <form action="controller.php?action=delsy&studentId=<?php echo $_SESSION['IDNO']; ?>" Method="POST">  					
 				<table class="table table-hover">
 				  <thead>
@@ -9,13 +9,13 @@
 				  		<th>Year and Sem</th> 
 				  		<th>Schoolyr</th>
 				  		<th>Status</th>
-				  		<th>Date Enrolled</th>
+				  		
 				  		<th>Options</th> 
 				  	</tr>	
 				  </thead>
 				  <tbody>
 				  	<?php 
-				  		$mydb->setQuery("SELECT  `COURSE_NAME` ,COURSE_DESC,  `SYID` ,  `AY` ,  `SEMESTER` , s.`COURSE_ID` ,  `IDNO` ,  `CATEGORY` ,  `DATE_RESERVED` ,  `DATE_ENROLLED` ,  `STATUS` 
+				  		$mydb->setQuery("SELECT  `COURSE_NAME` ,COURSE_DESC,  `SYID` ,  `AY` ,  `SEMESTER` , s.`COURSE_ID` ,  `IDNO` ,  `CATEGORY` ,   `STATUS` 
 										FROM  `schoolyr` s,  `course` c
 										WHERE s.`COURSE_ID` = c.`COURSE_ID` AND IDNO=".$_SESSION['IDNO']);
 				  		$cur = $mydb->loadResultList();
@@ -27,8 +27,8 @@
 				  //		echo '<td>'. $schoolyr->SEMESTER.'</td>';
 				  		echo '<td>'. $schoolyr->AY.'</td>';
 				  		echo '<td>'. $schoolyr->STATUS.'</td>';
-				  		echo '<td>'. $schoolyr->DATE_RESERVED.'</td>';
-				  		echo '<td ><a href = "index.php?page=4&studentId='.$schoolyr->IDNO.'&cid='.$schoolyr->COURSE_ID.'&sy='.$schoolyr->SYID.'" style="color:#780000; font-weight:700px;">Enrolled Subjects</a></td>';
+				  		
+				  		echo '<td ><a href = "index.php?page=4&studentId='.$schoolyr->IDNO.'&cid='.$schoolyr->COURSE_ID.'&sy='.$schoolyr->SYID.'" style="color:#780000; font-weight:700px;">View Grades</a></td>';
 				  		echo '</tr>';
 				  	} 
 				  	?>

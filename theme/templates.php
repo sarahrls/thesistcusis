@@ -22,20 +22,17 @@
     <link rel="stylesheet" href="<?php echo WEB_ROOT; ?>plugins/homepage/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="<?php echo WEB_ROOT; ?>plugins/homepage/fonts/flaticon/font/flaticon.css">
     <link rel="stylesheet" href="<?php echo WEB_ROOT; ?>plugins/homepage/css/aos.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="<?php echo WEB_ROOT; ?>plugins/homepage/css/style.css">
 
   </head>
 <style type="text/css">
-  body{
-  background-image: url("images/tcu.png");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
+  
    header{
 	position: fixed;
+    display: flex;
 	width: 100%;
 	top: 0;
 	right: 0;
@@ -43,8 +40,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	background: transparent;
-	
+    background-color: #780000;
 	transition: all .50s ease;
 } 
   
@@ -57,12 +53,22 @@
         margin-left: auto;
     }
     
+    
+    
     nav{
         order: 1;
+       
     }
     
+    .col-9{
+        position: sticky;
+    }
+    
+    body{
+        overflow-y: hidden;
+    }
     .site-menu{
-        display: flex;
+        display: ;
         list-style: none;
     }
     .site-menu li{
@@ -89,8 +95,120 @@
         }
     }
     
+ .topnav {
+  overflow: hidden;
+  background-color: #780000;
+     float: right;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.active {
+  background-color: #780000;
+  color: white;
+    border-radius: 10px;
+    text-decoration: underline;
+}
+    .active:hover{
+        text-decoration-color: #fff;  
+        text-decoration: underline;
+    }
+
+.topnav .icon {
+  display: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;    
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+  background-color: #555;
+  color: white;
+    border-radius: 10px;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+    
 </style>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" >
+  <body data-target=".site-navbar-target" data-offset="300" >
 
     
     <div class="site-wrap" id="home-section">
@@ -142,26 +260,36 @@
 
             <div class="col-3 ">
               <div class="site-logo">
-                <a class="logo" href="<?php echo WEB_ROOT; ?>" style="color:#780000; position:inherit; " ><img src="images/tculogo.png" style="width:50px; height:50px; ">TCUSIS</a>
+                <a class="logo" href="<?php echo WEB_ROOT; ?>" style="color:#fff; position:inherit; " ><img src="images/tculogo.png" style="width:50px; height:50px; ">TCUSIS</a>
               </div>
             </div>
 
             <div class="col-9  text-right">
               
 
-              <span class="d-inline-block d-lg-none"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span class="icon-menu h3 text-white"></span></a></span>
+            
+                
 
-              
 
-              <nav class="site-navigation  ml-auto d-none d-lg-block " role="navigation"  style="color: red" >
-                <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                  <li class="active" style="font-size:18px; font-weight:600px; -webkit-text-stroke-color: #ffff; -webkit-text-stroke-width: 1px;"><a href="<?php echo WEB_ROOT; ?>">Home</a></li>
-                    <li><a href="<?php echo WEB_ROOT; ?>index.php?page=3">COE</a></li>
-                  <li><a href="<?php echo WEB_ROOT; ?>index.php?page=3">List of Subjects</a></li>
-                  <li><a href="<?php echo WEB_ROOT; ?>index.php?page=2">Student Info</a></li>
-                  <li><a href="<?php echo WEB_ROOT; ?>logout.php">Logout</a></li>  
-                </ul>
-              </nav>
+<div class="topnav" id="myTopnav">
+  <a style="font-size:18px; font-weight:600px; -webkit-text-stroke-color: #780000; font-weight:700; " href="<?php echo WEB_ROOT; ?>" class="active">Home</a>
+  <a href="#">COE</a>
+  <a href="<?php echo WEB_ROOT; ?>index.php?page=3">List of Grades</a>
+  <div class="dropdown" style="position: static;">
+    <button class="dropbtn">
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="<?php echo WEB_ROOT; ?>index.php?page=2">Account Info</a>
+      <a href="<?php echo WEB_ROOT; ?>logout.php">Logout</a>
+      
+    </div>
+  </div>
+  
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+            
             </div>
 
             
@@ -170,15 +298,25 @@
 
       </header>
 
-
+<div>
     <?php check_message(); ?>
     <?php require_once $content;?>
     
-
+</div>
   
 
     </div>
-
+     
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
     <script src="<?php echo WEB_ROOT; ?>plugins/homepage/js/jquery-3.3.1.min.js"></script>
     <script src="<?php echo WEB_ROOT; ?>plugins/homepage/js/popper.min.js"></script>
     <script src="<?php echo WEB_ROOT; ?>plugins/homepage/js/bootstrap.min.js"></script>
@@ -192,6 +330,8 @@
     <script src="<?php echo WEB_ROOT; ?>plugins/homepage/js/aos.js"></script>
 
     <script src="<?php echo WEB_ROOT; ?>plugins/homepage/js/main.js"></script>
+      
+
 
   </body>
 

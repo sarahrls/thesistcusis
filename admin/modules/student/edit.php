@@ -26,7 +26,7 @@ require_once ("../../../includes/encryption.php");
 		        <form class="form-horizontal well span9" action="controller.php?action=edit&id=<?php echo $cur->IDNO; ?>" method="POST">
 
 					<fieldset>
-						<legend style="margin-top:20px; font-family:Poppins; font-weight:900;">Edit Student</legend>
+						<legend style="margin-top:20px; font-family:Poppins; font-weight:900;"><span class="glyphicon glyphicon-user" ></span><a href="index.php" style="color:#780000; margin-right:5px;"><ion-icon name="arrow-back-outline"></ion-icon></a>Edit Student</legend>
 															
  
 			            <div class="col-md-4">
@@ -327,7 +327,7 @@ require_once ("../../../includes/encryption.php");
 if($_SESSION['ACCOUNT_TYPE']=='Administrator'){
 						echo '
 		              <div class="col-md-6" align="right">
-                        <a href="index.php" name="back" class="btn btn-default" style="background-color:#780000; font-family:Poppins; border-radius:5px;">Back</a>
+                       
 		               <button class="btn btn-primary" name="submit" type="submit" style="background-color:#780000; font-family:Poppins;">Save</button>
 
 		               </div>';

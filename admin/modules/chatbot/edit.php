@@ -13,7 +13,7 @@ $object = $chatbot->single_query($chatbotid);
  <form class="form-horizontal well span6" action="controller.php?action=edit&id=<?php echo $chatbotid;?>" method="POST">
 
           <fieldset>
-            <legend style="margin-top:5px; font-family:Poppins; font-weight:900; ">Edit Query</legend>
+            <legend style="margin-top:5px; font-family:Poppins; font-weight:900; "><span class="glyphicon glyphicon-user" ></span><a href="index.php" style="color:#780000;"><ion-icon name="arrow-back-outline"></ion-icon></a>Edit Query</legend>
                               
                   <div class="form-group">
                     <div class="col-md-8">

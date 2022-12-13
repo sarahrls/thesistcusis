@@ -1673,7 +1673,7 @@ form .btn {
   .line-bottom:after {
     content: "";
     position: absolute;
-    width: 40px;
+    width: 100px;
     height: 7px;
     left: 0;
     background-color: #fb7400;

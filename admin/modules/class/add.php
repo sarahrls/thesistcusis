@@ -2,7 +2,7 @@
 <form class="form-horizontal well span6" action="controller.php?action=add" method="POST">
 
       <fieldset>
-        <legend style="margin-top:20px; font-family:Poppins; font-size:24px; font-weight:900;">New Grade level</legend>
+        <legend style="margin-top:20px; font-family:Poppins; font-size:24px; font-weight:900;"><span class="glyphicon glyphicon-user" ></span><a href="index.php" style="color:#780000;"><ion-icon name="arrow-back-outline"></ion-icon></a>New Grade level</legend>
                           
 
           <div class="form-group">
@@ -89,7 +89,7 @@
                   "idno"></label>
 
                   <div class="col-md-8">
-                    <a href="index.php" class="btn btn-default" style="background-color:#780000;">Back</a>
+                   
                     <button class="btn btn-default" name="savecourse" type="submit" style="background-color:#780000; font-family:Poppins;"><span class="glyphicon glyphicon-floppy-save" ></span> Save</button>
                   </div>
                 </div>

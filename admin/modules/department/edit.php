@@ -13,7 +13,7 @@ $object = $singledept->single_dept($deptid);
  <form class="form-horizontal well span6" action="controller.php?action=edit&id=<?php echo $deptid;?>" method="POST">
 
           <fieldset>
-            <legend style="margin-top:5px; font-family:Poppins; font-weight:900; ">Edit Department</legend>
+            <legend style="margin-top:5px; font-family:Poppins; font-weight:900; "><span class="glyphicon glyphicon-user" ></span><a href="index.php" style="color:#780000;"><ion-icon name="arrow-back-outline"></ion-icon></a> Edit Department</legend>
                               
                   <div class="form-group">
                     <div class="col-md-8">
@@ -45,7 +45,7 @@ $object = $singledept->single_dept($deptid);
                       "idno"></label>
 
                       <div class="col-md-8">
-                            <a href="index.php" name="back" class="btn btn-default" style="background-color:#780000; font-family:Poppins; border-radius:5px;">Back</a>
+                            
                         <button class="btn btn-primary" name="save" type="submit" style="background-color:#780000; font-family:Poppins; ">Save</button>
                       </div>
                     </div>

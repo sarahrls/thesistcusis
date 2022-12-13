@@ -78,7 +78,7 @@
 	  ?>
 <div class="panel panel-primary">
 	  <div class="panel-heading">
-	    <h3 class="panel-title" style="margin-top:5px; font-family:Poppins; font-weight:900; ">Class </h3>
+	    <h3 class="panel-title" style="margin-top:5px; font-family:Poppins; font-weight:900; "><span class="glyphicon glyphicon-user" ></span><a href="index.php" style="color:#780000;"><ion-icon name="arrow-back-outline"></ion-icon></a>Class </h3>
 	  </div>
 	  <div class="panel-body">
 	   <div class="row" >
@@ -187,10 +187,7 @@
 				  </tbody>
 				 
 				</table>
-				<div class="btn-group">
-				  <a href="index.php" class="btn btn-default" style="background-color:#780000; font-family:Poppins; ">Back</a>
-				  <!--  <button type="submit" class="btn btn-default" name="delete"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button> -->
-				</div>
+				
 				</form>
 	
 

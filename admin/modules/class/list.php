@@ -67,6 +67,7 @@
 
 <div class="container">
 <h3 align="left" style="margin-top:5px; font-family:Poppins; font-size:24px; font-weight:900; ">List of Class</h3>
+     <a href="index.php?view=add" class="btn btn-default" style="background-color:#780000; font-family:Poppins; "><span class="glyphicon glyphicon-plus-sign"></span> New</a>
     <form action="#.php" Method="POST"> 
 
 		<table id="example" class="display" cellspacing="0" width="100%">
@@ -118,10 +119,7 @@
 
 
 
-	<div class="btn-group">
-	  <a href="index.php?view=add" class="btn btn-default" style="background-color:#780000; font-family:Poppins; "><span class="glyphicon glyphicon-plus-sign"></span> New</a>
-	  
-	</div> 
+	
 	</form>
 
 

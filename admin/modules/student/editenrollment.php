@@ -15,7 +15,7 @@
 
 					<div class="panel panel-primary">
 					  <div class="panel-heading">
-					    <h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> Enroll Student</h3>
+					    <h3 class="panel-title"><span class="glyphicon glyphicon-user"></span><span class="glyphicon glyphicon-user" ></span><a href="index.php" style="color:#780000;"><ion-icon name="arrow-back-outline"></ion-icon></a> Enroll Student</h3>
 					  </div>
 					  <div class="panel-body">
 
@@ -123,8 +123,8 @@
 				                	<?php
 				                	if($_SESSION['ACCOUNT_TYPE']=='Administrator'){
 						echo '
-							         <div class="btn-group" style="background-color:#780000; border-radius:5px;"> 
-							          <a href="index.php" name="back" class="btn btn-default" style="background-color:#780000; font-family:Poppins; border-radius:5px;"></span>Back</a>
+							         <div > 
+							          
 									    <button type="submit" name="savestep1" class="btn btn-default" style="background-color:#780000; font-family:Poppins; border-radius:5px;"><span class="glyphicon glyphicon-floppy-save"></span> Save</button>
 									  
 									  

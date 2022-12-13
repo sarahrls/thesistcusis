@@ -1,4 +1,6 @@
 <style type="text/css">
+    
+ 
     /*
 	Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically.
 	*/
@@ -25,7 +27,7 @@
       
     tr:nth-child(odd) {
       background: #ccc;
-        margin: 5rem;
+        margin: 2rem;
     }
     
 		td {
@@ -33,7 +35,7 @@
 			border: none;
 			border-bottom: 1px solid #eee;
 			position: relative;
-			padding-left: 50px;
+			padding-left: 10px;
             margin-bottom: 10px;
           
 		}
@@ -61,11 +63,24 @@
 		td:nth-of-type(6):before { content: "Email Address"; }
 		td:nth-of-type(7):before { content: "Option"; }
 	} 
+    
+         @media screen and (max-width:480px){
+        .wells{
+            
+            overflow-x: scroll;
+        }
+         .navigation{
+            display: flex;
+            overflow-y: scroll;
+        }
+    }
+    
 
 </style>
 
 		<div class="wells">
 				<h3 align="left" style="margin-top:5px; font-family:Poppins; font-weight:900; ">List of Student</h3>
+                <a href="index.php?view=add" class="btn btn-default" style="background-color:#780000; font-family:Poppins; margin-top:-30px; margin-bottom:20px;"><span class="glyphicon glyphicon-plus-sign" ></span>  New</a>
 			    <form action="controller.php?action=delete" Method="POST">  					
 					<table  role="table" id="example" class="table table-striped" cellspacing="0">
 				
@@ -127,8 +142,12 @@
 					  	
 					  		echo '<td role="cell" style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'.$decrypted_EMAIL.'</td>';
 					  		echo '<td role="cell" style="font-size:14px; font-family:Poppins; font-weight:500;"><a href="index.php?view=edit&id='.$student->IDNO.'" style="color:#780000; font-size:15px; font-family:Poppins; font-weight:500;"><span class="glyphicon glyphicon-list-alt"> </span>  Edit</a>';
-                            echo '<a href = "index.php?view=view&studentId='.$student->IDNO.'" style="color:#780000; font-size:15px; font-family:Poppins; font-weight:500;"><span class="glyphicon glyphicon-list-alt"> </span>  View</a>';
-                            echo '<a href = "index.php?view=upload&studentId='.$student->IDNO.'" style="color:#780000; font-size:15px; font-family:Poppins; font-weight:500;"><span class="glyphicon glyphicon-list-alt"> </span>  Upload</a></td>';
+                            echo '<a href = "index.php?view=view&studentId='.$student->IDNO.'" style="color:#780000; font-size:15px; font-family:Poppins; font-weight:500;"><span class="glyphicon glyphicon-list-alt"> </span>  View</a> <br>'; 
+                            echo '<a href = "index.php?view=upload&studentId='.$student->IDNO.'" style="color:#780000; font-size:15px; font-family:Poppins; font-weight:500;"><span class="glyphicon glyphicon-list-alt"> </span>  Upload</a>';
+                                
+                            echo '<a href = "#" style="color:#780000; font-size:15px; font-family:Poppins; font-weight:500;"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                                </td>';
+                            
 					  		echo '</tr>';
 					  		}
 
@@ -143,10 +162,7 @@
 				<?php 
 					if($_SESSION['ACCOUNT_TYPE']=='Administrator'){
 						echo '
-						<div class="btn-group">
-						  <a href="index.php?view=add" class="btn btn-default" style="background-color:#780000; font-family:Poppins;"><span class="glyphicon glyphicon-plus-sign" ></span>  New</a>
-						   <button type="submit" class="btn btn-default" name="delete" style="background-color:#780000; font-family:Poppins;"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>
-						</div>';
+						';
 					}
 
 				?>

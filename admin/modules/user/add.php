@@ -1,7 +1,7 @@
  <form class="form-horizontal span6" action="controller.php?action=add" method="POST">
 
           <fieldset>
-            <legend style="margin-top:20px; font-family:Poppins; font-size:24px; font-weight:900;">New User Account</legend>
+            <legend style="margin-top:20px; font-family:Poppins; font-size:24px; font-weight:900;"><span class="glyphicon glyphicon-user" ></span><a href="index.php" style="color:#780000;"><ion-icon name="arrow-back-outline"></ion-icon></a>New User Account</legend>
                               
                   
                   <div class="form-group">
@@ -66,7 +66,7 @@
                       "idno"></label>
 
                       <div class="col-md-8">
-                        <a href="index.php" class="btn btn-default" style="background-color:#780000;">Back</a>
+                        
                         <button class="btn btn-primary" name="save" type="submit" style="background-color:#780000;">Save</button>
                       </div>
                     </div>

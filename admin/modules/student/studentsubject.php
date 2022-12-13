@@ -1,3 +1,80 @@
+<style type="text/css">
+    /*
+	Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically.
+	*/
+	@media screen and (max-width: 768px), (min-device-width: 320px) 
+    and (max-device-width: 1024px)  {
+
+		/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr {
+			display: table;
+           
+		}
+
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr {
+            display: none;
+			position: absolute;
+			top: -500px;
+			left: -9999px;
+		}
+
+    tr {
+      margin: 0 0 1rem 0;
+    }
+      
+    tr:nth-child(odd) {
+      background: #ccc;
+        margin: 5rem;
+    }
+    
+		td {
+			/* Behave  like a "row" */
+			border: none;
+			border-bottom: 1px solid #eee;
+			position: relative;
+			padding-left: 50px;
+            margin-bottom: 10px;
+          
+		}
+
+		td:before {
+			/* Now like a table header */
+		
+			/* Top/left values mimic padding */
+			top: 0;
+			left: 6px;
+			width: 30%;
+			padding-right: 5px;
+			white-space: nowrap;
+		}
+        
+           @media screen and (max-width:480px){
+        .well{
+            
+            overflow-x: scroll;
+        }
+         .navigation{
+            display: flex;
+            overflow-y: scroll;
+        }
+    }
+
+		/*
+		Label the data
+    You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
+		*/
+		td:nth-of-type(1):before { content: "Subject"; }
+		td:nth-of-type(2):before { content: "Description"; }
+		td:nth-of-type(3):before { content: "Midterm"; }
+		td:nth-of-type(4):before { content: "Finals"; }
+		td:nth-of-type(5):before { content: "Average"; }
+		td:nth-of-type(6):before { content: "Remarks"; }
+		
+	} 
+
+</style>
+
 
 <div class="rows">
 
@@ -47,7 +124,7 @@
 		  <!-- <form class="form-horizontal span4" action="#.php" method="POST"> -->
 					<div class="panel panel-primary">
 					  <div class="panel-heading">
-					    <h3 class="panel-title" style="margin-top:5px; font-family:Poppins; font-weight:900; "><span class="glyphicon glyphicon-user" ></span> Enrolled Subject by the Student </h3>
+					    <h3 class="panel-title" style="margin-top:5px; font-family:Poppins; font-weight:900; "><span class="glyphicon glyphicon-user" ></span><a href="index.php" style="color:#780000;"><ion-icon name="arrow-back-outline"></ion-icon></a> Enrolled Subject by the Student </h3>
 					  </div>
 					  <div class="panel-body">
 					   <div class="row">      	  		            		          
@@ -155,7 +232,7 @@
 
 
 
-						<div class="btn-group" id="divButtons" name="divButtons" style="background-color:#780000; border-radius:5px;">
+						<div >
 						<a href="index.php?view=view&studentId=<?php echo $_GET['studentId'];?>" class="btn btn-default" style="background-color:#780000; font-family:Poppins;">  Back</a>
 						<?php 
 						 if($_SESSION['ACCOUNT_TYPE']=='Administrator'){

@@ -3,7 +3,7 @@
     <form class="form-horizontal well span4" action="#.php" method="POST">
 
           <fieldset >
-            <legend style="margin-top:5px; font-family:Poppins; font-weight:900; ">New Faculty</legend>
+            <legend style="margin-top:5px; font-family:Poppins; font-weight:900; "><span class="glyphicon glyphicon-user" ></span><a href="index.php" style="color:#780000;"><ion-icon name="arrow-back-outline"></ion-icon></a>New Faculty</legend>
                               
 
               <div class="form-group">
@@ -123,7 +123,7 @@
                       "idno"></label>
 
                       <div class="col-md-8">
-                           <a href="index.php" class="btn btn-default" style="background-color:#780000;">Back</a>
+                         
                         <button class="btn btn-default" name="savefaculty" type="submit" style="background-color:#780000;"><span class="glyphicon glyphicon-floppy-save" ></span> Save</button>
                       </div>
                     </div>

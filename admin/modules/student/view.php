@@ -14,7 +14,9 @@
 
 			    <form action="controller.php?action=delsy&studentId=<?php echo $_GET['studentId']; ?>" Method="POST">  					
 				<table class="table table-hover">
-				<h3 align="left" style="margin-top:5px; font-family:Poppins; font-weight:900; ">Student Enrollment Records</h3>
+				<h3 align="left" style="margin-top:5px; font-family:Poppins; font-weight:900; "><span class="glyphicon glyphicon-user"></span><a href="index.php" style="color:#780000;"><ion-icon name="arrow-back-outline"></ion-icon></a>Student Enrollment Records</h3>
+                    
+                    <a href="index.php?view=enroll&studentId='. $_GET['studentId'].'" class="btn btn-default" style="background-color:#780000; font-family:Poppins;"><span class="glyphicon glyphicon-plus-sign"></span > New</a>
 				  <thead>
 				  	<tr>
 				  		<th style="font-size:16px; font-family:Poppins; font-weight:900;"> <input type="checkbox" name="chkall" id="chkall" onclick="return checkall('selector[]');" > Year/Sem</th>
@@ -42,7 +44,10 @@
 				  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $schoolyr->AY.'</td>';
 				  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $schoolyr->STATUS.'</td>';
 				  		echo '<td style="font-size:15px; font-family:Poppins; font-weight:500; margin-left:10px;">'. $schoolyr->DATE_RESERVED.'</td>';
-				  		echo '<td><a href = "index.php?view=subject&studentId='.$schoolyr->IDNO.'&cid='.$schoolyr->COURSE_ID.'&sy='.$schoolyr->SYID.'" style="color:#780000; font-size:15px; font-family:Poppins; font-weight:500;">Enrolled Subjects</a></td>';
+				  		echo '<td><a href = "index.php?view=subject&studentId='.$schoolyr->IDNO.'&cid='.$schoolyr->COURSE_ID.'&sy='.$schoolyr->SYID.'" style="color:#780000; font-size:15px; font-family:Poppins; font-weight:500;">Enrolled Subjects</a>';
+                            
+                        echo '<a href = "#" style="color:#780000; font-size:15px; font-family:Poppins; font-weight:500;"><span class="glyphicon glyphicon-trash"></span> Delete</a>    
+                        </td>';
                         //echo '<a href = "index.php?view=view&studentId='.$schoolyr->COE.'" ><span class="glyphicon glyphicon-list-alt"> </span> Upload File </a></td>';
 				  		echo '</tr>';
 				  	} 
@@ -53,11 +58,9 @@
 				<?php
 				if($_SESSION['ACCOUNT_TYPE']=='Administrator') {
 		
-			echo   '<div class="btn-group" style="background-color:#780000; border-radius:5px; margin-bottom:10px;">
-                   <a href="index.php" name="back" class="btn btn-default" style="background-color:#780000; font-family:Poppins; border-radius:5px;"></span>Back</a>
-				  <a href="index.php?view=enroll&studentId='. $_GET['studentId'].'" class="btn btn-default" style="background-color:#780000; font-family:Poppins;"><span class="glyphicon glyphicon-plus-sign"></span > New</a>
-				  <button type="submit" class="btn btn-default" name="delete" style="background-color:#780000; font-family:Poppins;"><span class="glyphicon glyphicon-trash"></span> Delete Selected</button>
-				</div>';
+			echo   '
+                 
+				 ';
 				
 				 }
 				?>
